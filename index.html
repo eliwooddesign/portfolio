@@ -2,116 +2,108 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>Eli Wood</title>
-    <link rel="stylesheet" href="assets/CSS/reset.css">
-    <link rel="stylesheet" href="assets/CSS/style.css">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
+
     <header>
-        <h1 id="title">Eli Wood</h1>
+
+        <div id="headline">
+
+            <h1 id="name">Eli Wood</h1>
+            <p id="title">Full Stack Software Engineer</p>
+
+        </div>
+
         <nav>
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
-            <a href="#">Resume</a>
+
+            <div id="menuIcon">
+
+                <p id="menuIcon-left" class="">/</p>
+                <p id="menuIcon-right" class="">/</p>
+
+            </div>
+
+            <div id="menuItems">
+
+                <input type="radio" name="navItem" id="aboutNav" value="aboutNav">
+                <label for="aboutNav" class="navItem">About</label>
+
+                <input type="radio" name="navItem" id="workNav" value="workNav" checked="checked">
+                <label for="workNav" class="navItem">Work</label>
+
+                <input type="radio" name="navItem" id="contactNav" value="contactNav">
+                <label for="contactNav" class="navItem">Contact</label>
+
+                <a href="./assets/resume/Eli Wood Resume.pdf" target="_blank">Resume</a>
+
+            </div>
+
         </nav>
+
     </header>
-
-    <!-- splash image banner -->
-    <section class="banner">
-        <img src="assets/images/stone.jpg" alt="Bellevue, WA skyline at dusk">
-        <section id="subtitle">
-            <h2>Cool subtitle here!</h2>
-        </section>
-    </section>
-
+    
     <main>
-        
-        <!-- about -->
-        <section class="section" id="about">
-            <h1 class="section-label">About</h1>
-            <p id="bio">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, adipisci odit sapiente
-                tenetur quam molestiae labore aperiam consequatur tempore, dolores debitis! Modi inventore sed
-                cupiditate sequi repellendus blanditiis labore quae?<br>
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro aut autem id incidunt modi quae quasi illum consectetur soluta eveniet error reiciendis eaque aperiam possimus, enim necessitatibus nulla et itaque?
-            </p>
+
+        <section id="about" class="hidden">
+
+            <div id="aboutContent">
+
+                <img src="./assets/images/Casual Headshot Portrait.jpg" alt="Eli Wood's headshot">
+
+                <p id="bio">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat sit error saepe assumenda, exercitationem numquam animi natus voluptas odit facilis, a sed ut dignissimos est quod. Tempora ducimus dolor molestiae?
+                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sed repellat animi non reiciendis magnam odio, laboriosam dolore, nemo alias recusandae, libero voluptatem tenetur. Repudiandae quisquam assumenda placeat nesciunt in.
+                </p>
+
+            </div>
+
         </section>
 
-        <!-- work -->
-        <section class="section" id="work">
-            <h1 class="section-label">Work</h1>
-            <section id="portfolio">
+        <section id="work">
 
-                <section id="hero">
-                    <a href="#">
-                        <img src="assets/images/desert.jpg" alt="Desert">
-                    </a>
-                    <section class="work-title">
-                        <h2>Desert</h2>
-                        <p>Landscapes</p>
-                    </section>
-                </section>
+            <h2>WikiLeeks</h2>
 
-                <section class="sub-work">
-                    <a href="#">
-                        <img src="assets/images/forest.jpg" alt="Forest">
-                    </a>
-                    <section class="work-title">
-                        <h2>Forest</h2>
-                        <p>Treelines</p>
-                    </section>
-                </section>
+            <a href="https://hannahcallison.github.io/project-1-official/" target="_blank">
+                <img src="./assets/images/WikiLeeks Screenshot.png" alt="Screenshot of WikiLeeks application.">
+            </a>
 
-                <section class="sub-work">
-                    <a href="#">
-                        <img src="assets/images/beach.jpg" alt="Beach">
-                    </a>
-                    <section class="work-title">
-                        <h2>Beach</h2>
-                        <p>Waterlines</p>
-                    </section>
-                </section>
-
-                <section class="sub-work">
-                    <a href="#">
-                        <img src="assets/images/snow.jpg" alt="Snow">
-                    </a>
-                    <section class="work-title">
-                        <h2>Snow</h2>
-                        <p>Whitecaps</p>
-                    </section>
-                </section>
-
-                <section class="sub-work">
-                    <a href="#"><img src="assets/images/lava.jpg" alt="Lava">
-                    </a>
-                    <section class="work-title">
-                        <h2>Lava</h2>
-                        <p>Eruptions</p>
-                    </section>
-                </section>
-                
-            </section>
         </section>
 
-        <!-- contact -->
-        <section class="section" id="contact">
-            <h1 class="section-label">Contact</h1>
-            <section id="contact-info">
-                <a href="sms:4257365875">425.736.5875</a>
-                <a href="mailto:contact.eliwood@gmail.com">contact.eliwood@gmail.com</a>
-                <a href="https://github.com/MrEliWood">GitHub</a>
-                <a href="https://www.linkedin.com/in/eliwoodprofessional">LinkedIn</a>
-            </section>
+        <section id="contact" class="hidden">
+
         </section>
 
     </main>
+
+    <aside>
+
+        <p>/*</p>
+        <div class="spacer"></div>
+        <a href="sms:+14257365875">425.736.5875</a>
+        <div class="spacer"></div>
+        <a href="mailto:contact.eliwood@gmail.com">contact.eliwood@gmail.com</a>
+        <div class="spacer"></div>
+        <a href="https://www.linkedin.com/in/eliwoodprofessional/" target="_blank">LinkedIn</a>
+        <div class="spacer"></div>
+        <p>*/</p>
+
+    </aside>
+
+    <script src="./assets/js/script.js"></script>
 
 </body>
 
