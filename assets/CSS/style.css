@@ -53,7 +53,8 @@ body {
     justify-content: space-between;
     background: var(--dark);
     padding: 60px;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 }
 
 .hidden {
@@ -129,7 +130,8 @@ aside {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin: auto;
+    margin: 0px auto;
+    z-index: 2;
 }
 
 aside p {
@@ -158,6 +160,7 @@ main {
     align-items: center;
     margin: auto;
     height: 100%;
+    padding: 60px;
 }
 
 /* about */
@@ -188,11 +191,26 @@ main {
     text-align: center;
 }
 
-#work a {
+#work div {
     width: 100%;
     max-width: 1200px;
     box-shadow: 0px 0px 10px var(--shadow);
-    margin-top: 20px;
+    margin-top: 60px;
+}
+
+button {
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    width: fit-content;
+    background: none;
+    border: none;
+    opacity: 0.5;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 1;
 }
 
 
