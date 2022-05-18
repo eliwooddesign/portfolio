@@ -34,6 +34,7 @@ $('#menuIcon').click(function() {
             $('#menuIcon-right').addClass('menu-icon-right-x');
             $('#menuItems').css('display', 'flex');
             $('aside').css('display', 'flex');
+            $('body').css('overflow', 'hidden');
 
         } else {
 
@@ -41,6 +42,7 @@ $('#menuIcon').click(function() {
             $('#menuIcon-right').removeClass('menu-icon-right-x');
             $('#menuItems').css('display', 'none');
             $('aside').css('display', 'none');
+            $('body').css('overflow', 'visible');
 
         };
 
