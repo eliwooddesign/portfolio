@@ -1,0 +1,21 @@
+footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   padding: var(--large);
+   margin: 0px auto;
+}
+
+.footer-detail {
+    opacity: 0.5;
+}
+
+.footer-contact {
+   display: flex;
+   flex-direction: row;
+}
+
+.footer-contact li:last-of-type {
+   margin-left: var(--medium);
+}

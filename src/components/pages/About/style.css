@@ -1,0 +1,31 @@
+.about {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px var(--medium);
+}
+
+.portrait {
+    width: 50%;
+    padding: var(--medium);
+}
+
+.about-bio {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: var(--medium);
+    margin-top: var(--large);
+}
+
+.about-bio h2 {
+    margin-bottom: var(--medium);
+}
+
+.button-block {
+    display: flex;
+}
+
+.work-button {
+    opacity: 1;
+    margin: var(--medium) var(--medium) 0px 0px;
+}

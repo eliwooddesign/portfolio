@@ -1,0 +1,26 @@
+.nav {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.nav-item {
+   user-select: none;
+}
+
+.nav-item a {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.nav-detail {
+    opacity: 0.5;
+}
+
+.nav-link {
+   margin-left: var(--medium);
+}
+
+.active {
+   cursor: default;
+   opacity: 1;
+}
