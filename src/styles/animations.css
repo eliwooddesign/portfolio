@@ -1,0 +1,53 @@
+* {
+   transition: all 0.3s ease;
+}
+
+/* fade */
+@keyframes fade-in {
+   from {
+      display: block;
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes fade-out {
+   from {
+      opacity: 1;
+   }
+
+   to {
+      opacity: 0;
+      display: none;
+   }
+}
+
+/* scale */
+@keyframes scale-in {
+   from {
+      display: block;
+      transform: scale(0.8);
+      opacity: 0;
+   }
+
+   to {
+      transform: scale(1);
+      opacity: 1;
+   }
+}
+
+@keyframes scale-out {
+   from {
+      transform: scale(1);
+      opacity: 1;
+   }
+
+   to {
+      transform: scale(0.8);
+      opacity: 0;
+      display: none;
+   }
+}
