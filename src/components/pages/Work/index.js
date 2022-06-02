@@ -23,7 +23,7 @@ function Work({ currentPage, setCurrentPage }) {
             {/* recipe generator */}
             <div className="project-preview-left">
 
-                <a href="https://mreliwood.github.io/demo-recipe-generator/" className="project-thumbnail-link">
+                <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-link">
                     <img src="/assets/work/recipe/desktop-mockup.png" alt="recipe generator preview" className="project-thumbnail"></img>
                 </a>
 
@@ -32,9 +32,9 @@ function Work({ currentPage, setCurrentPage }) {
                     <h2 className="preview-title">Recipe Generator</h2>
 
                     <div className="preview-links">
-                        <a href="https://mreliwood.github.io/demo-recipe-generator/">Deployed Application</a>
+                        <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer">Deployed Application</a>
                         <p className="preview-link-divider">|</p>
-                        <a href="https://github.com/MrEliWood/demo-recipe-generator">GitHub Repository</a>
+                        <a href="https://github.com/MrEliWood/demo-recipe-generator" target="_blank" rel="noreferrer">GitHub Repository</a>
                     </div>
 
                 </div>
@@ -44,7 +44,7 @@ function Work({ currentPage, setCurrentPage }) {
             {/* weather dashboard */}
             <div className="project-preview-right">
 
-                <a href="https://demo-weather-dashboard.herokuapp.com" className="project-thumbnail-link">
+                <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-link">
                     <img src="/assets/work/weather/desktop-mockup.png" alt="weather dashboard preview" className="project-thumbnail"></img>
                 </a>
 
@@ -53,9 +53,9 @@ function Work({ currentPage, setCurrentPage }) {
                     <h2 className="preview-title">Weather Dashboard</h2>
 
                     <div className="preview-links">
-                        <a href="https://demo-weather-dashboard.herokuapp.com">Deployed Application</a>
+                        <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer">Deployed Application</a>
                         <p className="preview-link-divider">|</p>
-                        <a href="https://github.com/MrEliWood/demo-weather-dashboard">GitHub Repository</a>
+                        <a href="https://github.com/MrEliWood/demo-weather-dashboard" target="_blank" rel="noreferrer">GitHub Repository</a>
                     </div>
 
                 </div>
@@ -65,7 +65,7 @@ function Work({ currentPage, setCurrentPage }) {
             {/* blog template */}
             <div className="project-preview-left">
 
-                <a href="http://demo-blog-template.herokuapp.com/" className="project-thumbnail-link">
+                <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-link">
                     <img src="/assets/work/blog/desktop-mockup.png" alt="blog template preview" className="project-thumbnail"></img>
                 </a>
 
@@ -74,9 +74,9 @@ function Work({ currentPage, setCurrentPage }) {
                     <h2 className="preview-title">Blog Template</h2>
 
                     <div className="preview-links">
-                        <a href="http://demo-blog-template.herokuapp.com/">Deployed Application</a>
+                        <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer">Deployed Application</a>
                         <p className="preview-link-divider">|</p>
-                        <a href="https://github.com/MrEliWood/blog-template">GitHub Repository</a>
+                        <a href="https://github.com/MrEliWood/blog-template" target="_blank" rel="noreferrer">GitHub Repository</a>
                     </div>
 
                 </div>
@@ -86,7 +86,7 @@ function Work({ currentPage, setCurrentPage }) {
             {/* porefection */}
             <div className="project-preview-right">
 
-                <a href="https://porefect.herokuapp.com" className="project-thumbnail-link">
+                <a href="https://porefect.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-link">
                     <img src="/assets/work/porefection/desktop-mockup.png" alt="porefection preview" className="project-thumbnail"></img>
                 </a>
 
@@ -95,9 +95,9 @@ function Work({ currentPage, setCurrentPage }) {
                     <h2 className="preview-title">Porefect Skincare</h2>
 
                     <div className="preview-links">
-                        <a href="https://porefect.herokuapp.com">Deployed Application</a>
+                        <a href="https://porefect.herokuapp.com" target="_blank" rel="noreferrer">Deployed Application</a>
                         <p className="preview-link-divider">|</p>
-                        <a href="https://github.com/jittel/combo-skincare">GitHub Repository</a>
+                        <a href="https://github.com/jittel/combo-skincare" target="_blank" rel="noreferrer">GitHub Repository</a>
                     </div>
 
                 </div>
@@ -107,7 +107,7 @@ function Work({ currentPage, setCurrentPage }) {
             {/* social network api */}
             <div className="project-preview-left">
 
-                <a href="https://github.com/MrEliWood/social-network-api" className="project-thumbnail-link">
+                <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="project-thumbnail-link">
                     <img src="/assets/work/e-commerce/desktop-mockup.png" alt="social network api preview" className="project-thumbnail"></img>
                 </a>
 
@@ -116,7 +116,7 @@ function Work({ currentPage, setCurrentPage }) {
                     <h2 className="preview-title">Social Network API</h2>
 
                     <div className="preview-links">
-                        <a href="https://github.com/MrEliWood/social-network-api">GitHub Repository</a>
+                        <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer">GitHub Repository</a>
                     </div>
 
                 </div>
@@ -126,7 +126,7 @@ function Work({ currentPage, setCurrentPage }) {
             {/* e-commerce back end */}
             <div className="project-preview-right">
 
-                <a href="https://github.com/MrEliWood/e-commerce-back-end" className="project-thumbnail-link">
+                <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="project-thumbnail-link">
                     <img src="/assets/work/e-commerce/desktop-mockup.png" alt="e-commerce back end preview" className="project-thumbnail"></img>
                 </a>
 
@@ -135,7 +135,7 @@ function Work({ currentPage, setCurrentPage }) {
                     <h2 className="preview-title">E-Commerce Back End</h2>
 
                     <div className="preview-links">
-                        <a href="https://github.com/MrEliWood/e-commerce-back-end">GitHub Repository</a>
+                        <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer">GitHub Repository</a>
                     </div>
 
                 </div>
