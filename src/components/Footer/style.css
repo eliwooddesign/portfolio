@@ -14,8 +14,19 @@ footer {
 .footer-contact {
    display: flex;
    flex-direction: row;
+   align-items: center;
 }
 
 .footer-contact li:last-of-type {
    margin-left: var(--medium);
+}
+
+.focused {
+    transition: all 1s ease;
+    transform: translateY(-30vh);
+    flex-direction: column;
+}
+
+.focused li {
+    margin: var(--small);
 }

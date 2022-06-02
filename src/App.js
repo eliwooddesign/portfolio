@@ -19,21 +19,19 @@ function App() {
 
    const renderPage = () => {
       if (currentPage === 'About') {
-         return <About currentPage={currentPage} setCurrentPage={setCurrentPage}/>;
+         return <About currentPage={currentPage} setCurrentPage={setCurrentPage} />;
       }
       if (currentPage === 'Work') {
-         return <Work currentPage={currentPage} setCurrentPage={setCurrentPage}/>;
+         return <Work currentPage={currentPage} setCurrentPage={setCurrentPage} />;
       }
-      return <Contact currentPage={currentPage} setCurrentPage={setCurrentPage}/>;
+      return <Contact currentPage={currentPage} setCurrentPage={setCurrentPage} />;
    };
-
-   // const handlePageChange = (page) => setCurrentPage(page);
 
    return (
       <div className="body">
-         <Header currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+         <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
          {renderPage()}
-         <Footer />
+         <Footer currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </div>
    );
 

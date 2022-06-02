@@ -11,7 +11,7 @@ function Work({ currentPage, setCurrentPage }) {
 
                 <h2>Hi, my name is Eli and I'm a software developer.</h2>
 
-                <h3>I'm always open to new opportunities. Check out some of my work</h3>
+                <h3>I'm always open to new opportunities. Check out my portfolio</h3>
                 <h3>and let me know if you're interested in working together.</h3>
 
                 <a href="#contact" onClick={() => setCurrentPage('Contact')} className="contact-button">
@@ -98,6 +98,44 @@ function Work({ currentPage, setCurrentPage }) {
                         <a href="https://porefect.herokuapp.com">Deployed Application</a>
                         <p className="preview-link-divider">|</p>
                         <a href="https://github.com/jittel/combo-skincare">GitHub Repository</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            {/* social network api */}
+            <div className="project-preview-left">
+
+                <a href="https://github.com/MrEliWood/social-network-api" className="project-thumbnail-link">
+                    <img src="/assets/work/e-commerce/desktop-mockup.png" alt="social network api preview" className="project-thumbnail"></img>
+                </a>
+
+                <div className="preview-details-left">
+                
+                    <h2 className="preview-title">Social Network API</h2>
+
+                    <div className="preview-links">
+                        <a href="https://github.com/MrEliWood/social-network-api">GitHub Repository</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            {/* e-commerce back end */}
+            <div className="project-preview-right">
+
+                <a href="https://github.com/MrEliWood/e-commerce-back-end" className="project-thumbnail-link">
+                    <img src="/assets/work/e-commerce/desktop-mockup.png" alt="e-commerce back end preview" className="project-thumbnail"></img>
+                </a>
+
+                <div className="preview-details-right">
+                
+                    <h2 className="preview-title">E-Commerce Back End</h2>
+
+                    <div className="preview-links">
+                        <a href="https://github.com/MrEliWood/e-commerce-back-end">GitHub Repository</a>
                     </div>
 
                 </div>
