@@ -1,7 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 
 function Work({ currentPage, setCurrentPage }) {
+
+    // set state
+    const [recipeModifier, setRecipeModifier] = useState(0);
+    const [weatherModifier, setWeatherModifier] = useState(0);
+    const [blogModifier, setBlogeModifier] = useState(0);
+    const [porefectionModifier, setPorefectionModifier] = useState(0);
+    const [socialModifier, setSocialModifier] = useState(0);
+    const [commerceModifier, setCommerceModifier] = useState(0);
+
+    // parallax scrolling
+    const handleScroll = () => {
+
+        // get window height
+        const windowHeight = window.innerHeight;
+
+        // get elements from the page
+        const recipe = document.getElementById('recipe').getBoundingClientRect().top;
+        const weather = document.getElementById('weather').getBoundingClientRect().top;
+        const blog = document.getElementById('blog').getBoundingClientRect().top;
+        const porefection = document.getElementById('porefection').getBoundingClientRect().top;
+        const social = document.getElementById('social').getBoundingClientRect().top;
+        const commerce = document.getElementById('commerce').getBoundingClientRect().top;
+
+        // arrays of all elements and state setters
+        const allElements = [recipe, weather, blog, porefection, social, commerce];
+        const allStates = [setRecipeModifier, setWeatherModifier, setBlogeModifier, setPorefectionModifier, setSocialModifier, setCommerceModifier];
+
+        // calculate modifier and set to state
+        for (let i = 0; i < allElements.length; i++) {
+
+            if (allElements[i] < 60) {
+                allStates[i](Math.floor((windowHeight - 60) / 8));
+            } else if (allElements[i] < windowHeight) {
+                allStates[i](Math.floor((windowHeight - allElements[i]) / 8));
+            };
+
+        };
+
+    };
+
+    console.log('Recipe Modifier: ', recipeModifier);
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    }, []);
 
     return (
 
@@ -21,14 +66,14 @@ function Work({ currentPage, setCurrentPage }) {
             </div>
 
             {/* recipe generator */}
-            <div className="project-preview-left">
+            <div id="recipe" className="project-preview-left">
 
-                <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-link">
+                <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-link" style={{ transform: `translateY(-${recipeModifier}px)` }}>
                     <img src="/assets/work/recipe/desktop-mockup.png" alt="recipe generator preview" className="project-thumbnail"></img>
                 </a>
 
                 <div className="preview-details-left">
-                
+
                     <h2 className="preview-title">Recipe Generator</h2>
 
                     <div className="preview-links">
@@ -42,14 +87,14 @@ function Work({ currentPage, setCurrentPage }) {
             </div>
 
             {/* weather dashboard */}
-            <div className="project-preview-right">
+            <div id="weather" className="project-preview-right">
 
-                <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-link">
+                <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-link" style={{ transform: `translateY(-${weatherModifier}px)` }}>
                     <img src="/assets/work/weather/desktop-mockup.png" alt="weather dashboard preview" className="project-thumbnail"></img>
                 </a>
 
                 <div className="preview-details-right">
-                
+
                     <h2 className="preview-title">Weather Dashboard</h2>
 
                     <div className="preview-links">
@@ -63,14 +108,14 @@ function Work({ currentPage, setCurrentPage }) {
             </div>
 
             {/* blog template */}
-            <div className="project-preview-left">
+            <div id="blog" className="project-preview-left">
 
-                <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-link">
+                <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-link" style={{ transform: `translateY(-${blogModifier}px)` }}>
                     <img src="/assets/work/blog/desktop-mockup.png" alt="blog template preview" className="project-thumbnail"></img>
                 </a>
 
                 <div className="preview-details-left">
-                
+
                     <h2 className="preview-title">Blog Template</h2>
 
                     <div className="preview-links">
@@ -84,14 +129,14 @@ function Work({ currentPage, setCurrentPage }) {
             </div>
 
             {/* porefection */}
-            <div className="project-preview-right">
+            <div id="porefection" className="project-preview-right">
 
-                <a href="https://porefect.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-link">
+                <a href="https://porefect.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-link" style={{ transform: `translateY(-${porefectionModifier}px)` }}>
                     <img src="/assets/work/porefection/desktop-mockup.png" alt="porefection preview" className="project-thumbnail"></img>
                 </a>
 
                 <div className="preview-details-right">
-                
+
                     <h2 className="preview-title">Porefect Skincare</h2>
 
                     <div className="preview-links">
@@ -105,14 +150,14 @@ function Work({ currentPage, setCurrentPage }) {
             </div>
 
             {/* social network api */}
-            <div className="project-preview-left">
+            <div id="social" className="project-preview-left">
 
-                <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="project-thumbnail-link">
+                <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="project-thumbnail-link" style={{ transform: `translateY(-${socialModifier}px)` }}>
                     <img src="/assets/work/e-commerce/desktop-mockup.png" alt="social network api preview" className="project-thumbnail"></img>
                 </a>
 
                 <div className="preview-details-left">
-                
+
                     <h2 className="preview-title">Social Network API</h2>
 
                     <div className="preview-links">
@@ -124,14 +169,14 @@ function Work({ currentPage, setCurrentPage }) {
             </div>
 
             {/* e-commerce back end */}
-            <div className="project-preview-right">
+            <div id="commerce" className="project-preview-right">
 
-                <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="project-thumbnail-link">
+                <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="project-thumbnail-link" style={{ transform: `translateY(-${commerceModifier}px)` }}>
                     <img src="/assets/work/e-commerce/desktop-mockup.png" alt="e-commerce back end preview" className="project-thumbnail"></img>
                 </a>
 
                 <div className="preview-details-right">
-                
+
                     <h2 className="preview-title">E-Commerce Back End</h2>
 
                     <div className="preview-links">
