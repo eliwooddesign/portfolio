@@ -49,7 +49,7 @@
     justify-content: center;
     align-items: flex-start;
     width: 50%;
-    padding: var(--large);
+    padding: var(--small) var(--large);
 }
 
 .preview-details-right {
@@ -59,11 +59,7 @@
     align-items: flex-end;
     text-align: right;
     width: 50%;
-    padding: var(--large);
-}
-
-.preview-title {
-    /* margin-top: var(--large); */
+    padding: var(--small) var(--large);
 }
 
 .preview-links {
