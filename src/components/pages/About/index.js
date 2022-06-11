@@ -9,7 +9,7 @@ function About({ currentPage, setCurrentPage }) {
 
             <div className="about">
 
-                <img src="/assets/images/casual-headshot-portrait.jpg" alt="personal portrait" className="portrait"></img>
+                <img src="/portfolio/assets/images/casual-headshot-portrait.jpg" alt="personal portrait" className="portrait"></img>
 
                 <div className="about-bio">
 
