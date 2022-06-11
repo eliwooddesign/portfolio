@@ -5,6 +5,7 @@
     align-items: center;
     text-align: center;
     height: 45vh;
+    margin-bottom: var(--medium);
 }
 
 .intro h2 {
@@ -20,8 +21,9 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    height: 100vh;
     width: 100%;
-    padding: var(--large) var(--huge);
+    padding: var(--huge);
 }
 
 .project-preview-right {
@@ -30,29 +32,55 @@
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    padding: var(--large) var(--huge);
+    padding: var(--huge);
 }
 
-.project-thumbnail-link {
+.preview-thumbnail {
     display: flex;
     width: 50%;
+}
+
+.project-thumbnail-desktop-link {
+    display: flex;
+    width: fit-content;
     opacity: 1;
+    margin-top: var(--medium);
+}
+
+.project-thumbnail-desktop {
+    object-fit: contain;
+    width: 90%;
+}
+
+.project-thumbnail-phone-link {
+    position: absolute;
+    left: 40%;
+    bottom: -30vh;
+    display: flex;
+    width: 10%;
+    opacity: 1;
+    z-index: 1;
+}
+
+.project-thumbnail-phone {
+    object-fit: contain;
+    width: 100%;
 }
 
 .project-thumbnail {
     width: 100%;
 }
 
-.preview-details-left {
+.preview-details-right {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     width: 50%;
-    padding: var(--small) var(--large);
+    padding: 0px var(--large);
 }
 
-.preview-details-right {
+.preview-details-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
