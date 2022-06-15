@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
-function About({ currentPage, setCurrentPage }) {
+function About() {
 
     return (
 
@@ -19,13 +20,13 @@ function About({ currentPage, setCurrentPage }) {
 
                     <div className="button-block">
 
-                        <a href="#work" onClick={() => setCurrentPage('Work')} className="work-button">
+                        <Link to="../work" className="work-button">
                             <button>Work</button>
-                        </a>
+                        </Link>
 
-                        <a href="#contact" onClick={() => setCurrentPage('Contact')} className="contact-button">
+                        <Link to="../contact" className="contact-button">
                             <button>Contact</button>
-                        </a>
+                        </Link>
                         
                     </div>
 
