@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './style.css';
 
-function Footer({ currentPage, setCurrentPage }) {
+function Footer() {
 
     let contactStatus;
 
