@@ -1,19 +1,21 @@
 .about {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 0px var(--medium);
 }
 
 .portrait {
+    object-fit: cover;
+    object-position: top;
     width: 50%;
-    padding: var(--medium);
+    padding-right: var(--medium);
 }
 
 .about-bio {
     display: flex;
     flex-direction: column;
     width: 50%;
-    padding: var(--medium);
+    padding-left: var(--medium);
     margin-top: var(--large);
 }
 
@@ -28,4 +30,61 @@
 .work-button {
     opacity: 1;
     margin: var(--medium) var(--medium) 0px 0px;
+}
+
+/* large screens */
+@media screen and (max-width: 1500px) {
+
+    .about-bio h2:first-of-type {
+        margin-bottom: 0px;
+    }
+
+}
+
+/* small screens */
+@media screen and (max-width: 1024px) {}
+
+/* tablets */
+@media screen and (max-width: 768px) {
+
+    .about {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: var(--medium);
+    }
+
+    .portrait {
+        height: 45vh;
+        width: 100%;
+        padding-right: 0px;
+    }
+    
+    .about-bio {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0px;
+        margin-top: var(--large);
+    }
+    
+    .button-block {
+        justify-content: center;
+    }
+
+}
+
+/* phones */
+@media screen and (max-width: 480px) {
+
+    .about {
+        padding: var(--small);
+    }
+
+    .portrait {
+        height: 35vh;
+        width: 100%;
+        padding-right: 0px;
+    }
+
 }
