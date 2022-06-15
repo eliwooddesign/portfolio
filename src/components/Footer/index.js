@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './style.css';
 
 function Footer({ currentPage, setCurrentPage }) {
@@ -8,7 +9,9 @@ function Footer({ currentPage, setCurrentPage }) {
     let footerDetailOpen = '/*';
     let footerDetailClose = '*/';
 
-    if (currentPage === 'Contact') {
+    const location = useLocation();
+
+    if (location.pathname === '/contact') {
         contactStatus = 'focused';
         footerDetailOpen = '';
         footerDetailClose = '';

@@ -1,10 +1,14 @@
 // import components
-import React, { useState } from 'react';
+import React from 'react';
+import Error from './components/Error'
 import Header from './components/Header';
 import Footer from './components/Footer'
 import About from './components/pages/About';
 import Work from './components/pages/Work';
 import Contact from './components/pages/Contact';
+
+// import react router
+import { Routes, Route } from "react-router-dom";
 
 // import styles
 import './styles/reset.css';
@@ -15,25 +19,19 @@ import './styles/style.css';
 
 function App() {
 
-   const [currentPage, setCurrentPage] = useState('Work');
-
-   const renderPage = () => {
-      if (currentPage === 'About') {
-         return <About currentPage={currentPage} setCurrentPage={setCurrentPage} />;
-      }
-      if (currentPage === 'Work') {
-         return <Work currentPage={currentPage} setCurrentPage={setCurrentPage} />;
-      }
-      return <Contact currentPage={currentPage} setCurrentPage={setCurrentPage} />;
-   };
-
-   return (
-      <div className="body">
-         <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-         {renderPage()}
-         <Footer currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      </div>
-   );
+    return (
+        <div className="body">
+            <Header />
+            <Routes>
+                <Route path="*" element={<Error />} />
+                <Route path="/" element={<Work />} />
+                <Route path="about" element={<About />} />
+                <Route path="work" element={<Work />} />
+                <Route path="contact" element={<Contact />} />
+            </Routes>
+            <Footer />
+        </div>
+    );
 
 }
 

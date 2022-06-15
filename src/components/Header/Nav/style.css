@@ -1,22 +1,81 @@
 .nav {
-   display: flex;
-   justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .nav-item {
-   user-select: none;
+    user-select: none;
+    width: fit-content;
+    margin-left: var(--medium);
 }
 
 .nav-detail {
+    display: flex;
     opacity: 0.5;
     font-size: 1.2em;
-}
-
-.nav-link {
-   margin-left: var(--medium);
+    margin-left: 0px;
 }
 
 .active {
-   cursor: default;
-   opacity: 1;
+    cursor: default;
+    opacity: 1;
 }
+
+.mobile-nav-button {
+    display: none;
+}
+
+/* tablets */
+@media screen and (max-width: 768px) {
+
+    .mobile-nav-button {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0.5;
+        font-size: 1.7em;
+        margin: var(--medium);
+        z-index: 99;
+    }
+
+    .nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: var(--dark75);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        font-size: 1.5em;
+        padding: var(--medium);
+        z-index: 9;
+    }
+
+    .nav-item {
+        text-align: right;
+        margin-left: 0px;
+        margin-top: var(--medium);
+    }
+
+    .nav-detail {
+        margin-top: 0px;
+        opacity: 0;
+    }
+
+    .nav-open {
+        animation: fade-in 0.5s both;
+    }
+
+    .nav-closed {
+        animation: fade-out 0.5s both;
+    }
+
+}
+
+/* phones */
+@media screen and (max-width: 480px) {}
