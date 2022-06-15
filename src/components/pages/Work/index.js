@@ -4,8 +4,6 @@ import './style.css';
 
 function Work({ currentPage, setCurrentPage }) {
 
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
     // project positions
     const [foundArkPos, setFoundArkPos] = useState();
     // const [recipePos, setRecipePos] = useState();
@@ -50,7 +48,7 @@ function Work({ currentPage, setCurrentPage }) {
         // set parallax end point
         let offset;
 
-        if (windowWidth > 480) {
+        if (window.innerWidth > 480) {
             offset = windowHeight / 4;
         } else {
             offset = windowHeight / 2;
@@ -69,7 +67,6 @@ function Work({ currentPage, setCurrentPage }) {
     };
 
     useEffect(() => {
-        window.addEventListener("resize", setWindowWidth(window.innerWidth));
         window.addEventListener("scroll", handleScroll);
         handleScroll();
         // eslint-disable-next-line
@@ -82,7 +79,7 @@ function Work({ currentPage, setCurrentPage }) {
             {/* banner */}
             <div className="intro">
 
-                {windowWidth > 768 ?
+                {window.innerWidth > 768 ?
                     // desktop
                     <>
                         <h2>Hi, my name is Eli and I'm a software developer.</h2>

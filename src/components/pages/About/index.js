@@ -14,7 +14,16 @@ function About() {
 
                 <div className="about-bio">
 
-                    <h2>Hi, my name is Eli and I'm a software developer.</h2>
+                    {window.innerWidth > 1500 ?
+                        // desktop
+                        <h2>Hi, my name is Eli and I'm a software developer.</h2>
+                        :
+                        // mobile
+                        <>
+                            <h2>Hi, my name is Eli and</h2>
+                            <h2>I'm a software developer.</h2>
+                        </>
+                    }
 
                     <h3>I'm always open to new opportunities. Check out some of my work and let me know if you're interested in working together.</h3>
 
@@ -27,7 +36,7 @@ function About() {
                         <Link to="../contact" className="contact-button">
                             <button>Contact</button>
                         </Link>
-                        
+
                     </div>
 
                 </div>
