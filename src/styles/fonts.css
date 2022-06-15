@@ -33,22 +33,11 @@ a {
    font-weight: 400;
 }
 
-@media screen and (max-width: 768px) {
+/* phones */
+@media screen and (max-width: 480px) {
 
-   * {
-      font-size: 90%;
-   }
-
-   h1 {
-      font-size: 1.8em;
-   }
-
-   h2 {
-      font-size: 1.5em;
-   }
-
-   h3 {
-      font-size: 1.2em;
-   }
+    body {
+        font-size: 0.8em;
+    }
 
 }

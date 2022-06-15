@@ -3,6 +3,8 @@ import './style.css';
 
 function Work({ currentPage, setCurrentPage }) {
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
     // project positions
     const [foundArkPos, setFoundArkPos] = useState();
     // const [recipePos, setRecipePos] = useState();
@@ -43,28 +45,34 @@ function Work({ currentPage, setCurrentPage }) {
         // arrays of all elements and state setters
         const allPositions = [foundArk, recipe, weather, blog, social, commerce];
         const setAllMods = [setFoundArkMod, setRecipeMod, setWeatherMod, setBlogeMod, setSocialMod, setCommerceMod];
-    
-        // calculate modifier and set to state
+
+        // set parallax end point
+        let offset;
+
+        if (windowWidth > 480) {
+            offset = windowHeight / 4;
+        } else {
+            offset = windowHeight / 2;
+        }
+
         for (let i = 0; i < allPositions.length; i++) {
-    
-            if (allPositions[i] < 0) {
-                setAllMods[i](Math.floor(Math.sqrt((windowHeight) * 40)));
+
+            if (allPositions[i] < offset) {
+                setAllMods[i](100 - ((offset / windowHeight) * 100));
             } else if (allPositions[i] < windowHeight) {
-                setAllMods[i](Math.floor(Math.sqrt((windowHeight - allPositions[i]) * 40)));
+                setAllMods[i](100 - ((allPositions[i] / windowHeight) * 100));
             };
-    
+
         };
 
     };
 
     useEffect(() => {
+        window.addEventListener("resize", setWindowWidth(window.innerWidth));
         window.addEventListener("scroll", handleScroll);
         handleScroll();
         // eslint-disable-next-line
     }, []);
-
-    console.log('POS - ', foundArkPos);
-    console.log('MOD - ', foundArkMod);
 
     return (
 
@@ -73,10 +81,23 @@ function Work({ currentPage, setCurrentPage }) {
             {/* banner */}
             <div className="intro">
 
-                <h2>Hi, my name is Eli and I'm a software developer.</h2>
+                {windowWidth > 768 ?
+                    // desktop
+                    <>
+                        <h2>Hi, my name is Eli and I'm a software developer.</h2>
 
-                <h3>I'm always open to new opportunities. Check out my portfolio</h3>
-                <h3>and let me know if you're interested in working together.</h3>
+                        <h3>I'm always open to new opportunities. Check out my portfolio</h3>
+                        <h3>and let me know if you're interested in working together.</h3>
+                    </>
+                    :
+                    // mobile
+                    <>
+                        <h2>Hi, my name is Eli and</h2>
+                        <h2>I'm a software developer.</h2>
+
+                        <h3>I'm always open to new opportunities. Check out my portfolio and let me know if you're interested in working together.</h3>
+                    </>
+                }
 
                 <a href="#contact" onClick={() => setCurrentPage('Contact')} className="contact-button">
                     <button>Contact</button>
@@ -89,12 +110,12 @@ function Work({ currentPage, setCurrentPage }) {
 
                 <div className="preview-thumbnail-left">
 
-                    <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${foundArkMod}px)` }}>
+                    <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${foundArkMod / 5}vh)` }}>
                         <img src="assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
                         {foundArkPos < (window.innerHeight / 2) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
                     </a>
 
-                    <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod * 0.5)}px)` }}>
+                    <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${foundArkMod / 10}vh)` }}>
                         <img src="assets/work/found-ark/mobile-mockup.png" alt="found ark phone preview" className="project-thumbnail-phone"></img>
                     </a>
 
@@ -119,11 +140,11 @@ function Work({ currentPage, setCurrentPage }) {
 
                 <div className="preview-thumbnail-right">
 
-                    <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${recipeMod}px)` }}>
+                    <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${recipeMod / 5}vh)` }}>
                         <img src="assets/work/recipe/desktop-mockup.png" alt="recipe generator desktop preview" className="project-thumbnail-desktop"></img>
                     </a>
 
-                    <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(recipeMod * 0.5)}px)` }}>
+                    <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${recipeMod / 10}vh)` }}>
                         <img src="assets/work/recipe/mobile-mockup.png" alt="recipe generator phone preview" className="project-thumbnail-phone"></img>
                     </a>
 
@@ -148,7 +169,7 @@ function Work({ currentPage, setCurrentPage }) {
 
                 <div className="preview-thumbnail-left">
 
-                    <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${weatherMod}px)` }}>
+                    <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${weatherMod / 5}vh)` }}>
                         <img src="assets/work/weather/desktop-mockup.png" alt="weather dashboard preview" className="project-thumbnail-desktop"></img>
                     </a>
 
@@ -173,7 +194,7 @@ function Work({ currentPage, setCurrentPage }) {
 
                 <div className="preview-thumbnail-right">
 
-                    <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${blogMod}px)` }}>
+                    <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${blogMod / 5}vh)` }}>
                         <img src="assets/work/blog/desktop-mockup.png" alt="blog template preview" className="project-thumbnail-desktop"></img>
                     </a>
 
@@ -198,7 +219,7 @@ function Work({ currentPage, setCurrentPage }) {
 
                 <div className="preview-thumbnail-left">
 
-                    <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${socialMod}px)` }}>
+                    <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${socialMod / 5}vh)` }}>
                         <img src="assets/work/e-commerce/desktop-mockup.png" alt="social network api preview" className="project-thumbnail-desktop"></img>
                     </a>
 
@@ -221,7 +242,7 @@ function Work({ currentPage, setCurrentPage }) {
 
                 <div className="preview-thumbnail-right">
 
-                    <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${commerceMod}px)` }}>
+                    <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${commerceMod / 5}vh)` }}>
                         <img src="assets/work/e-commerce/desktop-mockup.png" alt="e-commerce back end preview" className="project-thumbnail-desktop"></img>
                     </a>
 

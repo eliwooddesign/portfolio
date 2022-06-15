@@ -1,21 +1,30 @@
 header {
-   display: flex;
-   justify-content: space-between;
-   width: 100%;
-   padding: var(--large);
-   margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--large);
+    margin: 0px;
 }
 
 .site-title {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .site-title a {
-   opacity: 1;
+    opacity: 1;
 }
 
 .site-title p {
-   user-select: none;
+    user-select: none;
+}
+
+/* tablets */
+@media screen and (max-width: 768px) {
+
+    header {
+        padding: var(--medium);
+    }
+
 }
