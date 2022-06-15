@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Nav from './Nav'
 import './style.css';
 
-function Header({ currentPage, setCurrentPage }) {
+function Header() {
 
     return (
 
@@ -10,15 +11,15 @@ function Header({ currentPage, setCurrentPage }) {
 
             <div className="site-title">
 
-                <a href="#work" onClick={() => setCurrentPage('Work')}>
+                <Link to="work">
                     <h1>Eli Wood</h1>
-                </a>
+                </Link>
                 
                 <p>Full Stack Software Developer</p>
 
             </div>
 
-            <Nav currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <Nav />
 
         </header>
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 function Work({ currentPage, setCurrentPage }) {
@@ -99,9 +100,9 @@ function Work({ currentPage, setCurrentPage }) {
                     </>
                 }
 
-                <a href="#contact" onClick={() => setCurrentPage('Contact')} className="contact-button">
+                <Link to="../contact" className="contact-button">
                     <button>Contact</button>
-                </a>
+                </Link>
 
             </div>
 
@@ -111,12 +112,12 @@ function Work({ currentPage, setCurrentPage }) {
                 <div className="preview-thumbnail-left">
 
                     <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${foundArkMod / 5}vh)` }}>
-                        <img src="assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
+                        <img src="./assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
                         {foundArkPos < (window.innerHeight / 2) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
                     </a>
 
                     <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${foundArkMod / 10}vh)` }}>
-                        <img src="assets/work/found-ark/mobile-mockup.png" alt="found ark phone preview" className="project-thumbnail-phone"></img>
+                        <img src="./assets/work/found-ark/mobile-mockup.png" alt="found ark phone preview" className="project-thumbnail-phone"></img>
                     </a>
 
                 </div>
@@ -141,11 +142,11 @@ function Work({ currentPage, setCurrentPage }) {
                 <div className="preview-thumbnail-right">
 
                     <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${recipeMod / 5}vh)` }}>
-                        <img src="assets/work/recipe/desktop-mockup.png" alt="recipe generator desktop preview" className="project-thumbnail-desktop"></img>
+                        <img src="./assets/work/recipe/desktop-mockup.png" alt="recipe generator desktop preview" className="project-thumbnail-desktop"></img>
                     </a>
 
                     <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${recipeMod / 10}vh)` }}>
-                        <img src="assets/work/recipe/mobile-mockup.png" alt="recipe generator phone preview" className="project-thumbnail-phone"></img>
+                        <img src="./assets/work/recipe/mobile-mockup.png" alt="recipe generator phone preview" className="project-thumbnail-phone"></img>
                     </a>
 
                 </div>
@@ -170,7 +171,7 @@ function Work({ currentPage, setCurrentPage }) {
                 <div className="preview-thumbnail-left">
 
                     <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${weatherMod / 5}vh)` }}>
-                        <img src="assets/work/weather/desktop-mockup.png" alt="weather dashboard preview" className="project-thumbnail-desktop"></img>
+                        <img src="./assets/work/weather/desktop-mockup.png" alt="weather dashboard preview" className="project-thumbnail-desktop"></img>
                     </a>
 
                 </div>
@@ -195,7 +196,7 @@ function Work({ currentPage, setCurrentPage }) {
                 <div className="preview-thumbnail-right">
 
                     <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${blogMod / 5}vh)` }}>
-                        <img src="assets/work/blog/desktop-mockup.png" alt="blog template preview" className="project-thumbnail-desktop"></img>
+                        <img src="./assets/work/blog/desktop-mockup.png" alt="blog template preview" className="project-thumbnail-desktop"></img>
                     </a>
 
                 </div>
@@ -220,7 +221,7 @@ function Work({ currentPage, setCurrentPage }) {
                 <div className="preview-thumbnail-left">
 
                     <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${socialMod / 5}vh)` }}>
-                        <img src="assets/work/e-commerce/desktop-mockup.png" alt="social network api preview" className="project-thumbnail-desktop"></img>
+                        <img src="./assets/work/e-commerce/desktop-mockup.png" alt="social network api preview" className="project-thumbnail-desktop"></img>
                     </a>
 
                 </div>
@@ -243,7 +244,7 @@ function Work({ currentPage, setCurrentPage }) {
                 <div className="preview-thumbnail-right">
 
                     <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${commerceMod / 5}vh)` }}>
-                        <img src="assets/work/e-commerce/desktop-mockup.png" alt="e-commerce back end preview" className="project-thumbnail-desktop"></img>
+                        <img src="./assets/work/e-commerce/desktop-mockup.png" alt="e-commerce back end preview" className="project-thumbnail-desktop"></img>
                     </a>
 
                 </div>
