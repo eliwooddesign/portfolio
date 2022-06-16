@@ -6,11 +6,11 @@ function Work() {
 
     // project positions
     const [foundArkPos, setFoundArkPos] = useState();
-    // const [recipePos, setRecipePos] = useState();
-    // const [weatherPos, setWeatherPos] = useState();
-    // const [blogPos, setBlogePos] = useState();
-    // const [socialPos, setSocialPos] = useState();
-    // const [commercePos, setCommercePos] = useState();
+    const [recipePos, setRecipePos] = useState();
+    const [weatherPos, setWeatherPos] = useState();
+    const [blogPos, setBlogePos] = useState();
+    const [socialPos, setSocialPos] = useState();
+    const [commercePos, setCommercePos] = useState();
 
     // project modifiers
     const [foundArkMod, setFoundArkMod] = useState(0);
@@ -35,11 +35,11 @@ function Work() {
         const commerce = document.getElementById('commerce').getBoundingClientRect().top;
 
         setFoundArkPos(foundArk);
-        // setRecipePos(recipe);
-        // setWeatherPos(weather);
-        // setBlogePos(blog);
-        // setSocialPos(social);
-        // setCommercePos(commerce);
+        setRecipePos(recipe);
+        setWeatherPos(weather);
+        setBlogePos(blog);
+        setSocialPos(social);
+        setCommercePos(commerce);
 
         // arrays of all elements and state setters
         const allPositions = [foundArk, recipe, weather, blog, social, commerce];
@@ -135,7 +135,7 @@ function Work() {
                         </div>
 
                         <p className={(foundArkPos / window.innerHeight) < 0.21 ? "project-description-right show-description" : "project-description-right hide-description"}>
-                            This web application makes it easier for players to find and create groups for the game, Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.
+                            A web application that makes it easier for players to find and create groups for the game, Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.
                         </p>
 
                     </div>
@@ -173,6 +173,76 @@ function Work() {
                             <a href="https://github.com/MrEliWood/demo-recipe-generator" target="_blank" rel="noreferrer">GitHub Repository</a>
                         </div>
 
+                        <p className={(recipePos / window.innerHeight) < 0.21 ? "project-description-left show-description" : "project-description-left hide-description"}>
+                            Users can find inspiration for their next meal by randomly generating recipes with sorting logic to filter their results by course and/or dietary restrictions and an engaging, intuitive user experience.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div className="sticky-spacer-medium"></div>
+
+            </div>
+
+            {/* social network api */}
+            <div className="sticky-container">
+
+                <div id="social" className="project-preview-left">
+
+                    <div className="preview-thumbnail-center">
+
+                        <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${socialMod / 5}px)` }}>
+                            <img src="./assets/work/e-commerce/desktop-mockup.png" alt="social network api preview" className="project-thumbnail-desktop"></img>
+                        </a>
+
+                    </div>
+
+                    <div className="preview-details-right">
+
+                        <h2 className="preview-title">Social Network API</h2>
+
+                        <div className="preview-links">
+                            <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer">GitHub Repository</a>
+                        </div>
+
+                        <p className={(socialPos / window.innerHeight) < 0.21 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                            This Social Network API uses MongoDB to build the foundation for a NoSQL social network. Out of the box, users are able to share thoughts, react to thoughts, and connect with friends.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div className="sticky-spacer-medium"></div>
+
+            </div>
+
+            {/* e-commerce back end */}
+            <div className="sticky-container">
+
+                <div id="commerce" className="project-preview-right">
+
+                    <div className="preview-thumbnail-center">
+
+                        <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${commerceMod / 5}px)` }}>
+                            <img src="./assets/work/e-commerce/desktop-mockup.png" alt="e-commerce back end preview" className="project-thumbnail-desktop"></img>
+                        </a>
+
+                    </div>
+
+                    <div className="preview-details-left">
+
+                        <h2 className="preview-title">E-Commerce Back End</h2>
+
+                        <div className="preview-links">
+                            <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer">GitHub Repository</a>
+                        </div>
+
+                        <p className={(commercePos / window.innerHeight) < 0.21 ? "project-description-left show-description" : "project-description-left hide-description"}>
+                            This strictly backend e-commerce application allows the user to easily manage their inventory with a MySQL database or lays a solid foundation for a developer planning to build a full stack e-commerce platform.
+                        </p>
+
                     </div>
 
                 </div>
@@ -204,6 +274,10 @@ function Work() {
                             <a href="https://github.com/MrEliWood/demo-weather-dashboard" target="_blank" rel="noreferrer">GitHub Repository</a>
                         </div>
 
+                        <p className={(weatherPos / window.innerHeight) < 0.21 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                            Full bleed background images and a clear, engaging user interface deliver a 5-day forecast utilizing powerful integrations from the Google Maps API and OpenWeather.
+                        </p>
+
                     </div>
 
                 </div>
@@ -217,7 +291,7 @@ function Work() {
 
                 <div id="blog" className="project-preview-right">
 
-                    <div className="preview-thumbnail-right">
+                    <div className="preview-thumbnail-left">
 
                         <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${blogMod / 5}px)` }}>
                             <img src="./assets/work/blog/desktop-mockup.png" alt="blog template preview" className="project-thumbnail-desktop"></img>
@@ -235,63 +309,9 @@ function Work() {
                             <a href="https://github.com/MrEliWood/blog-template" target="_blank" rel="noreferrer">GitHub Repository</a>
                         </div>
 
-                    </div>
-
-                </div>
-
-                <div className="sticky-spacer-medium"></div>
-
-            </div>
-
-            {/* social network api */}
-            <div className="sticky-container">
-
-                <div id="social" className="project-preview-right">
-
-                    <div className="preview-thumbnail-left">
-
-                        <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${socialMod / 5}px)` }}>
-                            <img src="./assets/work/e-commerce/desktop-mockup.png" alt="social network api preview" className="project-thumbnail-desktop"></img>
-                        </a>
-
-                    </div>
-
-                    <div className="preview-details-left">
-
-                        <h2 className="preview-title">Social Network API</h2>
-
-                        <div className="preview-links">
-                            <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer">GitHub Repository</a>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className="sticky-spacer-medium"></div>
-
-            </div>
-
-            {/* e-commerce back end */}
-            <div className="sticky-container">
-
-                <div id="commerce" className="project-preview-left">
-
-                    <div className="preview-thumbnail-right">
-
-                        <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${commerceMod / 5}px)` }}>
-                            <img src="./assets/work/e-commerce/desktop-mockup.png" alt="e-commerce back end preview" className="project-thumbnail-desktop"></img>
-                        </a>
-
-                    </div>
-
-                    <div className="preview-details-right">
-
-                        <h2 className="preview-title">E-Commerce Back End</h2>
-
-                        <div className="preview-links">
-                            <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer">GitHub Repository</a>
-                        </div>
+                        <p className={(blogPos / window.innerHeight) < 0.21 ? "project-description-left show-description" : "project-description-left hide-description"}>
+                            Free template for developers building a blog based on a MySQL database with complex relationships, including multiple users with hashed passwords powered by bcrypt.
+                        </p>
 
                     </div>
 

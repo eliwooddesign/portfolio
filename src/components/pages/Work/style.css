@@ -33,7 +33,8 @@
 }
 
 .preview-thumbnail-left,
-.preview-thumbnail-right {
+.preview-thumbnail-right,
+.preview-thumbnail-center {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -55,6 +56,12 @@
     width: 90%;
     opacity: 1;
     margin: var(--medium) 0px auto auto;
+}
+
+.preview-thumbnail-center .project-thumbnail-desktop-link {
+    width: 100%;
+    opacity: 1;
+    margin: var(--medium) auto auto auto;
 }
 
 .project-thumbnail-desktop,

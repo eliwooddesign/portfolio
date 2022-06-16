@@ -24,7 +24,7 @@ footer {
 
 .focused {
     transition: all 1s ease;
-    transform: translateY(-30vh);
+    transform: translateY(-25vh);
     flex-direction: column;
 }
 
@@ -38,12 +38,20 @@ footer {
 /* tablets */
 @media screen and (max-width: 768px) {
 
+    footer {
+        height: 100vh;
+    }
+
     .footer-contact {
         flex-direction: column;
     }
 
     .footer-detail {
         display: none;
+    }
+
+    .focused {
+        transform: translateY(-15vh);
     }
 
 }
