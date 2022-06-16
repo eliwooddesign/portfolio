@@ -23,11 +23,14 @@ function App() {
         <div className="body">
             <Header />
             <Routes>
-                <Route path="*" element={<Error />} />
+                <Route path="" element={<Work />} />
                 <Route path="/" element={<Work />} />
+
                 <Route path="about" element={<About />} />
                 <Route path="work" element={<Work />} />
                 <Route path="contact" element={<Contact />} />
+                
+                <Route path="*" element={<Error />} />
             </Routes>
             <Footer />
         </div>

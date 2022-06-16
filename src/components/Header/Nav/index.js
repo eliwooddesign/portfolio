@@ -60,7 +60,7 @@ function Nav({ currentPage, setCurrentPage }) {
                 </li>
 
                 <li className="nav-item">
-                    <Link to="work" className={"nav-link " + (location.pathname === '/work' && 'active')}>Work</Link>
+                    <Link to="work" className={location.pathname === '/work' || location.pathname === '/' || location.pathname === '' ? 'nav-link active' : 'nav-link'}>Work</Link>
                 </li>
 
                 <li className="nav-item">
