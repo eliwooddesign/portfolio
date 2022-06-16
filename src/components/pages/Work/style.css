@@ -21,6 +21,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    position: sticky;
+    top: 15vh;
     height: 100vh;
     width: 100%;
     padding: var(--huge);
@@ -87,11 +89,12 @@
     align-items: flex-end;
     text-align: right;
     width: 50%;
-    padding: var(--small) 0px var(--small) var(--large);
+    padding: var(--small) var(--large) var(--small) 0px;
 }
 
 .preview-details-right {
     align-items: flex-start;
+    padding: var(--small) 0px var(--small) var(--large) !important;
 }
 
 .preview-links {
@@ -103,6 +106,27 @@
     font-weight: 300;
     opacity: 0.5;
     margin: 0px var(--small);
+}
+
+.project-description-left,
+.project-description-right {
+    margin-top: var(--medium);
+}
+
+.project-description-left {
+    text-align: right;
+}
+
+.project-description-right {
+    text-align: left;
+}
+
+.show-description {
+    animation: slide-up 1s both;
+}
+
+.hide-description {
+    animation: slide-down 1s both;
 }
 
 /* large screens */
@@ -119,7 +143,7 @@
 @media screen and (max-width: 1024px) {
 
     .intro {
-        height: 65vh;
+        height: 55vh;
     }
 
     .project-preview-left,
@@ -127,7 +151,8 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        height: 100vh;
+        top: 10vh;
+        height: 100%;
         width: 100%;
         padding: var(--large);
     }
@@ -135,13 +160,13 @@
     .preview-thumbnail-left,
     .preview-thumbnail-right {
         align-items: flex-start;
-        height: 65vw;
-        width: 100%;
+        height: 45vw;
+        width: 75%;
     }
 
     .project-thumbnail-phone-link {
-        width: 20%;
-        margin-top: 4%;
+        width: 15%;
+        margin-top: 3%;
     }
 
     .preview-details-left,
@@ -150,7 +175,13 @@
         align-items: center;
         text-align: center;
         width: 100%;
-        padding: 0px;
+        padding: var(--small) !important;
+    }
+
+    .project-description-left,
+    .project-description-right {
+        text-align: center;
+        margin-top: var(--medium);
     }
 
 }
@@ -159,6 +190,7 @@
 @media screen and (max-width: 768px) {
 
     .intro {
+        height: 65vh;
         padding: var(--medium);
     }
 
@@ -168,7 +200,19 @@
 
     .project-preview-left,
     .project-preview-right {
+        top: 20vh;
         padding: var(--medium);
+    }
+
+    .preview-thumbnail-left,
+    .preview-thumbnail-right {
+        height: 60vw;
+        width: 100%;
+    }
+
+    .project-thumbnail-phone-link {
+        width: 20%;
+        margin-top: 4%;
     }
 
 }
@@ -182,8 +226,19 @@
 
     .project-preview-left,
     .project-preview-right {
+        top: 15vh;
         height: 65vh;
         width: 100%;
+    }
+
+    .preview-thumbnail-left,
+    .preview-thumbnail-right {
+        height: 65vw;
+    }
+
+    .preview-details-left,
+    .preview-details-right {
+        padding: 0px !important;
     }
 
 }

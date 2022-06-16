@@ -47,7 +47,11 @@ button:hover {
     color: var(--dark);
 }
 
-/* sticky spacers */
+/* sticky */
+.sticky-container {
+    width: 100%;
+}
+
 .sticky-spacer-small {
     height: 10vh;
 }
