@@ -48,10 +48,12 @@ function Work() {
         // set parallax end point
         let offset;
 
-        if (window.innerWidth > 480) {
+        if (window.innerWidth > 768) {
             offset = windowHeight / 4;
+        } else if (window.innerWidth > 480) {
+            offset = windowHeight / 2.5;
         } else {
-            offset = windowHeight / 2;
+            offset = windowHeight / 1.75;
         }
 
         for (let i = 0; i < allPositions.length; i++) {
@@ -115,7 +117,7 @@ function Work() {
 
                         <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(foundArkMod / 5)}px)` }}>
                             <img src="./assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
-                            {foundArkPos < (window.innerHeight / 2) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
+                            {(foundArkPos / window.innerHeight) < 0.21 && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
                         </a>
 
                         <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / 10)}px)` }}>
@@ -256,7 +258,7 @@ function Work() {
 
                 <div id="weather" className="project-preview-left">
 
-                    <div className="preview-thumbnail-left">
+                    <div className="preview-thumbnail-center">
 
                         <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${weatherMod / 5}px)` }}>
                             <img src="./assets/work/weather/desktop-mockup.png" alt="weather dashboard preview" className="project-thumbnail-desktop"></img>
@@ -291,7 +293,7 @@ function Work() {
 
                 <div id="blog" className="project-preview-right">
 
-                    <div className="preview-thumbnail-left">
+                    <div className="preview-thumbnail-center">
 
                         <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${blogMod / 5}px)` }}>
                             <img src="./assets/work/blog/desktop-mockup.png" alt="blog template preview" className="project-thumbnail-desktop"></img>
