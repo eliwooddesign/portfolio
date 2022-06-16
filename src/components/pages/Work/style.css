@@ -72,6 +72,7 @@
 }
 
 .thumbnail-animation-desktop {
+    animation: fade-in 1s both 1.5s;
     padding: 3.7% 3.3%;
 }
 
@@ -162,10 +163,12 @@
         height: 100%;
         width: 100%;
         padding: var(--large);
+        margin-bottom: var(--huge);
     }
 
     .preview-thumbnail-left,
-    .preview-thumbnail-right {
+    .preview-thumbnail-right,
+    .preview-thumbnail-center {
         align-items: flex-start;
         height: 45vw;
         width: 75%;
@@ -212,14 +215,9 @@
     }
 
     .preview-thumbnail-left,
-    .preview-thumbnail-right {
-        height: 60vw;
-        width: 100%;
-    }
-
-    .project-thumbnail-phone-link {
-        width: 20%;
-        margin-top: 4%;
+    .preview-thumbnail-right,
+    .preview-thumbnail-center {
+        height: 50vw;
     }
 
 }
@@ -236,11 +234,19 @@
         top: 15vh;
         height: 65vh;
         width: 100%;
+        margin-bottom: var(--large);
     }
 
     .preview-thumbnail-left,
-    .preview-thumbnail-right {
+    .preview-thumbnail-right,
+    .preview-thumbnail-center {
         height: 65vw;
+        width: 100%;
+    }
+
+    .project-thumbnail-phone-link {
+        width: 20%;
+        margin-top: 4%;
     }
 
     .preview-details-left,
