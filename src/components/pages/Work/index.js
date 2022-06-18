@@ -228,7 +228,7 @@ function Work() {
 
             </div>
 
-            {/* e-commerce back end */}
+            {/* e-commerce backend */}
             <div className="sticky-container">
 
                 <div id="commerce" className="project-preview-right">
@@ -243,7 +243,7 @@ function Work() {
 
                     <div className="preview-details-left">
 
-                        <h2 className="preview-title">E-Commerce Back End</h2>
+                        <h2 className="preview-title">E-Commerce Backend</h2>
 
                         <div className="preview-links">
                             <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer">GitHub Repository</a>
