@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 50vh;
+    height: 55vh;
 }
 
 .intro h2 {
@@ -40,6 +40,7 @@
     align-items: flex-start;
     height: 50vh;
     width: 50%;
+    z-index: 1;
 }
 
 .preview-thumbnail-right {
@@ -50,18 +51,21 @@
     width: 90%;
     opacity: 1;
     margin: var(--medium) auto auto 0px;
+    transition: all 0.1s;
 }
 
 .preview-thumbnail-right .project-thumbnail-desktop-link {
     width: 90%;
     opacity: 1;
     margin: var(--medium) 0px auto auto;
+    transition: all 0.1s;
 }
 
 .preview-thumbnail-center .project-thumbnail-desktop-link {
     width: 100%;
     opacity: 1;
     margin: var(--medium) auto auto auto;
+    transition: all 0.1s;
 }
 
 .project-thumbnail-desktop,
@@ -82,6 +86,7 @@
     margin-top: 2%;
     opacity: 1;
     z-index: 1;
+    transition: all 0.1s;
 }
 
 .project-thumbnail-phone {
@@ -102,6 +107,7 @@
 
 .preview-details-right {
     align-items: flex-start;
+    text-align: left;
     padding: var(--small) 0px var(--small) var(--large) !important;
 }
 
@@ -137,6 +143,30 @@
     animation: slide-down 1s both;
 }
 
+#social,
+#commerce {
+    position: static;
+    justify-content: flex-start;
+    background-color: var(--background);
+    background-attachment: fixed;
+    background-position: top var(--small) left var(--huge);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+}
+
+#social {
+    background-image: url('../../../../public/assets/work/social/background.png');
+}
+
+#commerce {
+    background-image: url('../../../../public/assets/work/e-commerce/background.png');
+}
+
+#maven {
+    margin-top: var(--huge);
+}
+
 /* large screens */
 @media screen and (max-width: 1200px) {
 
@@ -151,7 +181,7 @@
 @media screen and (max-width: 1024px) {
 
     .intro {
-        height: 55vh;
+        height: 60vh;
     }
 
     .project-preview-left,
@@ -160,7 +190,7 @@
         justify-content: flex-start;
         align-items: center;
         top: 10vh;
-        height: 100%;
+        height: 100vh;
         width: 100%;
         padding: var(--large);
         margin-bottom: var(--huge);
@@ -192,6 +222,25 @@
     .project-description-right {
         text-align: center;
         margin-top: var(--medium);
+    }
+
+    #social,
+    #commerce {
+        margin-bottom: 0;
+    }
+
+    #social {
+        background-image: url('../../../../public/assets/work/social/background.png');
+    }
+    
+    #commerce {
+        background-image: url('../../../../public/assets/work/e-commerce/background.png');
+    }
+
+    #social .preview-details-right,
+    #commerce .preview-details-right {
+        background: linear-gradient(transparent, hsla(0, 0%, 2%, 75%), transparent);
+        height: 50vh;
     }
 
 }
@@ -232,7 +281,7 @@
     .project-preview-left,
     .project-preview-right {
         top: 15vh;
-        height: 65vh;
+        height: 80vh;
         width: 100%;
         margin-bottom: var(--large);
     }

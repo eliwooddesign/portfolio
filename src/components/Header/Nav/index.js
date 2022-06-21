@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './style.css';
 
-function Nav({ currentPage, setCurrentPage }) {
+function Nav() {
 
     const [navStatus, setNavStatus] = useState('hidden');
 

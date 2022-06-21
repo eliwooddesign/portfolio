@@ -6,21 +6,21 @@ function Work() {
 
     // project positions
     const [foundArkPos, setFoundArkPos] = useState();
-    const [recipePos, setRecipePos] = useState();
-    const [weatherPos, setWeatherPos] = useState();
-    const [blogPos, setBlogePos] = useState();
-    const [socialPos, setSocialPos] = useState();
-    const [commercePos, setCommercePos] = useState();
-    const [mavenPos, setMavenPos] = useState();
-    const [propertyPos, setPropertyPos] = useState();
+    // const [recipePos, setRecipePos] = useState();
+    // const [weatherPos, setWeatherPos] = useState();
+    // const [blogPos, setBlogePos] = useState();
+    // const [socialPos, setSocialPos] = useState();
+    // const [commercePos, setCommercePos] = useState();
+    // const [mavenPos, setMavenPos] = useState();
+    // const [propertyPos, setPropertyPos] = useState();
 
     // project modifiers
     const [foundArkMod, setFoundArkMod] = useState(0);
     const [recipeMod, setRecipeMod] = useState(0);
     const [weatherMod, setWeatherMod] = useState(0);
     const [blogMod, setBlogeMod] = useState(0);
-    const [socialMod, setSocialMod] = useState(0);
-    const [commerceMod, setCommerceMod] = useState(0);
+    // const [socialMod, setSocialMod] = useState(0);
+    // const [commerceMod, setCommerceMod] = useState(0);
     const [mavenMod, setMavenMod] = useState(0);
     const [propertyMod, setPropertyMod] = useState(0);
 
@@ -35,23 +35,23 @@ function Work() {
         const recipe = document.getElementById('recipe').getBoundingClientRect().top;
         const weather = document.getElementById('weather').getBoundingClientRect().top;
         const blog = document.getElementById('blog').getBoundingClientRect().top;
-        const social = document.getElementById('social').getBoundingClientRect().top;
-        const commerce = document.getElementById('commerce').getBoundingClientRect().top;
+        // const social = document.getElementById('social').getBoundingClientRect().top;
+        // const commerce = document.getElementById('commerce').getBoundingClientRect().top;
         const maven = document.getElementById('maven').getBoundingClientRect().top;
         const property = document.getElementById('property').getBoundingClientRect().top;
 
         setFoundArkPos(foundArk);
-        setRecipePos(recipe);
-        setWeatherPos(weather);
-        setBlogePos(blog);
-        setSocialPos(social);
-        setCommercePos(commerce);
-        setMavenPos(maven);
-        setPropertyPos(property);
+        // setRecipePos(recipe);
+        // setWeatherPos(weather);
+        // setBlogePos(blog);
+        // setSocialPos(social);
+        // setCommercePos(commerce);
+        // setMavenPos(maven);
+        // setPropertyPos(property);
 
         // arrays of all elements and state setters
-        const allPositions = [foundArk, recipe, weather, blog, social, commerce, maven, property];
-        const setAllMods = [setFoundArkMod, setRecipeMod, setWeatherMod, setBlogeMod, setSocialMod, setCommerceMod, setMavenMod, setPropertyMod];
+        const allPositions = [foundArk, recipe, weather, blog, maven, property];
+        const setAllMods = [setFoundArkMod, setRecipeMod, setWeatherMod, setBlogeMod, setMavenMod, setPropertyMod];
 
         // set parallax end point
         let offset;
@@ -81,8 +81,6 @@ function Work() {
         handleScroll();
         // eslint-disable-next-line
     }, []);
-
-    console.log(foundArkMod)
 
     return (
 
@@ -116,16 +114,15 @@ function Work() {
             </div>
 
             {/* found ark */}
-            <div className="sticky-container">
+            <div id="found-ark" className="sticky-container">
 
-                <div id="found-ark" className="project-preview-left">
-
+                <div className="project-preview-left">
 
                     <div className="preview-thumbnail-left">
 
                         <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(foundArkMod / 5)}px)` }}>
                             <img src="./assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
-                            {(foundArkPos / window.innerHeight) < 0.21 && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
+                            {foundArkPos <= (window.innerHeight * 0.2) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
                         </a>
 
                         <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / 10)}px)` }}>
@@ -144,15 +141,13 @@ function Work() {
                             <a href="https://github.com/chuanw101/found-ark" target="_blank" rel="noreferrer">GitHub Repository</a>
                         </div>
 
-                        <p className={(foundArkPos / window.innerHeight) < 0.21 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                        <p className={foundArkPos <= (window.innerHeight * 0.5) ? "project-description-right show-description" : "project-description-right hide-description"}>
                             A web application that makes it easier for players to find and create groups for the game Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.
                         </p>
 
                     </div>
 
                 </div>
-
-                <div className="sticky-spacer-medium"></div>
 
             </div>
 
@@ -183,7 +178,7 @@ function Work() {
                             <a href="https://github.com/MrEliWood/demo-recipe-generator" target="_blank" rel="noreferrer">GitHub Repository</a>
                         </div>
 
-                        <p className={(recipePos / window.innerHeight) < 0.21 ? "project-description-left show-description" : "project-description-left hide-description"}>
+                        <p className="project-description-left">
                             Users can find inspiration for their next meal by randomly generating recipes with sorting logic to filter their results by course and/or dietary restrictions and an engaging, intuitive user experience.
                         </p>
 
@@ -191,22 +186,14 @@ function Work() {
 
                 </div>
 
-                <div className="sticky-spacer-medium"></div>
-
             </div>
 
-            {/* social network api */}
             <div className="sticky-container">
 
+                {/* social network api */}
                 <div id="social" className="project-preview-left">
 
-                    <div className="preview-thumbnail-center">
-
-                        <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${socialMod / 5}px)` }}>
-                            <img src="./assets/work/e-commerce/desktop-mockup.png" alt="social network api preview" className="project-thumbnail-desktop"></img>
-                        </a>
-
-                    </div>
+                    <div className="placeholder-container" style={{ width: '50%' }}></div>
 
                     <div className="preview-details-right">
 
@@ -216,7 +203,7 @@ function Work() {
                             <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer">GitHub Repository</a>
                         </div>
 
-                        <p className={(socialPos / window.innerHeight) < 0.21 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                        <p className="project-description-right">
                             This Social Network API uses MongoDB to build the foundation for a NoSQL social network. Out of the box, users are able to share thoughts, react to thoughts, and connect with friends.
                         </p>
 
@@ -224,24 +211,12 @@ function Work() {
 
                 </div>
 
-                <div className="sticky-spacer-medium"></div>
+                {/* e-commerce backend */}
+                <div id="commerce" className="project-preview-left">
 
-            </div>
+                    <div className="placeholder-container" style={{ width: '50%' }}></div>
 
-            {/* e-commerce backend */}
-            <div className="sticky-container">
-
-                <div id="commerce" className="project-preview-right">
-
-                    <div className="preview-thumbnail-center">
-
-                        <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${commerceMod / 5}px)` }}>
-                            <img src="./assets/work/e-commerce/desktop-mockup.png" alt="e-commerce back end preview" className="project-thumbnail-desktop"></img>
-                        </a>
-
-                    </div>
-
-                    <div className="preview-details-left">
+                    <div className="preview-details-right">
 
                         <h2 className="preview-title">E-Commerce Backend</h2>
 
@@ -249,15 +224,13 @@ function Work() {
                             <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer">GitHub Repository</a>
                         </div>
 
-                        <p className={(commercePos / window.innerHeight) < 0.21 ? "project-description-left show-description" : "project-description-left hide-description"}>
+                        <p className="project-description-right">
                             This strictly backend e-commerce application allows the user to easily manage their inventory with a MySQL database or lays a solid foundation for a developer planning to build a full stack e-commerce platform.
                         </p>
 
                     </div>
 
                 </div>
-
-                <div className="sticky-spacer-medium"></div>
 
             </div>
 
@@ -287,15 +260,13 @@ function Work() {
                             <a href="https://www.mavengroupnw.com" target="_blank" rel="noreferrer">Maven Group Live Website</a>
                         </div>
 
-                        <p className={(mavenPos / window.innerHeight) < 0.21 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                        <p className="project-description-right">
                             Promotional websites for real estate teams, serving as the first point of contact for potential clients and showcase for the services and success of the team.
                         </p>
 
                     </div>
 
                 </div>
-
-                <div className="sticky-spacer-medium"></div>
 
             </div>
 
@@ -324,15 +295,13 @@ function Work() {
                             <a href="https://shadowhawktownhome.com" target="_blank" rel="noreferrer">Shadowhawk Townhome Live Website</a>
                         </div>
 
-                        <p className={(propertyPos / window.innerHeight) < 0.21 ? "project-description-left show-description" : "project-description-left hide-description"}>
-                            One of many websites shocasing a property for sale or for rent, featuring all important property details, engaging potential customers and funneling high value traffic.
+                        <p className="project-description-left">
+                            One of many websites showcasing a property for sale or for rent, featuring all important property details, engaging potential customers and funneling high value traffic.
                         </p>
 
                     </div>
 
                 </div>
-
-                <div className="sticky-spacer-medium"></div>
 
             </div>
 
@@ -360,15 +329,13 @@ function Work() {
                             <a href="https://github.com/MrEliWood/demo-weather-dashboard" target="_blank" rel="noreferrer">GitHub Repository</a>
                         </div>
 
-                        <p className={(weatherPos / window.innerHeight) < 0.21 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                        <p className="project-description-right">
                             Full bleed background images and a clear, engaging user interface deliver a 5-day forecast utilizing powerful integrations from the Google Maps API and OpenWeather.
                         </p>
 
                     </div>
 
                 </div>
-
-                <div className="sticky-spacer-medium"></div>
 
             </div>
 
@@ -395,15 +362,13 @@ function Work() {
                             <a href="https://github.com/MrEliWood/blog-template" target="_blank" rel="noreferrer">GitHub Repository</a>
                         </div>
 
-                        <p className={(blogPos / window.innerHeight) < 0.21 ? "project-description-left show-description" : "project-description-left hide-description"}>
+                        <p className="project-description-left">
                             Free template for developers building a blog based on a MySQL database with complex relationships, including multiple users with hashed passwords powered by bcrypt.
                         </p>
 
                     </div>
 
                 </div>
-
-                <div className="sticky-spacer-medium"></div>
 
             </div>
 
