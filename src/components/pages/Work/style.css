@@ -41,7 +41,6 @@
     height: 100vh;
     width: 100%;
     padding: var(--huge);
-    transition: all 0.1s;
 }
 
 .preview-thumbnail-hero {
@@ -51,6 +50,7 @@
     height: 50vh;
     width: 100%;
     z-index: 1;
+    transition: all 0.1s;
 }
 
 .preview-thumbnail-placeholder {
