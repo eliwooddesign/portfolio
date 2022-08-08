@@ -14,7 +14,7 @@
 }
 
 a {
-   opacity: 0.5;
+   opacity: 0.75;
 }
 
 a:hover {
@@ -45,6 +45,49 @@ button:hover {
     cursor: pointer;
     background: var(--light);
     color: var(--dark);
+}
+
+.icon {
+    width: 32px;
+}
+
+.icon:hover + .icon-description-right {
+    max-width: 160px;
+    margin-right: var(--small);
+}
+
+.icon:hover + .icon-description-left {
+    max-width: 160px;
+    margin-left: var(--small);
+}
+
+.icon-link-right,
+.icon-link-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-link-left {
+    flex-direction: row-reverse;
+}
+
+.icon-description-right,
+.icon-description-left {
+    max-width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+    opacity: 0.75;
+}
+
+.icon-description-right {
+    margin-left: var(--small);
+}
+
+.icon-description-left {
+    margin-right: var(--small);
+    direction: rtl;
 }
 
 /* sticky */

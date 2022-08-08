@@ -4,6 +4,12 @@ import './style.css';
 
 function Work() {
 
+    // offset
+    const [offset, setOffset] = useState(0);
+
+    // hero width
+    const [heroWidth, setHeroWidth] = useState(200);
+
     // project positions
     const [foundArkPos, setFoundArkPos] = useState();
     // const [recipePos, setRecipePos] = useState();
@@ -17,6 +23,7 @@ function Work() {
     // project modifiers
     const [foundArkMod, setFoundArkMod] = useState(0);
     const [recipeMod, setRecipeMod] = useState(0);
+    const [porefectionMod, setPorefectionMod] = useState(0);
     const [weatherMod, setWeatherMod] = useState(0);
     const [blogMod, setBlogeMod] = useState(0);
     // const [socialMod, setSocialMod] = useState(0);
@@ -33,6 +40,7 @@ function Work() {
         // get elements from the page
         const foundArk = document.getElementById('found-ark').getBoundingClientRect().top;
         const recipe = document.getElementById('recipe').getBoundingClientRect().top;
+        const porefection = document.getElementById('porefection').getBoundingClientRect().top;
         const weather = document.getElementById('weather').getBoundingClientRect().top;
         const blog = document.getElementById('blog').getBoundingClientRect().top;
         // const social = document.getElementById('social').getBoundingClientRect().top;
@@ -42,6 +50,7 @@ function Work() {
 
         setFoundArkPos(foundArk);
         // setRecipePos(recipe);
+        // setPorefectionMod(porefection);
         // setWeatherPos(weather);
         // setBlogePos(blog);
         // setSocialPos(social);
@@ -50,29 +59,44 @@ function Work() {
         // setPropertyPos(property);
 
         // arrays of all elements and state setters
-        const allPositions = [foundArk, recipe, weather, blog, maven, property];
-        const setAllMods = [setFoundArkMod, setRecipeMod, setWeatherMod, setBlogeMod, setMavenMod, setPropertyMod];
+        const allPositions = [foundArk, recipe, porefection, weather, blog, maven, property];
+        const setAllMods = [setFoundArkMod, setRecipeMod, setPorefectionMod, setWeatherMod, setBlogeMod, setMavenMod, setPropertyMod];
 
         // set parallax end point
-        let offset;
+        let newOffset;
 
         if (window.innerWidth > 768) {
-            offset = windowHeight / 4;
+            newOffset = windowHeight / 4;
+            setOffset(newOffset);
         } else if (window.innerWidth > 480) {
-            offset = windowHeight / 2.5;
+            newOffset = windowHeight / 2.5;
+            setOffset(newOffset);
         } else {
-            offset = windowHeight / 1.75;
+            newOffset = windowHeight / 1.75;
+            setOffset(newOffset);
         }
 
         for (let i = 0; i < allPositions.length; i++) {
 
-            if (allPositions[i] < offset) {
-                setAllMods[i](windowHeight - offset);
+            if (allPositions[i] < newOffset) {
+                setAllMods[i](windowHeight - newOffset);
             } else if (allPositions[i] < windowHeight) {
                 setAllMods[i](windowHeight - allPositions[i]);
             };
 
         };
+
+        if (foundArk < offset) {
+            setHeroWidth(100);
+        } else {
+            // number of pixels in 1% of movement distance
+            let moveUnits = (windowHeight - offset) / 100;
+
+            // movement distance converted to percentage
+            let moveProgress = ((windowHeight - offset) - foundArk) / moveUnits;
+
+            setHeroWidth(200 - moveProgress);
+        }
 
     };
 
@@ -116,34 +140,43 @@ function Work() {
             {/* found ark */}
             <div id="found-ark" className="sticky-container">
 
-                <div className="project-preview-left">
+                <div className="project-preview-hero">
 
-                    <div className="preview-thumbnail-left">
+                    <div className="preview-thumbnail-placeholder">
 
-                        <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(foundArkMod / 5)}px)` }}>
-                            <img src="./assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
-                            {foundArkPos <= (window.innerHeight * 0.2) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
-                        </a>
+                        <div className="preview-thumbnail-hero" style={{ width: `${heroWidth}%` }}>
 
-                        <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / 10)}px)` }}>
-                            <img src="./assets/work/found-ark/mobile-mockup.png" alt="found ark phone preview" className="project-thumbnail-phone"></img>
-                        </a>
+                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(foundArkMod / 5)}px)` }}>
+                                <img src="./assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
+                                {foundArkPos <= offset && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
+                            </a>
+
+                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / 10)}px)`, width: `${heroWidth / 10}%` }}>
+                                <img src="./assets/work/found-ark/mobile-mockup.png" alt="found ark phone preview" className="project-thumbnail-phone"></img>
+                            </a>
+
+                        </div>
 
                     </div>
 
-                    <div className="preview-details-right">
+                    <div className={foundArkPos <= offset ? "preview-details-right show-description" : "preview-details-right hide-description"}>
 
                         <h2 className="preview-title">Found Ark</h2>
 
-                        <div className="preview-links">
-                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer">Deployed Application</a>
-                            <p className="preview-link-divider">|</p>
-                            <a href="https://github.com/chuanw101/found-ark" target="_blank" rel="noreferrer">GitHub Repository</a>
-                        </div>
-
-                        <p className={foundArkPos <= (window.innerHeight * 0.5) ? "project-description-right show-description" : "project-description-right hide-description"}>
+                        <p className={foundArkPos <= offset ? "project-description-right show-description" : "project-description-right hide-description"}>
                             A web application that makes it easier for players to find and create groups for the game Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.
                         </p>
+
+                        <div className={foundArkPos <= offset ? "preview-links show-description" : "preview-links hide-description"}>
+                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="icon-link-right">
+                                <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
+                                <p className="icon-description-right">Deployed Application</p>
+                            </a>
+                            <a href="https://github.com/chuanw101/found-ark" target="_blank" rel="noreferrer" className="icon-link-right">
+                                <img src="./assets/icons/GitHub-Mark-Light-120px-plus.png" alt="GitHub repository link" className="icon"></img>
+                                <p className="icon-description-right">GitHub Repository</p>
+                            </a>
+                        </div>
 
                     </div>
 
@@ -172,15 +205,20 @@ function Work() {
 
                         <h2 className="preview-title">Recipe Generator</h2>
 
-                        <div className="preview-links">
-                            <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer">Deployed Application</a>
-                            <p className="preview-link-divider">|</p>
-                            <a href="https://github.com/MrEliWood/demo-recipe-generator" target="_blank" rel="noreferrer">GitHub Repository</a>
-                        </div>
-
                         <p className="project-description-left">
                             Users can find inspiration for their next meal by randomly generating recipes with sorting logic to filter their results by course and/or dietary restrictions and an engaging, intuitive user experience.
                         </p>
+
+                        <div className="preview-links">
+                            <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="icon-link-left">
+                                <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
+                                <p className="icon-description-left">Deployed Application</p>
+                            </a>
+                            <a href="https://github.com/MrEliWood/demo-recipe-generator" target="_blank" rel="noreferrer" className="icon-link-left">
+                                <img src="./assets/icons/GitHub-Mark-Light-120px-plus.png" alt="GitHub repository link" className="icon"></img>
+                                <p className="icon-description-left">GitHub Repository</p>
+                            </a>
+                        </div>
 
                     </div>
 
@@ -199,13 +237,16 @@ function Work() {
 
                         <h2 className="preview-title">Social Network API</h2>
 
-                        <div className="preview-links">
-                            <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer">GitHub Repository</a>
-                        </div>
-
                         <p className="project-description-right">
                             This Social Network API uses MongoDB to build the foundation for a NoSQL social network. Out of the box, users are able to share thoughts, react to thoughts, and connect with friends.
                         </p>
+
+                        <div className="preview-links">
+                            <a href="https://github.com/MrEliWood/social-network-api" target="_blank" rel="noreferrer" className="icon-link-right">
+                                <img src="./assets/icons/GitHub-Mark-Light-120px-plus.png" alt="GitHub repository link" className="icon"></img>
+                                <p className="icon-description-right">GitHub Repository</p>
+                            </a>
+                        </div>
 
                     </div>
 
@@ -220,13 +261,59 @@ function Work() {
 
                         <h2 className="preview-title">E-Commerce Backend</h2>
 
-                        <div className="preview-links">
-                            <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer">GitHub Repository</a>
-                        </div>
-
                         <p className="project-description-right">
                             This strictly backend e-commerce application allows the user to easily manage their inventory with a MySQL database or lays a solid foundation for a developer planning to build a full stack e-commerce platform.
                         </p>
+
+                        <div className="preview-links">
+                            <a href="https://github.com/MrEliWood/e-commerce-back-end" target="_blank" rel="noreferrer" className="icon-link-right">
+                                <img src="./assets/icons/GitHub-Mark-Light-120px-plus.png" alt="GitHub repository link" className="icon"></img>
+                                <p className="icon-description-right">GitHub Repository</p>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            {/* porefection */}
+            <div id="porefection" className="sticky-container">
+
+                <div className="project-preview-right">
+
+                    <div className="preview-thumbnail-right">
+
+                        <a href="https://mreliwood.github.io/porefection/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(porefectionMod / 5)}px)` }}>
+                            <img src="./assets/work/porefection/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
+                        </a>
+
+                        <a href="https://mreliwood.github.io/porefection/" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(porefectionMod / 10)}px)` }}>
+                            <img src="./assets/work/porefection/mobile-mockup.png" alt="found ark phone preview" className="project-thumbnail-phone"></img>
+                        </a>
+
+                    </div>
+
+                    <div className="preview-details-left">
+
+                        <h2 className="preview-title">Porefection</h2>
+
+                        <p className="project-description-left">
+                            This web application helps users manage their skincare routine by allowing them to create a detailed list of their skincare products. When the user adds a product to their list, detailed product information is fetched from Sephora API and the list is automatically sorted in the correct order for using the products.
+                        </p>
+
+                        <div className="preview-links">
+                            <a href="https://mreliwood.github.io/porefection/" target="_blank" rel="noreferrer" className="icon-link-left">
+                                <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
+                                <p className="icon-description-left">Deployed Application</p>
+                            </a>
+                            <a href="https://github.com/MrEliWood/porefection" target="_blank" rel="noreferrer" className="icon-link-left">
+                                <img src="./assets/icons/GitHub-Mark-Light-120px-plus.png" alt="GitHub repository link" className="icon"></img>
+                                <p className="icon-description-left">GitHub Repository</p>
+                            </a>
+                        </div>
 
                     </div>
 
@@ -238,7 +325,6 @@ function Work() {
             <div className="sticky-container">
 
                 <div id="maven" className="project-preview-left">
-
 
                     <div className="preview-thumbnail-left">
 
@@ -256,13 +342,16 @@ function Work() {
 
                         <h2 className="preview-title">Real Estate Team Websites</h2>
 
-                        <div className="preview-links">
-                            <a href="https://www.mavengroupnw.com" target="_blank" rel="noreferrer">Maven Group Live Website</a>
-                        </div>
-
                         <p className="project-description-right">
                             Promotional websites for real estate teams, serving as the first point of contact for potential clients and showcase for the services and success of the team.
                         </p>
+
+                        <div className="preview-links">
+                            <a href="https://www.mavengroupnw.com" target="_blank" rel="noreferrer" className="icon-link-right">
+                                <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
+                                <p className="icon-description-right">Live Website</p>
+                            </a>
+                        </div>
 
                     </div>
 
@@ -291,13 +380,16 @@ function Work() {
 
                         <h2 className="preview-title">Property Websites</h2>
 
-                        <div className="preview-links">
-                            <a href="https://shadowhawktownhome.com" target="_blank" rel="noreferrer">Shadowhawk Townhome Live Website</a>
-                        </div>
-
                         <p className="project-description-left">
                             One of many websites showcasing a property for sale or for rent, featuring all important property details, engaging potential customers and funneling high value traffic.
                         </p>
+
+                        <div className="preview-links">
+                            <a href="https://shadowhawktownhome.com" target="_blank" rel="noreferrer" className="icon-link-left">
+                                <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
+                                <p className="icon-description-left">Live Website</p>
+                            </a>
+                        </div>
 
                     </div>
 
@@ -323,15 +415,20 @@ function Work() {
 
                         <h2 className="preview-title">Weather Dashboard</h2>
 
-                        <div className="preview-links">
-                            <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer">Deployed Application</a>
-                            <p className="preview-link-divider">|</p>
-                            <a href="https://github.com/MrEliWood/demo-weather-dashboard" target="_blank" rel="noreferrer">GitHub Repository</a>
-                        </div>
-
                         <p className="project-description-right">
                             Full bleed background images and a clear, engaging user interface deliver a 5-day forecast utilizing powerful integrations from the Google Maps API and OpenWeather.
                         </p>
+
+                        <div className="preview-links">
+                            <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="icon-link-right">
+                                <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
+                                <p className="icon-description-right">Deployed Application</p>
+                            </a>
+                            <a href="https://github.com/MrEliWood/demo-weather-dashboard" target="_blank" rel="noreferrer" className="icon-link-right">
+                                <img src="./assets/icons/GitHub-Mark-Light-120px-plus.png" alt="GitHub repository link" className="icon"></img>
+                                <p className="icon-description-right">GitHub Repository</p>
+                            </a>
+                        </div>
 
                     </div>
 
@@ -356,15 +453,20 @@ function Work() {
 
                         <h2 className="preview-title">Blog Template</h2>
 
-                        <div className="preview-links">
-                            <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer">Deployed Application</a>
-                            <p className="preview-link-divider">|</p>
-                            <a href="https://github.com/MrEliWood/blog-template" target="_blank" rel="noreferrer">GitHub Repository</a>
-                        </div>
-
                         <p className="project-description-left">
                             Free template for developers building a blog based on a MySQL database with complex relationships, including multiple users with hashed passwords powered by bcrypt.
                         </p>
+
+                        <div className="preview-links">
+                            <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="icon-link-left">
+                                <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
+                                <p className="icon-description-left">Deployed Application</p>
+                            </a>
+                            <a href="https://github.com/MrEliWood/blog-template" target="_blank" rel="noreferrer" className="icon-link-left">
+                                <img src="./assets/icons/GitHub-Mark-Light-120px-plus.png" alt="GitHub repository link" className="icon"></img>
+                                <p className="icon-description-left">GitHub Repository</p>
+                            </a>
+                        </div>
 
                     </div>
 
