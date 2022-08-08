@@ -41,6 +41,7 @@
     height: 100vh;
     width: 100%;
     padding: var(--huge);
+    transition: all 0.1s;
 }
 
 .preview-thumbnail-hero {
@@ -48,7 +49,7 @@
     justify-content: flex-end;
     align-items: flex-start;
     height: 50vh;
-    width: 200%;
+    width: 100%;
     z-index: 1;
 }
 
@@ -59,7 +60,7 @@
 
 .preview-thumbnail-hero .project-thumbnail-phone-link {
     position: absolute;
-    width: 20%;
+    width: 10%;
     margin-top: 2%;
     opacity: 1;
     z-index: 1;
@@ -213,7 +214,8 @@
 @media screen and (max-width: 1200px) {
 
     .project-preview-left,
-    .project-preview-right {
+    .project-preview-right,
+    .project-preview-hero {
         padding: var(--large);
     }
 
@@ -227,7 +229,8 @@
     }
 
     .project-preview-left,
-    .project-preview-right {
+    .project-preview-right,
+    .project-preview-hero {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
@@ -240,7 +243,8 @@
 
     .preview-thumbnail-left,
     .preview-thumbnail-right,
-    .preview-thumbnail-center {
+    .preview-thumbnail-center,
+    .preview-thumbnail-placeholder {
         align-items: flex-start;
         height: 45vw;
         width: 75%;
@@ -263,7 +267,6 @@
     .project-description-left,
     .project-description-right {
         text-align: center;
-        margin-top: var(--medium);
     }
 
     #social,
@@ -300,14 +303,16 @@
     }
 
     .project-preview-left,
-    .project-preview-right {
+    .project-preview-right,
+    .project-preview-hero {
         top: 20vh;
         padding: var(--medium);
     }
 
     .preview-thumbnail-left,
     .preview-thumbnail-right,
-    .preview-thumbnail-center {
+    .preview-thumbnail-center,
+    .preview-thumbnail-placeholder {
         height: 50vw;
     }
 
@@ -321,7 +326,8 @@
     }
 
     .project-preview-left,
-    .project-preview-right {
+    .project-preview-right,
+    .project-preview-hero {
         top: 15vh;
         height: 80vh;
         width: 100%;
@@ -330,7 +336,8 @@
 
     .preview-thumbnail-left,
     .preview-thumbnail-right,
-    .preview-thumbnail-center {
+    .preview-thumbnail-center,
+    .preview-thumbnail-placeholder {
         height: 65vw;
         width: 100%;
     }
