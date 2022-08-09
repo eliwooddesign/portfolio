@@ -50,7 +50,7 @@
     height: 50vh;
     width: 100%;
     z-index: 1;
-    transition: all 0.1s;
+    transition: all 0.1s linear;
 }
 
 .preview-thumbnail-placeholder {
@@ -64,7 +64,7 @@
     margin-top: 2%;
     opacity: 1;
     z-index: 1;
-    transition: all 0.1s;
+    transition: all 0.1s linear;
 }
 
 .preview-thumbnail-left,
@@ -86,28 +86,28 @@
     width: 90%;
     opacity: 1;
     margin: var(--medium) auto auto 0px;
-    transition: all 0.1s;
+    transition: all 0.1s linear;
 }
 
 .preview-thumbnail-left .project-thumbnail-desktop-link {
     width: 90%;
     opacity: 1;
     margin: var(--medium) auto auto 0px;
-    transition: all 0.1s;
+    transition: all 0.1s linear;
 }
 
 .preview-thumbnail-right .project-thumbnail-desktop-link {
     width: 90%;
     opacity: 1;
     margin: var(--medium) 0px auto auto;
-    transition: all 0.1s;
+    transition: all 0.1s linear;
 }
 
 .preview-thumbnail-center .project-thumbnail-desktop-link {
     width: 100%;
     opacity: 1;
     margin: var(--medium) auto auto auto;
-    transition: all 0.1s;
+    transition: all 0.1s linear;
 }
 
 .project-thumbnail-desktop,
@@ -192,10 +192,9 @@
     justify-content: flex-start;
     background-color: var(--background);
     background-attachment: fixed;
-    background-position: top var(--small) left var(--huge);
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
+    background-size: contain;
 }
 
 #social {
@@ -275,16 +274,15 @@
     }
 
     #social {
-        background-image: url('../../../../public/assets/work/social/background.png');
+        background-image: linear-gradient(var(--dark50), var(--dark50)), url('../../../../public/assets/work/social/background.png');
     }
     
     #commerce {
-        background-image: url('../../../../public/assets/work/e-commerce/background.png');
+        background-image: linear-gradient(var(--dark50), var(--dark50)), url('../../../../public/assets/work/e-commerce/background.png');
     }
 
     #social .preview-details-right,
     #commerce .preview-details-right {
-        background: linear-gradient(transparent, hsla(0, 0%, 2%, 75%), transparent);
         height: 50vh;
     }
 
