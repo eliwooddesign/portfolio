@@ -93,21 +93,21 @@ function Work() {
         // set size of hero image based on screen size
         const heroWidth = document.getElementById('hero-container').offsetWidth;
         
-        let resizeSpeed = 1;
+        let resizeSpeed = 2;
 
-        setSpacerLarge(heroWidth);
+        setSpacerLarge(heroWidth / resizeSpeed - offset);
 
         if (window.innerWidth > 1024) {
 
-            if (foundArk > 0) {
+            if (foundArk > offset) {
                 setDesktopWidth(heroWidth * 2);
                 setMobileWidth(heroWidth / 2.5);
-            } else if ((foundArk * resizeSpeed) < -heroWidth) {
+            } else if (((foundArk - offset) * resizeSpeed) < -heroWidth) {
                 setDesktopWidth(heroWidth);
                 setMobileWidth(heroWidth / 5);
             } else {
-                setDesktopWidth((heroWidth * 2) + (foundArk * resizeSpeed));
-                setMobileWidth(((heroWidth * 2) + (foundArk * resizeSpeed)) / 5);
+                setDesktopWidth((heroWidth * 2) + ((foundArk - offset) * resizeSpeed));
+                setMobileWidth(((heroWidth * 2) + ((foundArk - offset) * resizeSpeed)) / 5);
             }
 
         } else if (window.innerWidth > 480) {
@@ -168,14 +168,14 @@ function Work() {
 
                     <div id="hero-container" className="preview-thumbnail-placeholder">
 
-                        <div className="preview-thumbnail-hero" style={{ width: `${desktopWidth}px` }}>
+                        <div className="preview-thumbnail-hero" style={{ width: `${Math.floor(desktopWidth)}px` }}>
 
                             <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(foundArkMod / 5)}px)` }}>
                                 <img src="./assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
-                                {foundArkPos <= offset && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
+                                {foundArkPos <= (-spacerLarge - offset - 300) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
                             </a>
 
-                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / 10)}px)`, width: `${mobileWidth}px` }}>
+                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / 10)}px)`, width: `${Math.floor(mobileWidth)}px` }}>
                                 <img src="./assets/work/found-ark/mobile-mockup.png" alt="found ark phone preview" className="project-thumbnail-phone"></img>
                             </a>
 
