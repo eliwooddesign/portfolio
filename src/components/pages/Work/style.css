@@ -52,7 +52,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    /* height: 50vh; */
     width: 100%;
     z-index: 1;
     transition: all 0.1s linear;
@@ -76,7 +75,7 @@
 .preview-thumbnail-hero .project-thumbnail-desktop-link {
     width: 90%;
     opacity: 1;
-    margin: 0px auto auto 0px;
+    margin: var(--medium) auto auto 0px;
     transition: all 0.1s linear;
 }
 

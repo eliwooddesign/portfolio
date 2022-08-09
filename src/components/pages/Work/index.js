@@ -7,9 +7,10 @@ function Work() {
     // sticky spacer size
     const [spacerLarge, setSpacerLarge] = useState(0);
 
-    // hero width
-    const [desktopWidth, setDesktopWidth] = useState(200);
-    const [mobileWidth, setMobileWidth] = useState(20);
+    // hero animation properties
+    const [heroSize, setHeroSize] = useState(1);
+    const [heroPosition, setHeroPosition] = useState(0);
+    const [parallaxSpeed, setParallaxSpeed] = useState(1);
 
     // project positions
     const [foundArkPos, setFoundArkPos] = useState();
@@ -57,8 +58,8 @@ function Work() {
         // setPropertyPos(property);
 
         // arrays of all elements and state setters
-        const allPositions = [foundArk, recipe, porefection, weather, blog, maven, property];
-        const setAllMods = [setFoundArkMod, setRecipeMod, setPorefectionMod, setWeatherMod, setBlogeMod, setMavenMod, setPropertyMod];
+        const allPositions = [recipe, porefection, weather, blog, maven, property];
+        const setAllMods = [setRecipeMod, setPorefectionMod, setWeatherMod, setBlogeMod, setMavenMod, setPropertyMod];
 
         // set parallax variables
         let offset;
@@ -86,39 +87,53 @@ function Work() {
 
         };
 
-        // set size of hero image
+        // get size of hero image
         const heroWidth = document.getElementById('hero-container').offsetWidth;
 
-        let resizeSpeed = 2;
+        // set resize speed
+        let resizeSpeed = 1;
 
+        // set size of sticky spacer
         setSpacerLarge(heroWidth / resizeSpeed);
 
+        // set resize progress
+        let resizeProgress = ((foundArk - offset / 2) * resizeSpeed) / ((-heroWidth / resizeSpeed) + offset);
+
+        // set hero size based on progress
         if (window.innerWidth > 1024) {
 
-            if (foundArk > offset) {
-                setDesktopWidth(heroWidth * 2);
-                setMobileWidth(heroWidth / 2.5);
-            } else if (foundArk < ((-heroWidth / resizeSpeed) + offset)) {
-                setDesktopWidth(heroWidth);
-                setMobileWidth(heroWidth / 5);
+            if (resizeProgress < 0) {
+                setHeroSize(2);
+                setHeroPosition(heroWidth / 2);
+            } else if (resizeProgress > 1) {
+                setHeroSize(1);
+                setHeroPosition(0);
             } else {
-                setDesktopWidth((heroWidth * 2) + ((foundArk - offset) * resizeSpeed));
-                setMobileWidth(((heroWidth * 2) + ((foundArk - offset) * resizeSpeed)) / 5);
-            }
-
-        } else if (window.innerWidth > 768) {
-
-            setDesktopWidth(heroWidth);
-            setMobileWidth(heroWidth / (100 / 15));
+                setHeroSize(2 - resizeProgress);
+                setHeroPosition((1 - resizeProgress) * (heroWidth / 2));
+            };
 
         } else {
 
-            setDesktopWidth(heroWidth);
-            setMobileWidth(heroWidth / 5);
+            setHeroSize(1);
 
         };
 
-        console.log(heroWidth);
+        // set parallax modifier for hero
+        if (resizeProgress > 1) {
+            setFoundArkMod((window.innerHeight - offset) * moveSpeed);
+        } else if (foundArk < window.innerHeight) {
+            setFoundArkMod((window.innerHeight - foundArk) * moveSpeed);
+        };
+
+        // set parallax speed for hero
+        if (resizeProgress > 1) {
+            setParallaxSpeed(0);
+        } else if (resizeProgress > 0) {
+            setParallaxSpeed(2 - (resizeProgress / 1.5));
+        } else {
+            setParallaxSpeed(2);
+        }
 
     };
 
@@ -166,14 +181,14 @@ function Work() {
 
                     <div id="hero-container">
 
-                        <div className="preview-thumbnail-hero" style={{ width: `${Math.floor(desktopWidth)}px` }}>
+                        <div className="preview-thumbnail-hero" style={{ transform: `matrix(${heroSize}, 0, 0, ${heroSize}, ${heroPosition}, 0)` }}>
 
-                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(foundArkMod / 5)}px)` }}>
+                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(foundArkMod / (5 * parallaxSpeed))}px)` }}>
                                 <img src="./assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
                                 {foundArkPos <= (-spacerLarge - 200) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
                             </a>
 
-                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / 10)}px)`, width: `${Math.floor(mobileWidth)}px` }}>
+                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / (10 * parallaxSpeed))}px)`, width: `20%` }}>
                                 <img src="./assets/work/found-ark/mobile-mockup.png" alt="found ark phone preview" className="project-thumbnail-phone"></img>
                             </a>
 
@@ -181,15 +196,15 @@ function Work() {
 
                     </div>
 
-                    <div className={foundArkPos <= (-spacerLarge + 100) || window.innerWidth <= 1024 ? "preview-details-right show-description" : "preview-details-right hide-description"}>
+                    <div className={foundArkPos <= (-spacerLarge + 150) || window.innerWidth <= 1024 ? "preview-details-right show-description" : "preview-details-right hide-description"}>
 
                         <h2 className="preview-title">Found Ark</h2>
 
-                        <p className={foundArkPos <= (-spacerLarge - 50) || window.innerWidth <= 1024 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                        <p className={foundArkPos <= (-spacerLarge) || window.innerWidth <= 1024 ? "project-description-right show-description" : "project-description-right hide-description"}>
                             A web application that makes it easier for players to find and create groups for the game Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.
                         </p>
 
-                        <div className={foundArkPos <= (-spacerLarge - 200) || window.innerWidth <= 1024 ? "preview-links show-description" : "preview-links hide-description"}>
+                        <div className={foundArkPos <= (-spacerLarge - 150) || window.innerWidth <= 1024 ? "preview-links show-description" : "preview-links hide-description"}>
                             <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="icon-link-right">
                                 <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
                                 <p className="icon-description-right">Deployed Application</p>
