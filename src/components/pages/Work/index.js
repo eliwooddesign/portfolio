@@ -185,7 +185,6 @@ function Work() {
 
                             <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(foundArkMod / (5 * parallaxSpeed))}px)` }}>
                                 <img src="./assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
-                                {foundArkPos <= (-spacerLarge - 200) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
                             </a>
 
                             <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / (10 * parallaxSpeed))}px)`, width: `20%` }}>
@@ -196,15 +195,15 @@ function Work() {
 
                     </div>
 
-                    <div className={foundArkPos <= (-spacerLarge + 150) || window.innerWidth <= 1024 ? "preview-details-right show-description" : "preview-details-right hide-description"}>
+                    <div className={foundArkPos <= (-spacerLarge + 300) || window.innerWidth <= 1024 ? "preview-details-right show-description" : "preview-details-right hide-description"}>
 
                         <h2 className="preview-title">Found Ark</h2>
 
-                        <p className={foundArkPos <= (-spacerLarge) || window.innerWidth <= 1024 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                        <p className={foundArkPos <= (-spacerLarge + 150) || window.innerWidth <= 1024 ? "project-description-right show-description" : "project-description-right hide-description"}>
                             A web application that makes it easier for players to find and create groups for the game Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.
                         </p>
 
-                        <div className={foundArkPos <= (-spacerLarge - 150) || window.innerWidth <= 1024 ? "preview-links show-description" : "preview-links hide-description"}>
+                        <div className={foundArkPos <= (-spacerLarge) || window.innerWidth <= 1024 ? "preview-links show-description" : "preview-links hide-description"}>
                             <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="icon-link-right">
                                 <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
                                 <p className="icon-description-right">Deployed Application</p>
@@ -219,7 +218,7 @@ function Work() {
 
                 </div>
 
-                {window.innerWidth > 1024 && <div className="sticky-spacer-large" style={{ height: `${spacerLarge + 500}px` }}></div>}
+                {window.innerWidth > 1024 && <div className="sticky-spacer-large" style={{ height: `${spacerLarge + 300}px` }}></div>}
 
             </div>
 
