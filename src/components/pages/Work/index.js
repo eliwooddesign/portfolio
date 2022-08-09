@@ -4,9 +4,6 @@ import './style.css';
 
 function Work() {
 
-    // offset
-    const [offset, setOffset] = useState(0);
-
     // sticky spacer size
     const [spacerLarge, setSpacerLarge] = useState(0);
 
@@ -38,9 +35,6 @@ function Work() {
     // parallax effect
     const handleScroll = () => {
 
-        // get window height
-        const windowHeight = window.innerHeight;
-
         // get elements from the page
         const foundArk = document.getElementById('found-ark').getBoundingClientRect().top;
         const recipe = document.getElementById('recipe').getBoundingClientRect().top;
@@ -66,43 +60,45 @@ function Work() {
         const allPositions = [foundArk, recipe, porefection, weather, blog, maven, property];
         const setAllMods = [setFoundArkMod, setRecipeMod, setPorefectionMod, setWeatherMod, setBlogeMod, setMavenMod, setPropertyMod];
 
-        // set parallax end point
-        let newOffset;
+        // set parallax variables
+        let offset;
+        let moveSpeed;
 
         if (window.innerWidth > 768) {
-            newOffset = windowHeight / 4;
-            setOffset(newOffset);
+            offset = window.innerHeight / 4;
+            moveSpeed = 1;
         } else if (window.innerWidth > 480) {
-            newOffset = windowHeight / 2.5;
-            setOffset(newOffset);
+            offset = window.innerHeight / 3;
+            moveSpeed = 1;
         } else {
-            newOffset = windowHeight / 1.75;
-            setOffset(newOffset);
-        }
+            offset = -window.innerHeight / 4;
+            moveSpeed = 0.4;
+        };
 
+        // set parallax modifier
         for (let i = 0; i < allPositions.length; i++) {
 
-            if (allPositions[i] < newOffset) {
-                setAllMods[i](windowHeight - newOffset);
-            } else if (allPositions[i] < windowHeight) {
-                setAllMods[i](windowHeight - allPositions[i]);
+            if (allPositions[i] < offset) {
+                setAllMods[i]((window.innerHeight - offset) * moveSpeed);
+            } else if (allPositions[i] < window.innerHeight) {
+                setAllMods[i]((window.innerHeight - allPositions[i]) * moveSpeed);
             };
 
         };
 
-        // set size of hero image based on screen size
+        // set size of hero image
         const heroWidth = document.getElementById('hero-container').offsetWidth;
-        
+
         let resizeSpeed = 2;
 
-        setSpacerLarge(heroWidth / resizeSpeed - offset);
+        setSpacerLarge(heroWidth / resizeSpeed);
 
         if (window.innerWidth > 1024) {
 
             if (foundArk > offset) {
                 setDesktopWidth(heroWidth * 2);
                 setMobileWidth(heroWidth / 2.5);
-            } else if (((foundArk - offset) * resizeSpeed) < -heroWidth) {
+            } else if (foundArk < ((-heroWidth / resizeSpeed) + offset)) {
                 setDesktopWidth(heroWidth);
                 setMobileWidth(heroWidth / 5);
             } else {
@@ -110,7 +106,7 @@ function Work() {
                 setMobileWidth(((heroWidth * 2) + ((foundArk - offset) * resizeSpeed)) / 5);
             }
 
-        } else if (window.innerWidth > 480) {
+        } else if (window.innerWidth > 768) {
 
             setDesktopWidth(heroWidth);
             setMobileWidth(heroWidth / (100 / 15));
@@ -121,6 +117,8 @@ function Work() {
             setMobileWidth(heroWidth / 5);
 
         };
+
+        console.log(heroWidth);
 
     };
 
@@ -166,13 +164,13 @@ function Work() {
 
                 <div className="project-preview-hero">
 
-                    <div id="hero-container" className="preview-thumbnail-placeholder">
+                    <div id="hero-container">
 
                         <div className="preview-thumbnail-hero" style={{ width: `${Math.floor(desktopWidth)}px` }}>
 
                             <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(foundArkMod / 5)}px)` }}>
                                 <img src="./assets/work/found-ark/desktop-mockup.png" alt="found ark desktop preview" className="project-thumbnail-desktop"></img>
-                                {foundArkPos <= (-spacerLarge - offset - 300) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
+                                {foundArkPos <= (-spacerLarge - 200) && <img src="assets/work/found-ark/desktop-animation.gif" alt="found ark desktop animation" className="thumbnail-animation-desktop"></img>}
                             </a>
 
                             <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(foundArkMod / 10)}px)`, width: `${Math.floor(mobileWidth)}px` }}>
@@ -183,15 +181,15 @@ function Work() {
 
                     </div>
 
-                    <div className={foundArkPos <= (-spacerLarge - offset + 100) || window.innerWidth <= 1024 ? "preview-details-right show-description" : "preview-details-right hide-description"}>
+                    <div className={foundArkPos <= (-spacerLarge + 100) || window.innerWidth <= 1024 ? "preview-details-right show-description" : "preview-details-right hide-description"}>
 
                         <h2 className="preview-title">Found Ark</h2>
 
-                        <p className={foundArkPos <= (-spacerLarge - offset - 50) || window.innerWidth <= 1024 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                        <p className={foundArkPos <= (-spacerLarge - 50) || window.innerWidth <= 1024 ? "project-description-right show-description" : "project-description-right hide-description"}>
                             A web application that makes it easier for players to find and create groups for the game Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.
                         </p>
 
-                        <div className={foundArkPos <= (-spacerLarge - offset - 200) || window.innerWidth <= 1024 ? "preview-links show-description" : "preview-links hide-description"}>
+                        <div className={foundArkPos <= (-spacerLarge - 200) || window.innerWidth <= 1024 ? "preview-links show-description" : "preview-links hide-description"}>
                             <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="icon-link-right">
                                 <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
                                 <p className="icon-description-right">Deployed Application</p>
@@ -206,7 +204,7 @@ function Work() {
 
                 </div>
 
-                {window.innerWidth > 1024 && <div className="sticky-spacer-large" style={{ height: `${spacerLarge + offset + 450}px` }}></div>}
+                {window.innerWidth > 1024 && <div className="sticky-spacer-large" style={{ height: `${spacerLarge + 500}px` }}></div>}
 
             </div>
 
@@ -217,11 +215,11 @@ function Work() {
 
                     <div className="preview-thumbnail-right">
 
-                        <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${recipeMod / 5}px)` }}>
+                        <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(recipeMod / 5)}px)` }}>
                             <img src="./assets/work/recipe/desktop-mockup.png" alt="recipe generator desktop preview" className="project-thumbnail-desktop"></img>
                         </a>
 
-                        <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${recipeMod / 10}px)` }}>
+                        <a href="https://mreliwood.github.io/demo-recipe-generator/" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(recipeMod / 10)}px)` }}>
                             <img src="./assets/work/recipe/mobile-mockup.png" alt="recipe generator phone preview" className="project-thumbnail-phone"></img>
                         </a>
 
@@ -392,11 +390,11 @@ function Work() {
 
                     <div className="preview-thumbnail-right">
 
-                        <a href="https://shadowhawktownhome.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${propertyMod / 5}px)` }}>
+                        <a href="https://shadowhawktownhome.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(propertyMod / 5)}px)` }}>
                             <img src="./assets/work/property/desktop-mockup.png" alt="property desktop preview" className="project-thumbnail-desktop"></img>
                         </a>
 
-                        <a href="https://shadowhawktownhome.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${propertyMod / 10}px)` }}>
+                        <a href="https://shadowhawktownhome.com" target="_blank" rel="noreferrer" className="project-thumbnail-phone-link" style={{ transform: `translateY(${Math.floor(propertyMod / 10)}px)` }}>
                             <img src="./assets/work/property/mobile-mockup.png" alt="property phone preview" className="project-thumbnail-phone"></img>
                         </a>
 
@@ -431,7 +429,7 @@ function Work() {
 
                     <div className="preview-thumbnail-center">
 
-                        <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${weatherMod / 5}px)` }}>
+                        <a href="https://demo-weather-dashboard.herokuapp.com" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(weatherMod / 5)}px)` }}>
                             <img src="./assets/work/weather/desktop-mockup.png" alt="weather dashboard preview" className="project-thumbnail-desktop"></img>
                         </a>
 
@@ -469,7 +467,7 @@ function Work() {
 
                     <div className="preview-thumbnail-center">
 
-                        <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${blogMod / 5}px)` }}>
+                        <a href="http://demo-blog-template.herokuapp.com/" target="_blank" rel="noreferrer" className="project-thumbnail-desktop-link" style={{ transform: `translateY(-${Math.floor(blogMod / 5)}px)` }}>
                             <img src="./assets/work/blog/desktop-mockup.png" alt="blog template preview" className="project-thumbnail-desktop"></img>
                         </a>
 
