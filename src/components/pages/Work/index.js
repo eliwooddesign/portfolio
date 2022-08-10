@@ -7,6 +7,9 @@ function Work() {
     // sticky spacer size
     const [spacerLarge, setSpacerLarge] = useState(0);
 
+    // set offset for use on page
+    const [pageOffset, setPageOffset] = useState(0);
+
     // hero animation properties
     const [heroSize, setHeroSize] = useState(1);
     const [heroPosition, setHeroPosition] = useState(0);
@@ -76,6 +79,8 @@ function Work() {
             moveSpeed = 0.4;
         };
 
+        setPageOffset(offset);
+
         // set parallax modifier
         for (let i = 0; i < allPositions.length; i++) {
 
@@ -91,7 +96,7 @@ function Work() {
         const heroWidth = document.getElementById('hero-container').offsetWidth;
 
         // set resize speed
-        let resizeSpeed = 1;
+        let resizeSpeed = 1.25;
 
         // set size of sticky spacer
         setSpacerLarge(heroWidth / resizeSpeed);
@@ -195,15 +200,15 @@ function Work() {
 
                     </div>
 
-                    <div className={foundArkPos <= (-spacerLarge + 300) || window.innerWidth <= 1024 ? "preview-details-right show-description" : "preview-details-right hide-description"}>
+                    <div className={foundArkPos <= (-spacerLarge + (pageOffset * 1.5)) || window.innerWidth <= 1024 ? "preview-details-right show-description" : "preview-details-right hide-description"}>
 
                         <h2 className="preview-title">Found Ark</h2>
 
-                        <p className={foundArkPos <= (-spacerLarge + 150) || window.innerWidth <= 1024 ? "project-description-right show-description" : "project-description-right hide-description"}>
+                        <p className={foundArkPos <= (-spacerLarge + (pageOffset * 1.25)) || window.innerWidth <= 1024 ? "project-description-right show-description" : "project-description-right hide-description"}>
                             A web application that makes it easier for players to find and create groups for the game Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.
                         </p>
 
-                        <div className={foundArkPos <= (-spacerLarge) || window.innerWidth <= 1024 ? "preview-links show-description" : "preview-links hide-description"}>
+                        <div className={foundArkPos <= (-spacerLarge + pageOffset) || window.innerWidth <= 1024 ? "preview-links show-description" : "preview-links hide-description"}>
                             <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="icon-link-right">
                                 <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
                                 <p className="icon-description-right">Deployed Application</p>
@@ -218,7 +223,7 @@ function Work() {
 
                 </div>
 
-                {window.innerWidth > 1024 && <div className="sticky-spacer-large" style={{ height: `${spacerLarge + 300}px` }}></div>}
+                {window.innerWidth > 1024 && <div className="sticky-spacer-large" style={{ height: `${spacerLarge + (pageOffset / 2)}px` }}></div>}
 
             </div>
 
