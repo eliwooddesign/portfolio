@@ -54,7 +54,7 @@
     align-items: flex-start;
     width: 100%;
     z-index: 1;
-    transition: all 0.1s linear;
+    transition: none !important;
 }
 
 .preview-thumbnail-left,
@@ -76,28 +76,28 @@
     width: 90%;
     opacity: 1;
     margin: var(--medium) auto auto 0px;
-    transition: all 0.1s linear;
+    transition: none !important;
 }
 
 .preview-thumbnail-left .project-thumbnail-desktop-link {
     width: 90%;
     opacity: 1;
     margin: var(--medium) auto auto 0px;
-    transition: all 0.1s linear;
+    transition: none !important;
 }
 
 .preview-thumbnail-right .project-thumbnail-desktop-link {
     width: 90%;
     opacity: 1;
     margin: var(--medium) 0px auto auto;
-    transition: all 0.1s linear;
+    transition: none !important;
 }
 
 .preview-thumbnail-center .project-thumbnail-desktop-link {
     width: 100%;
     opacity: 1;
     margin: var(--medium) auto auto auto;
-    transition: all 0.1s linear;
+    transition: none !important;
 }
 
 .project-thumbnail-desktop,
