@@ -22,6 +22,10 @@ a:hover {
    opacity: 1;
 }
 
+.button {
+    opacity: 1;
+}
+
 /* page styles */
 .page {
    display: flex;

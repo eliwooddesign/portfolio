@@ -5,15 +5,7 @@
     align-items: center;
     text-align: center;
     height: 50vh;
-}
-
-.intro h2 {
-    margin-bottom: var(--medium);
-}
-
-.contact-button {
-    opacity: 1;
-    margin-top: var(--medium);
+    gap: var(--medium);
 }
 
 .project-preview-left,
@@ -100,8 +92,7 @@
     transition: none !important;
 }
 
-.project-thumbnail-desktop,
-.thumbnail-animation-desktop {
+.project-thumbnail-desktop {
     position: absolute;
     object-fit: contain;
     width: 100%;
