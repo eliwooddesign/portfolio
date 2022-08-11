@@ -73,7 +73,7 @@ function Work() {
             moveSpeed = 1;
         } else if (window.innerWidth > 480) {
             offset = window.innerHeight / 3;
-            moveSpeed = 1;
+            moveSpeed = 0.8;
         } else {
             offset = -window.innerHeight / 4;
             moveSpeed = 0.4;
@@ -110,35 +110,30 @@ function Work() {
             if (resizeProgress < 0) {
                 setHeroSize(2);
                 setHeroPosition(heroWidth / 2);
+                setParallaxSpeed(2);
             } else if (resizeProgress > 1) {
                 setHeroSize(1);
                 setHeroPosition(0);
+                setParallaxSpeed(0);
             } else {
                 setHeroSize(2 - resizeProgress);
                 setHeroPosition((1 - resizeProgress) * (heroWidth / 2));
+                setParallaxSpeed(2 - (resizeProgress / 0.8));
             };
 
         } else {
 
             setHeroSize(1);
+            setParallaxSpeed(0.8);
 
         };
 
         // set parallax modifier for hero
-        if (resizeProgress > 1) {
+        if (foundArk < offset) {
             setFoundArkMod((window.innerHeight - offset) * moveSpeed);
         } else if (foundArk < window.innerHeight) {
             setFoundArkMod((window.innerHeight - foundArk) * moveSpeed);
         };
-
-        // set parallax speed for hero
-        if (resizeProgress > 1) {
-            setParallaxSpeed(0);
-        } else if (resizeProgress > 0) {
-            setParallaxSpeed(2 - (resizeProgress / 1.5));
-        } else {
-            setParallaxSpeed(2);
-        }
 
     };
 

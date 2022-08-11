@@ -259,11 +259,11 @@
     }
 
     #social {
-        background-image: linear-gradient(var(--dark90), var(--dark25)), url('../../../../public/assets/work/social/background.png');
+        background-image: linear-gradient(var(--background90), var(--background25)), url('../../../../public/assets/work/social/background.png');
     }
 
     #commerce {
-        background-image: linear-gradient(var(--dark50), var(--dark)), url('../../../../public/assets/work/e-commerce/background.png');
+        background-image: linear-gradient(var(--background50), var(--background)), url('../../../../public/assets/work/e-commerce/background.png');
     }
 
     #social .preview-details-right,
@@ -304,7 +304,7 @@
     }
 
     .project-thumbnail-phone-link {
-        width: 20%;
+        width: 15%;
         margin-top: 5%;
     }
 
