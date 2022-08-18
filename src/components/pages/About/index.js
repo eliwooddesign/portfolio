@@ -14,16 +14,7 @@ function About() {
 
                 <div className="about-bio">
 
-                    {window.innerWidth > 1500 ?
-                        // desktop
-                        <h2>Hi, my name is Eli and I'm a software developer.</h2>
-                        :
-                        // mobile
-                        <>
-                            <h2>Hi, my name is Eli and</h2>
-                            <h2>I'm a software developer.</h2>
-                        </>
-                    }
+                    <h2>Hi, my name is Eli and {window.innerWidth <= 768 && <br />} I'm a software developer.</h2>
 
                     <h3>I am a Front End Web Developer with a background in design and three years of professional web development experience. I recently earned a certificate in Full Stack Development from the University of Washington, where I developed skills in JavaScript, CSS, React.js, and responsive web design.</h3>
                     <h3>An innovative problem solver passionate about developing apps, with a focus on user-centered design and mobile-first and development. My previous career in sales management, and web design expereince has prepared me to approach problems with creativity and teamwork.</h3>
