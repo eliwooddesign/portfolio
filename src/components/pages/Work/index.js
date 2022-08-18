@@ -152,7 +152,7 @@ function Work() {
 
                 <h2>Hi, my name is Eli and {window.innerWidth <= 768 && <br />} I'm a software developer.</h2>
 
-                <h3>I'm always open to new opportunities. Check out my portfolio <br /> and let me know if you're interested in working together.</h3>
+                <h3>I'm always open to new opportunities. Check out my portfolio {window.innerWidth >= 768 && <br />} and let me know if you're interested in working together.</h3>
 
                 <Link to="../contact" className="contact-button">
                     <button>Contact</button>
