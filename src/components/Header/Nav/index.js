@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './style.css';
 
-function Nav() {
-
-    const [navStatus, setNavStatus] = useState('hidden');
+function Nav({ handleMobileNavClick, navStatus, setNavStatus }) {
 
     const location = useLocation();
 
@@ -20,19 +18,6 @@ function Nav() {
 
     };
 
-    const handleMobileNavClick = () => {
-
-        if (window.innerWidth > 768) {
-            return;
-        } else if (navStatus === 'hidden' || navStatus === 'nav-closed') {
-            setNavStatus('nav-open');
-        } else if (navStatus === 'nav-open') {
-            setNavStatus('nav-closed');
-            setTimeout(() => setNavStatus('hidden'), 500);
-        };
-
-    };
-
     useEffect(() => {
         window.addEventListener("resize", handleMobileNav);
         handleMobileNav();
@@ -44,8 +29,8 @@ function Nav() {
         <>
 
             <div onClick={handleMobileNavClick} className="nav-item mobile-nav-button">
-                <p>{navDetail}</p>
-                <p>{navDetail}</p>
+                <p className={navStatus === 'nav-open' && 'animate-nav-detail-left'}>{navDetail}</p>
+                <p className={navStatus === 'nav-open' && 'animate-nav-detail-right'}>{navDetail}</p>
             </div>
 
             <ul onClick={handleMobileNavClick} className={"nav " + navStatus}>

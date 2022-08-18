@@ -5,21 +5,21 @@
 
 /* global styles */
 .body {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   align-items: center;
-   min-height: 100vh;
-   background: var(--background);
-   color: var(--light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--light);
 }
 
 a {
-   opacity: 0.75;
+    opacity: 0.75;
 }
 
 a:hover {
-   opacity: 1;
+    opacity: 1;
 }
 
 .button {
@@ -28,15 +28,15 @@ a:hover {
 
 /* page styles */
 .page {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   width: 100vw;
-   max-width: 2000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    max-width: 2000px;
 }
 
 .page-title {
-   text-align: center;
+    text-align: center;
 }
 
 button {
@@ -58,12 +58,12 @@ button:hover {
     width: 32px;
 }
 
-.icon:hover + .icon-description-right {
+.icon:hover+.icon-description-right {
     max-width: 160px;
     margin-right: var(--small);
 }
 
-.icon:hover + .icon-description-left {
+.icon:hover+.icon-description-left {
     max-width: 160px;
     margin-left: var(--small);
 }
@@ -112,4 +112,13 @@ button:hover {
 
 .sticky-spacer-large {
     height: 100vh;
+}
+
+/* tablets */
+@media screen and (max-width: 768px) {
+
+    .page {
+        margin-top: var(--huge);
+    }
+
 }
