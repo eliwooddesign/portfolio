@@ -138,6 +138,7 @@
 .preview-links {
     display: flex;
     user-select: none;
+    gap: var(--small);
 }
 
 .preview-link-divider {

@@ -190,14 +190,18 @@ function Work() {
                         </p>
 
                         <div className={foundArkPos <= (-spacerLarge + pageOffset) || window.innerWidth <= 1024 ? "preview-links show-description" : "preview-links hide-description"}>
-                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="icon-link-right">
+                            <a href="https://found-ark.herokuapp.com" target="_blank" rel="noreferrer" className="icon-link-hero">
                                 <img src="./assets/icons/web-icon.png" alt="deployed application link" className="icon"></img>
                                 <p className="icon-description-right">Deployed Application</p>
                             </a>
-                            <a href="https://github.com/chuanw101/found-ark" target="_blank" rel="noreferrer" className="icon-link-right">
+                            <a href="https://github.com/chuanw101/found-ark" target="_blank" rel="noreferrer" className="icon-link-hero">
                                 <img src="./assets/icons/GitHub-Mark-Light-120px-plus.png" alt="GitHub repository link" className="icon"></img>
                                 <p className="icon-description-right">GitHub Repository</p>
                             </a>
+                            <div className="icon-link-hero">
+                                <img src="./assets/icons/React-icon.png" alt="GitHub repository link" className="icon"></img>
+                                <p className="icon-description-right">Made with React</p>
+                            </div>
                         </div>
 
                     </div>
@@ -337,6 +341,10 @@ function Work() {
                                 <img src="./assets/icons/GitHub-Mark-Light-120px-plus.png" alt="GitHub repository link" className="icon"></img>
                                 <p className="icon-description-left">GitHub Repository</p>
                             </a>
+                            <div className="icon-link-left">
+                                <img src="./assets/icons/React-icon.png" alt="GitHub repository link" className="icon"></img>
+                                <p className="icon-description-left">Made with React</p>
+                            </div>
                         </div>
 
                     </div>
