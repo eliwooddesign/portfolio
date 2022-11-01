@@ -150,7 +150,7 @@ function Work() {
             {/* banner */}
             <div className="intro">
 
-                <h2>Hi, my name is Eli and {window.innerWidth <= 768 && <br />} I'm a software developer.</h2>
+                <h2>Hi, my name is Eli.</h2>
 
                 <h3>I'm always open to new opportunities. Check out my portfolio {window.innerWidth >= 768 && <br />} and let me know if you're interested in working together.</h3>
 
