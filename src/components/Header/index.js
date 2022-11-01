@@ -30,7 +30,7 @@ function Header() {
                     <h1>Eli Wood</h1>
                 </Link>
                 
-                <p>Full Stack Software Developer</p>
+                <p>UX Designer / Software Developer</p>
 
             </div>
 
