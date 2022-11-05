@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // import Background from './types/Background';
 import Hero from './types/Hero';
-import Mockups from './types/Mockups';
+import Standard from './types/Standard';
 
 import './style.css';
 
@@ -23,7 +23,7 @@ function Work() {
 
 			{/* work */}
 			<Hero react title='Found Ark' description='A web application that makes it easier for players to find and create groups for the game Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.' link='https://mreliwood.github.io/found-ark' repo='https://github.com/mreliwood/found-ark' desktopImg='./assets/work/found-ark/desktop-mockup.png' mobileImg='./assets/work/found-ark/mobile-mockup.png' />
-			<Mockups flip title='Recipe Generator' description='Users can find inspiration for their next meal by randomly generating recipes with sorting logic to filter their results by course and/or dietary restrictions and an engaging, intuitive user experience.' link='https://mreliwood.github.io/demo-recipe-generator/' repo='https://github.com/MrEliWood/demo-recipe-generator' desktopImg='./assets/work/recipe/desktop-mockup.png' mobileImg='./assets/work/recipe/mobile-mockup.png' />
+			<Standard flip title='Recipe Generator' description='Users can find inspiration for their next meal by randomly generating recipes with sorting logic to filter their results by course and/or dietary restrictions and an engaging, intuitive user experience.' link='https://mreliwood.github.io/demo-recipe-generator/' repo='https://github.com/MrEliWood/demo-recipe-generator' desktopImg='./assets/work/recipe/desktop-mockup.png' mobileImg='./assets/work/recipe/mobile-mockup.png' />
 
 			<div className='sticky-container'>
 				{/* social network api */}
@@ -63,95 +63,11 @@ function Work() {
 				</div>
 			</div>
 
-			<Mockups flip react title='Porefection' description='This web application helps users manage their skincare routine by allowing them to create a detailed list of their skincare products. When the user adds a product to their list, detailed product information is fetched from Sephora API and the list is automatically sorted in the correct order for using the products.' link='https://mreliwood.github.io/porefection' repo='https://github.com/MrEliWood/porefection' desktopImg='./assets/work/porefection/desktop-mockup.png' mobileImg='./assets/work/porefection/mobile-mockup.png' />
-			<Mockups title='Real Estate Team Websites' description='Promotional websites for real estate teams, serving as the first point of contact for potential clients and showcase for the services and success of the team.' link='https://www.mavengroupnw.com' desktopImg='./assets/work/maven/desktop-mockup.png' mobileImg='./assets/work/maven/mobile-mockup.png' />
-			<Mockups flip title='Property Websites' description='' link='https://shadowhawktownhome.com' desktopImg='./assets/work/property/desktop-mockup.png' mobileImg='./assets/work/property/mobile-mockup.png' />
-			<Mockups title='' description='' link='' repo='' desktopImg='' mobileImg='' />
-			<Mockups flip title='' description='' link='' repo='' desktopImg='' mobileImg='' />
-
-			{/* property website */}
-			<div className='sticky-container'>
-				<div id='property' className='project-preview-right'>
-					<div className='preview-thumbnail-right'>
-						<a href='https://shadowhawktownhome.com' target='_blank' rel='noreferrer' className='project-thumbnail-desktop-link' style={{ transform: `translateY(-${Math.floor(propertyMod / 5)}px)` }}>
-							<img src='./assets/work/property/desktop-mockup.png' alt='property desktop preview' className='project-thumbnail-desktop'></img>
-						</a>
-
-						<a href='https://shadowhawktownhome.com' target='_blank' rel='noreferrer' className='project-thumbnail-phone-link' style={{ transform: `translateY(${Math.floor(propertyMod / 10)}px)` }}>
-							<img src='./assets/work/property/mobile-mockup.png' alt='property phone preview' className='project-thumbnail-phone'></img>
-						</a>
-					</div>
-
-					<div className='preview-details-left'>
-						<h2 className='preview-title'>Property Websites</h2>
-
-						<p className='project-description-left'>One of many websites showcasing a property for sale or for rent, featuring all important property details, engaging potential customers and funneling high value traffic.</p>
-
-						<div className='preview-links'>
-							<a href='https://shadowhawktownhome.com' target='_blank' rel='noreferrer' className='icon-link-left'>
-								<img src='./assets/icons/web-icon.png' alt='deployed application link' className='icon'></img>
-								<p className='icon-description-left'>Live Website</p>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			{/* weather dashboard */}
-			<div className='sticky-container'>
-				<div id='weather' className='project-preview-left'>
-					<div className='preview-thumbnail-center'>
-						<a href='https://demo-weather-dashboard.herokuapp.com' target='_blank' rel='noreferrer' className='project-thumbnail-desktop-link' style={{ transform: `translateY(-${Math.floor(weatherMod / 5)}px)` }}>
-							<img src='./assets/work/weather/desktop-mockup.png' alt='weather dashboard preview' className='project-thumbnail-desktop'></img>
-						</a>
-					</div>
-
-					<div className='preview-details-right'>
-						<h2 className='preview-title'>Weather Dashboard</h2>
-
-						<p className='project-description-right'>Full bleed background images and a clear, engaging user interface deliver a 5-day forecast utilizing powerful integrations from the Google Maps API and OpenWeather.</p>
-
-						<div className='preview-links'>
-							<a href='https://demo-weather-dashboard.herokuapp.com' target='_blank' rel='noreferrer' className='icon-link-right'>
-								<img src='./assets/icons/web-icon.png' alt='deployed application link' className='icon'></img>
-								<p className='icon-description-right'>Deployed Application</p>
-							</a>
-							<a href='https://github.com/MrEliWood/demo-weather-dashboard' target='_blank' rel='noreferrer' className='icon-link-right'>
-								<img src='./assets/icons/GitHub-Mark-Light-120px-plus.png' alt='GitHub repository link' className='icon'></img>
-								<p className='icon-description-right'>GitHub Repository</p>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			{/* blog template */}
-			<div className='sticky-container'>
-				<div id='blog' className='project-preview-right'>
-					<div className='preview-thumbnail-center'>
-						<a href='http://demo-blog-template.herokuapp.com/' target='_blank' rel='noreferrer' className='project-thumbnail-desktop-link' style={{ transform: `translateY(-${Math.floor(blogMod / 5)}px)` }}>
-							<img src='./assets/work/blog/desktop-mockup.png' alt='blog template preview' className='project-thumbnail-desktop'></img>
-						</a>
-					</div>
-
-					<div className='preview-details-left'>
-						<h2 className='preview-title'>Blog Template</h2>
-
-						<p className='project-description-left'>Free template for developers building a blog based on a MySQL database with complex relationships, including multiple users with hashed passwords powered by bcrypt.</p>
-
-						<div className='preview-links'>
-							<a href='http://demo-blog-template.herokuapp.com/' target='_blank' rel='noreferrer' className='icon-link-left'>
-								<img src='./assets/icons/web-icon.png' alt='deployed application link' className='icon'></img>
-								<p className='icon-description-left'>Deployed Application</p>
-							</a>
-							<a href='https://github.com/MrEliWood/blog-template' target='_blank' rel='noreferrer' className='icon-link-left'>
-								<img src='./assets/icons/GitHub-Mark-Light-120px-plus.png' alt='GitHub repository link' className='icon'></img>
-								<p className='icon-description-left'>GitHub Repository</p>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			<Standard flip react title='Porefection' description='This web application helps users manage their skincare routine by allowing them to create a detailed list of their skincare products. When the user adds a product to their list, detailed product information is fetched from Sephora API and the list is automatically sorted in the correct order for using the products.' link='https://mreliwood.github.io/porefection' repo='https://github.com/MrEliWood/porefection' />
+			<Standard title='Real Estate Team Websites' description='Promotional websites for real estate teams, serving as the first point of contact for potential clients and showcase for the services and success of the team.' link='https://www.mavengroupnw.com' />
+			<Standard flip title='Property Websites' description='One of many websites showcasing a property for sale or for rent, featuring all important property details, engaging potential customers and funneling high value traffic.' link='https://shadowhawktownhome.com' />
+			<Standard single title='Weather Dashboard' description='Full bleed background images and a clear, engaging user interface deliver a 5-day forecast utilizing powerful integrations from the Google Maps API and OpenWeather.' repo='https://github.com/MrEliWood/demo-weather-dashboard' />
+			<Standard flip single title='Blog Template' description='Free template for developers building a blog based on a MySQL database with complex relationships, including multiple users with hashed passwords powered by bcrypt.' link='http://demo-blog-template.herokuapp.com/' repo='https://github.com/MrEliWood/blog-template' />
 		</div>
 	);
 }
