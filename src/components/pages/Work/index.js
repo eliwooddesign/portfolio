@@ -22,7 +22,9 @@ function Work() {
 			</div>
 
 			{/* work */}
-			<Hero react title='Found Ark' description='A web application that makes it easier for players to find and create groups for the game Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.' link='https://mreliwood.github.io/found-ark' repo='https://github.com/mreliwood/found-ark' desktopImg='./assets/work/found-ark/desktop-mockup.png' mobileImg='./assets/work/found-ark/mobile-mockup.png' />
+			<Hero title='Maven Group' description='Experts in PNW real estate. Promotional website serving as the first touchpoint for potential clients and a modern showcase for the services and success of the team.' link='https://www.mavengroupnw.com' />
+			<Standard flip title='Property Website' description='One of many websites showcasing a property for sale or for rent, featuring all important property details, engaging potential customers and funneling high value traffic.' link='https://shadowhawktownhome.com' />
+			<Standard react title='Found Ark' description='A web application that makes it easier for players to find and create groups for the game Lost Ark, without having to rely on giant anonymous servers where they may never get picked up.' link='https://mreliwood.github.io/found-ark' repo='https://github.com/mreliwood/found-ark' desktopImg='./assets/work/found-ark/desktop-mockup.png' mobileImg='./assets/work/found-ark/mobile-mockup.png' />
 			<Standard flip title='Recipe Generator' description='Users can find inspiration for their next meal by randomly generating recipes with sorting logic to filter their results by course and/or dietary restrictions and an engaging, intuitive user experience.' link='https://mreliwood.github.io/demo-recipe-generator/' repo='https://github.com/MrEliWood/demo-recipe-generator' desktopImg='./assets/work/recipe/desktop-mockup.png' mobileImg='./assets/work/recipe/mobile-mockup.png' />
 
 			<div className='sticky-container'>
@@ -64,8 +66,6 @@ function Work() {
 			</div>
 
 			<Standard flip react title='Porefection' description='This web application helps users manage their skincare routine by allowing them to create a detailed list of their skincare products. When the user adds a product to their list, detailed product information is fetched from Sephora API and the list is automatically sorted in the correct order for using the products.' link='https://mreliwood.github.io/porefection' repo='https://github.com/MrEliWood/porefection' />
-			<Standard title='Real Estate Team Websites' description='Promotional websites for real estate teams, serving as the first point of contact for potential clients and showcase for the services and success of the team.' link='https://www.mavengroupnw.com' />
-			<Standard flip title='Property Websites' description='One of many websites showcasing a property for sale or for rent, featuring all important property details, engaging potential customers and funneling high value traffic.' link='https://shadowhawktownhome.com' />
 			<Standard single title='Weather Dashboard' description='Full bleed background images and a clear, engaging user interface deliver a 5-day forecast utilizing powerful integrations from the Google Maps API and OpenWeather.' repo='https://github.com/MrEliWood/demo-weather-dashboard' />
 			<Standard flip single title='Blog Template' description='Free template for developers building a blog based on a MySQL database with complex relationships, including multiple users with hashed passwords powered by bcrypt.' link='http://demo-blog-template.herokuapp.com/' repo='https://github.com/MrEliWood/blog-template' />
 		</div>

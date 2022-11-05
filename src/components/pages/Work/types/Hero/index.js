@@ -28,7 +28,7 @@ function Hero({ title, description, link, repo, react }) {
 	// hero image animation
 	const handleScroll = () => {
 		// get element position from the page
-		const heroTop = document.getElementById('found-ark').getBoundingClientRect().top;
+		const heroTop = document.getElementById(id).getBoundingClientRect().top;
 
 		setHeroPosition(heroTop);
 
@@ -113,7 +113,7 @@ function Hero({ title, description, link, repo, react }) {
 				</div>
 
 				<div className={heroPosition <= -spacer + pageOffset * 1.5 || window.innerWidth <= 1024 ? 'preview-details-right show-description' : 'preview-details-right hide-description'}>
-					<h2 className='preview-title'>Found Ark</h2>
+					<h2 className='preview-title'>{title}</h2>
 
 					<p className={heroPosition <= -spacer + pageOffset * 1.25 || window.innerWidth <= 1024 ? 'project-description-right show-description' : 'project-description-right hide-description'}>{description}</p>
 
