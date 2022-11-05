@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 
-function Hero({ title, description, link, repo, react, desktopImg, mobileImg }) {
+function Hero({ title, description, link, repo, react }) {
 	// hero position
 	const [heroPosition, setHeroPosition] = useState();
 
@@ -103,11 +103,11 @@ function Hero({ title, description, link, repo, react, desktopImg, mobileImg }) 
 				<div id={resizer} style={{ width: '50%', zIndex: '1' }}>
 					<div className='preview-thumbnail-hero' style={{ transform: `matrix(${heroSize}, 0, 0, ${heroSize}, ${imagePosition}, 0)` }}>
 						<a href={link} target='_blank' rel='noreferrer' className='project-thumbnail-desktop-link' style={{ transform: `translateY(-${Math.floor(heroMod / (5 * parallaxSpeed))}px)` }}>
-							<img src={desktopImg} alt={title + ' desktop preview'} className='project-thumbnail-desktop'></img>
+							<img src={'./assets/work/' + id + '/desktop-mockup.png'} alt={title + ' desktop preview'} className='project-thumbnail-desktop'></img>
 						</a>
 
 						<a href={link} target='_blank' rel='noreferrer' className='project-thumbnail-phone-link' style={{ transform: `translateY(${Math.floor(heroMod / (10 * parallaxSpeed))}px)`, width: `20%` }}>
-							<img src={mobileImg} alt={title + ' mobile preview'} className='project-thumbnail-phone'></img>
+							<img src={'./assets/work/' + id + '/mobile-mockup.png'} alt={title + ' mobile preview'} className='project-thumbnail-phone'></img>
 						</a>
 					</div>
 				</div>
@@ -118,14 +118,18 @@ function Hero({ title, description, link, repo, react, desktopImg, mobileImg }) 
 					<p className={heroPosition <= -spacer + pageOffset * 1.25 || window.innerWidth <= 1024 ? 'project-description-right show-description' : 'project-description-right hide-description'}>{description}</p>
 
 					<div className={heroPosition <= -spacer + pageOffset || window.innerWidth <= 1024 ? 'preview-links show-description' : 'preview-links hide-description'}>
-						<a href={link} target='_blank' rel='noreferrer' className='icon-link-hero'>
-							<img src='./assets/icons/web-icon.png' alt='deployed application link' className='icon'></img>
-							<p className='icon-description-right'>Deployed Application</p>
-						</a>
-						<a href={repo} target='_blank' rel='noreferrer' className='icon-link-hero'>
-							<img src='./assets/icons/GitHub-Mark-Light-120px-plus.png' alt='GitHub repository link' className='icon'></img>
-							<p className='icon-description-right'>GitHub Repository</p>
-						</a>
+						{link && (
+							<a href={link} target='_blank' rel='noreferrer' className='icon-link-hero'>
+								<img src='./assets/icons/web-icon.png' alt='deployed application link' className='icon'></img>
+								<p className='icon-description-right'>Deployed Application</p>
+							</a>
+						)}
+						{repo && (
+							<a href={repo} target='_blank' rel='noreferrer' className='icon-link-hero'>
+								<img src='./assets/icons/GitHub-Mark-Light-120px-plus.png' alt='GitHub repository link' className='icon'></img>
+								<p className='icon-description-right'>GitHub Repository</p>
+							</a>
+						)}
 						{react && (
 							<div className='icon-link-hero'>
 								<img src='./assets/icons/React-icon.png' alt='GitHub repository link' className='icon'></img>
