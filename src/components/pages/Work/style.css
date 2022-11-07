@@ -163,8 +163,7 @@
 	animation: slide-down 1s both;
 }
 
-#social,
-#commerce {
+.background {
 	position: static;
 	justify-content: flex-start;
 	background-color: var(--background);
@@ -172,14 +171,6 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
-}
-
-#social {
-	background-image: url('../../../../public/assets/work/social/background.png');
-}
-
-#commerce {
-	background-image: url('../../../../public/assets/work/e-commerce/background.png');
 }
 
 #porefection {
@@ -242,26 +233,12 @@
 		text-align: center;
 	}
 
-	#social,
-	#commerce {
+	.background {
 		background-attachment: scroll;
 		background-position: 0% 0%;
 		background-repeat: no-repeat;
 		background-size: 200%;
 		margin-bottom: 0;
-	}
-
-	#social {
-		background-image: linear-gradient(var(--background90), var(--background25)), url('../../../../public/assets/work/social/background.png');
-	}
-
-	#commerce {
-		background-image: linear-gradient(var(--background50), var(--background)), url('../../../../public/assets/work/e-commerce/background.png');
-	}
-
-	#social .preview-details-right,
-	#commerce .preview-details-right {
-		height: 50vh;
 	}
 }
 
