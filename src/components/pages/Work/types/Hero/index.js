@@ -20,7 +20,7 @@ function Hero({ title, description, link, repo, react }) {
 	const [pageOffset, setPageOffset] = useState(0);
 
 	// create id based on title
-	const id = title.replace(' ', '-').toLowerCase();
+	const id = title.replace(/ /g, '-').toLowerCase();
 
 	// create id for resizeable container
 	const resizer = id + '-resizer';
@@ -54,7 +54,7 @@ function Hero({ title, description, link, repo, react }) {
 		setPageOffset(offset);
 
 		// set resize speed
-		const resizeSpeed = 1.25;
+		const resizeSpeed = 0.9;
 
 		// set size of sticky spacer
 		setSpacer(heroWidth / resizeSpeed);
@@ -82,7 +82,7 @@ function Hero({ title, description, link, repo, react }) {
 			setParallaxSpeed(0.8);
 		}
 
-		// set parallax modifier for hero
+		// set parallax modifier
 		if (heroTop < offset) {
 			setHeroMod((window.innerHeight - offset) * moveSpeed);
 		} else if (heroTop < window.innerHeight) {
