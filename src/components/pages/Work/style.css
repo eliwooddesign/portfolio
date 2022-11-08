@@ -173,8 +173,9 @@
 	background-size: contain;
 }
 
-#porefection {
-	margin-top: var(--huge);
+.background-wrapper {
+	width: 100%;
+	margin-bottom: var(--huge);
 }
 
 /* large screens */
@@ -207,10 +208,9 @@
 
 	.preview-thumbnail-left,
 	.preview-thumbnail-right,
-	.preview-thumbnail-center,
-	#hero-container {
+	.preview-thumbnail-center {
 		align-items: flex-start;
-		height: 45vw;
+		height: 50vw;
 		width: 75%;
 	}
 
@@ -256,6 +256,7 @@
 	.project-preview-left,
 	.project-preview-right,
 	.project-preview-hero {
+		height: 80vh;
 		top: 20vh;
 		padding: var(--medium);
 	}
