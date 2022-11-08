@@ -11,7 +11,7 @@ function Hero({ title, description, link, repo, react }) {
 	// hero animation properties
 	const [heroSize, setHeroSize] = useState(1);
 	const [imagePosition, setImagePosition] = useState(0);
-	const [parallaxSpeed, setParallaxSpeed] = useState(1);
+	const [parallaxSpeed, setParallaxSpeed] = useState(2);
 
 	// parallax modifier
 	const [heroMod, setHeroMod] = useState(0);
@@ -35,23 +35,26 @@ function Hero({ title, description, link, repo, react }) {
 		// get size of hero image
 		const heroWidth = document.getElementById(resizer).offsetWidth;
 
-		// set parallax variables based on screen size
-		let offset;
-		let moveSpeed;
+		// set parallax stopping point
+		let offset = -window.innerHeight * 10;
+
+		// set animation variables based on screen size
+		let moveSpeed; // parallax speed
+		let breakpoint; // where resize stops
 
 		if (window.innerWidth > 768) {
-			offset = window.innerHeight / 4;
 			moveSpeed = 1;
+			breakpoint = window.innerHeight / 4;
 		} else if (window.innerWidth > 480) {
-			offset = window.innerHeight / 3;
 			moveSpeed = 0.8;
+			breakpoint = window.innerHeight / 3;
 		} else {
-			offset = -window.innerHeight / 4;
 			moveSpeed = 0.4;
+			breakpoint = -window.innerHeight / 4;
 		}
 
 		// set offset for use on page
-		setPageOffset(offset);
+		setPageOffset(breakpoint);
 
 		// set resize speed
 		const resizeSpeed = 0.9;
@@ -60,26 +63,23 @@ function Hero({ title, description, link, repo, react }) {
 		setSpacer(heroWidth / resizeSpeed);
 
 		// set resize progress
-		let resizeProgress = ((heroTop - offset / 2) * resizeSpeed) / (-heroWidth / resizeSpeed + offset);
+		let resizeProgress = ((heroTop - breakpoint / 2) * resizeSpeed) / (-heroWidth / resizeSpeed + breakpoint);
 
 		// set hero size based on progress
 		if (window.innerWidth > 1024) {
 			if (resizeProgress < 0) {
 				setHeroSize(2);
 				setImagePosition(heroWidth / 2);
-				setParallaxSpeed(2);
 			} else if (resizeProgress > 1) {
 				setHeroSize(1);
 				setImagePosition(0);
-				setParallaxSpeed(0);
 			} else {
 				setHeroSize(2 - resizeProgress);
 				setImagePosition((1 - resizeProgress) * (heroWidth / 2));
-				setParallaxSpeed(2 - resizeProgress / 0.8);
 			}
 		} else {
 			setHeroSize(1);
-			setParallaxSpeed(0.8);
+			setParallaxSpeed(1.5);
 		}
 
 		// set parallax modifier
@@ -100,13 +100,13 @@ function Hero({ title, description, link, repo, react }) {
 	return (
 		<div id={id} className='sticky-container'>
 			<div className='project-preview-hero'>
-				<div id={resizer} style={{ width: '50%', zIndex: '1' }}>
+				<div id={resizer} className='resizer'>
 					<div className='preview-thumbnail-hero' style={{ transform: `matrix(${heroSize}, 0, 0, ${heroSize}, ${imagePosition}, 0)` }}>
 						<a href={link} target='_blank' rel='noreferrer' className='project-thumbnail-desktop-link' style={{ transform: `translateY(-${Math.floor(heroMod / (5 * parallaxSpeed))}px)` }}>
 							<img src={'./assets/work/' + id + '/desktop-mockup.png'} alt={title + ' desktop preview'} className='project-thumbnail-desktop'></img>
 						</a>
 
-						<a href={link} target='_blank' rel='noreferrer' className='project-thumbnail-phone-link' style={{ transform: `translateY(${Math.floor(heroMod / (10 * parallaxSpeed))}px)`, width: `20%` }}>
+						<a href={link} target='_blank' rel='noreferrer' className='project-thumbnail-phone-link' style={{ transform: `translateY(${Math.floor(heroMod / (8 * parallaxSpeed))}px)`, width: `20%` }}>
 							<img src={'./assets/work/' + id + '/mobile-mockup.png'} alt={title + ' mobile preview'} className='project-thumbnail-phone'></img>
 						</a>
 					</div>

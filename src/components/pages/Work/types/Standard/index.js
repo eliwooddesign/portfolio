@@ -13,18 +13,15 @@ function Standard({ title, description, link, repo, react, flip, single }) {
 		// get elements from the page
 		const position = document.getElementById(id).getBoundingClientRect().top;
 
-		// set parallax variables
-		let offset;
+		// set parallax stopping point
+		let offset = -window.innerHeight;
+
+		// set parallax move speed based on screen size
 		let moveSpeed;
 
-		if (window.innerWidth > 768) {
-			offset = window.innerHeight / 4;
-			moveSpeed = 1;
-		} else if (window.innerWidth > 480) {
-			offset = window.innerHeight / 3;
-			moveSpeed = 0.8;
+		if (window.innerWidth > 480) {
+			moveSpeed = 0.6;
 		} else {
-			offset = -window.innerHeight / 4;
 			moveSpeed = 0.4;
 		}
 

@@ -1,0 +1,12 @@
+.resizer {
+	width: 50%;
+	z-index: 1;
+}
+
+/* small screens */
+@media screen and (max-width: 1024px) {
+	.resizer {
+		width: 75%;
+		height: 50vw;
+	}
+}
