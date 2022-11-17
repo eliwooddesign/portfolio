@@ -49,7 +49,7 @@ function Hero({ title, description, link, repo, react }) {
 			moveSpeed = 0.8;
 			breakpoint = window.innerHeight / 3;
 		} else {
-			moveSpeed = 0.4;
+			moveSpeed = 0.9;
 			breakpoint = -window.innerHeight / 4;
 		}
 
@@ -140,7 +140,7 @@ function Hero({ title, description, link, repo, react }) {
 				</div>
 			</div>
 
-			{window.innerWidth > 1024 && <div className='sticky-spacer-large' style={{ height: `${spacer + pageOffset / 2}px` }}></div>}
+			{window.innerWidth > 1024 && <div className='sticky-spacer-large' style={{ height: `${spacer + pageOffset / 10}px` }}></div>}
 		</div>
 	);
 }

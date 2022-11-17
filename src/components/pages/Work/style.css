@@ -267,8 +267,7 @@
 
 	.preview-thumbnail-left,
 	.preview-thumbnail-right,
-	.preview-thumbnail-center,
-	#hero-container {
+	.preview-thumbnail-center {
 		height: 50vw;
 	}
 
@@ -297,7 +296,7 @@
 	.preview-thumbnail-right,
 	.preview-thumbnail-center,
 	#hero-container {
-		height: 65vw;
+		height: 70vw;
 		width: 100%;
 	}
 
