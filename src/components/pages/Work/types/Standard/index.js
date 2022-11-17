@@ -22,7 +22,7 @@ function Standard({ title, description, link, repo, react, flip, single }) {
 		if (window.innerWidth > 480) {
 			moveSpeed = 0.6;
 		} else {
-			moveSpeed = 0.4;
+			moveSpeed = 0.5;
 		}
 
 		// set parallax modifier
