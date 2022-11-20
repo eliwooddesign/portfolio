@@ -122,6 +122,7 @@
 	width: 50%;
 	gap: var(--small);
 	padding: var(--small) var(--large) var(--small) 0px;
+	z-index: 1;
 }
 
 .preview-details-right {
@@ -163,19 +164,9 @@
 	animation: slide-down 1s both;
 }
 
-.background {
-	position: static;
-	justify-content: flex-start;
-	background-color: var(--background);
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
 .background-wrapper {
 	width: 100%;
-	margin-bottom: var(--huge);
+	margin: 60vh 0 85vh 0;
 }
 
 /* large screens */
@@ -233,12 +224,9 @@
 		text-align: center;
 	}
 
-	.background {
-		background-attachment: scroll;
-		background-position: 0% 0%;
-		background-repeat: no-repeat;
-		background-size: 200%;
-		margin-bottom: 0;
+	.background-wrapper {
+		width: 100%;
+		margin: var(--huge);
 	}
 }
 
