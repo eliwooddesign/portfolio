@@ -1,87 +1,91 @@
 .about {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 1500px;
-    padding: var(--medium);
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	max-width: 1500px;
+	padding: var(--medium);
 }
 
 .portrait {
-    object-fit: cover;
-    object-position: top;
-    width: 50%;
-    padding-right: var(--medium);
+	object-fit: cover;
+	object-position: top;
+	width: 50%;
+	padding-right: var(--medium);
 }
 
 .about-bio {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding-left: var(--medium);
-    margin-top: var(--large);
-    gap: var(--medium);
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	padding-left: var(--medium);
+	margin-top: var(--large);
+	gap: var(--medium);
 }
 
 .button-block {
-    display: flex;
-    gap: var(--medium);
-    max-width: 100%;
-    margin: var(--medium) 0;
+	display: flex;
+	gap: var(--medium);
+	max-width: 100%;
+	margin: var(--medium) 0;
 }
 
 /* large screens */
 @media screen and (max-width: 1500px) {
+	.about-bio h2:first-of-type {
+		margin-bottom: 0px;
+	}
+}
 
-    .about-bio h2:first-of-type {
-        margin-bottom: 0px;
-    }
+/* medium screens */
+@media screen and (max-width: 1200px) {
+	.about {
+		flex-direction: column;
+		align-items: center;
+		padding: var(--medium);
+	}
 
+	.portrait {
+		height: 45vh;
+		width: 100%;
+		object-position: 0vh -20vh;
+		padding-right: 0px;
+	}
+
+	.about-bio {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding-left: 0px;
+		margin-top: var(--large);
+	}
+
+	.button-block {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
 }
 
 /* small screens */
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+	.portrait {
+		object-position: 0vh -15vh;
+	}
+}
 
 /* tablets */
 @media screen and (max-width: 768px) {
-
-    .about {
-        flex-direction: column;
-        align-items: center;
-        padding: var(--medium);
-    }
-
-    .portrait {
-        height: 45vh;
-        width: 100%;
-        padding-right: 0px;
-    }
-    
-    .about-bio {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding-left: 0px;
-        margin-top: var(--large);
-    }
-    
-    .button-block {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
+	.portrait {
+		object-position: top;
+	}
 }
 
 /* phones */
 @media screen and (max-width: 480px) {
+	.about {
+		padding: var(--small);
+	}
 
-    .about {
-        padding: var(--small);
-    }
-
-    .portrait {
-        height: 35vh;
-        width: 100%;
-        padding-right: 0px;
-    }
-
+	.portrait {
+		height: 35vh;
+	}
 }
