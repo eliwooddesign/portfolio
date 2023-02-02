@@ -18,15 +18,54 @@
 	flex-direction: column;
 	width: 50%;
 	padding-left: var(--medium);
-	margin-top: var(--large);
+	margin-top: var(--small);
 	gap: var(--medium);
 }
 
-.button-block {
+.skills {
 	display: flex;
-	gap: var(--medium);
-	max-width: 100%;
-	margin: var(--medium) 0;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--large);
+	width: 100%;
+	padding: var(--large);
+}
+
+.skills-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--large);
+}
+
+.skills-section h2 {
+	text-align: center;
+	border-bottom: 1px solid var(--light);
+	width: 240px;
+	padding: var(--small);
+}
+
+.skills-sub-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--large);
+	width: 100%;
+}
+
+.skills-icon-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--small);
+	text-align: center;
+	width: 70px;
+}
+
+.skills-icon {
+	width: 45px;
 }
 
 /* large screens */

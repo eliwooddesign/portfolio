@@ -45,8 +45,8 @@ button {
 	border-radius: 3px;
 	background: none;
 	color: var(--light);
-	min-width: 150px;
-	padding: var(--small) var(--medium);
+	min-width: 90px;
+	padding: var(--tiny) var(--small);
 }
 
 button:hover {
