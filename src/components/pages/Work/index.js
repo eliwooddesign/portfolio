@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Background from './types/Background';
 import Hero from './types/Hero';
@@ -16,9 +15,9 @@ function Work() {
 
 				<h3>I'm always open to new opportunities. Check out my portfolio {window.innerWidth >= 768 && <br />} and let me know if you're interested in working together.</h3>
 
-				<Link to='../contact' className='contact-button'>
+				{/* <Link to='../contact' className='contact-button'>
 					<button>Contact</button>
-				</Link>
+				</Link> */}
 			</div>
 
 			{/* work */}
