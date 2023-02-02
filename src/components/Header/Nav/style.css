@@ -1,6 +1,7 @@
 .nav {
 	display: flex;
 	justify-content: flex-end;
+	animation: fade-in 1.5s ease-in-out both;
 }
 
 .nav-item {

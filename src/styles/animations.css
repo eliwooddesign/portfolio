@@ -1,105 +1,114 @@
 * {
-    transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
 
 /* fade */
 @keyframes fade-in {
-    from {
-        display: flex;
-        opacity: 0;
-    }
+	from {
+		display: flex;
+		opacity: 0;
+	}
 
-    to {
-        opacity: 1;
-    }
+	to {
+		opacity: 1;
+	}
 }
 
 @keyframes fade-out {
-    from {
-        opacity: 1;
-    }
+	from {
+		opacity: 1;
+	}
 
-    to {
-        opacity: 0;
-        display: none;
-    }
-
+	to {
+		opacity: 0;
+		display: none;
+	}
 }
 
 /* slide */
 @keyframes slide-up {
-    from {
-        display: flex;
-        transform: translateY(50%);
-        opacity: 0;
-    }
+	from {
+		display: flex;
+		transform: translateY(50%);
+		opacity: 0;
+	}
 
-    to {
-        transform: translateY(0%);
-        opacity: 1;
-    }
+	to {
+		transform: translateY(0%);
+		opacity: 1;
+	}
 }
 
 @keyframes slide-down {
-    from {
-        transform: translateY(0%);
-        opacity: 1;
-    }
+	from {
+		transform: translateY(0%);
+		opacity: 1;
+	}
 
-    to {
-        transform: translateY(50%);
-        opacity: 0;
-    }
-
+	to {
+		transform: translateY(50%);
+		opacity: 0;
+	}
 }
 
 /* scale */
 @keyframes scale-in {
-    from {
-        display: block;
-        transform: scale(0.8);
-        opacity: 0;
-    }
+	from {
+		display: block;
+		transform: scale(0.8);
+		opacity: 0;
+	}
 
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 
 @keyframes scale-out {
-    from {
-        transform: scale(1);
-        opacity: 1;
-    }
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
 
-    to {
-        transform: scale(0.8);
-        opacity: 0;
-        display: none;
-    }
+	to {
+		transform: scale(0.8);
+		opacity: 0;
+		display: none;
+	}
 }
 
 @keyframes shrink {
-    from {
-        width: scale(1);
-        opacity: 1;
-    }
+	from {
+		width: scale(1);
+		opacity: 1;
+	}
 
-    to {
-        transform: scale(0.5);
-        opacity: 0;
-    }
+	to {
+		transform: scale(0.5);
+		opacity: 0;
+	}
 }
 
 @keyframes grow {
-    from {
-        width: scale(0.5);
-        opacity: 1;
-    }
+	from {
+		width: scale(0.5);
+		opacity: 1;
+	}
 
-    to {
-        transform: scale(1);
-        opacity: 0;
-    }
+	to {
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+
+/* hero */
+@keyframes hero-buffer {
+	from {
+		margin-bottom: 30vh;
+	}
+
+	to {
+		margin-bottom: 0vh;
+	}
 }
