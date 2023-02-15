@@ -34,7 +34,7 @@
 	height: 100vh;
 	width: 100%;
 	padding: var(--huge);
-	animation: slide-up 1.5s ease-in-out 1s both;
+	/* animation: slide-up 1.5s ease-in-out 1s both; */
 }
 
 .preview-thumbnail-hero {
@@ -93,6 +93,7 @@
 	position: absolute;
 	object-fit: contain;
 	width: 100%;
+	animation: slide-up-bold 1.8s ease 1s both;
 }
 
 .thumbnail-animation-desktop {
@@ -112,6 +113,7 @@
 .project-thumbnail-phone {
 	object-fit: contain;
 	width: 100%;
+	animation: slide-up-bold 2s ease 1s both;
 }
 
 .preview-details-left,
@@ -171,8 +173,17 @@
 	margin: 60vh 0 85vh 0;
 }
 
+.scroll-indicator {
+	position: absolute;
+	transform: translateY(200px);
+}
+
 /* large screens */
 @media screen and (max-width: 1200px) {
+	.intro {
+		height: 50vh;
+	}
+
 	.project-preview-left,
 	.project-preview-right,
 	.project-preview-hero {
@@ -298,5 +309,12 @@
 	.preview-details-left,
 	.preview-details-right {
 		padding: 0px !important;
+	}
+}
+
+/* phones */
+@media screen and (max-width: 320px) {
+	.intro {
+		height: 45vh;
 	}
 }
