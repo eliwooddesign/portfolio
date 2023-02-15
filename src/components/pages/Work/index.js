@@ -15,9 +15,13 @@ function Work() {
 
 				<h3>I'm always open to new opportunities. Check out my portfolio {window.innerWidth >= 768 && <br />} and let me know if you're interested in working together.</h3>
 
-				{/* <Link to='../contact' className='contact-button'>
-					<button>Contact</button>
-				</Link> */}
+				{/* <div className='scroll-indicator'>
+					<div className='scroll-indicator-background' />
+					<p>Scroll</p>
+					<svg className='chevron' viewBox='0 0 24 24' width='12' height='12'>
+						<polyline points='2 7, 12 17, 22 7' />
+					</svg>
+				</div> */}
 			</div>
 
 			{/* work */}
