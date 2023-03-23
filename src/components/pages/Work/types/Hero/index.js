@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 
-function Hero({ title, description, link, repo, react }) {
+function Hero({ item }) {
 	// hero position
 	const [heroPosition, setHeroPosition] = useState();
 
@@ -20,7 +20,7 @@ function Hero({ title, description, link, repo, react }) {
 	const [pageOffset, setPageOffset] = useState(0);
 
 	// create id based on title
-	const id = title.replace(/ /g, '-').toLowerCase();
+	const id = item.title.replace(/ /g, '-').toLowerCase();
 
 	// create id for resizeable container
 	const resizer = id + '-resizer';
@@ -102,35 +102,35 @@ function Hero({ title, description, link, repo, react }) {
 			<div className='project-preview-hero'>
 				<div id={resizer} className='resizer'>
 					<div className='preview-thumbnail-hero' style={{ transform: `matrix(${heroSize}, 0, 0, ${heroSize}, ${imagePosition}, 0)` }}>
-						<a href={link} target='_blank' rel='noreferrer' className='project-thumbnail-desktop-link' style={{ transform: `translateY(-${Math.floor(heroMod / (5 * parallaxSpeed))}px)` }}>
-							<img src={'./assets/work/' + id + '/desktop-mockup.png'} alt={title + ' desktop preview'} className='project-thumbnail-desktop'></img>
+						<a href={item.link} target='_blank' rel='noreferrer' className='project-thumbnail-desktop-link' style={{ transform: `translateY(-${Math.floor(heroMod / (5 * parallaxSpeed))}px)` }}>
+							<img src={'./assets/work/' + id + '/desktop-mockup.png'} alt={item.title + ' desktop preview'} className='project-thumbnail-desktop'></img>
 						</a>
 
-						<a href={link} target='_blank' rel='noreferrer' className='project-thumbnail-phone-link' style={{ transform: `translateY(${Math.floor(heroMod / (8 * parallaxSpeed))}px)`, width: `20%` }}>
-							<img src={'./assets/work/' + id + '/mobile-mockup.png'} alt={title + ' mobile preview'} className='project-thumbnail-phone'></img>
+						<a href={item.link} target='_blank' rel='noreferrer' className='project-thumbnail-phone-link' style={{ transform: `translateY(${Math.floor(heroMod / (8 * parallaxSpeed))}px)`, width: `20%` }}>
+							<img src={'./assets/work/' + id + '/mobile-mockup.png'} alt={item.title + ' mobile preview'} className='project-thumbnail-phone'></img>
 						</a>
 					</div>
 				</div>
 
 				<div className={heroPosition <= -spacer + pageOffset * 1.5 || window.innerWidth <= 1024 ? 'preview-details-right show-description' : 'preview-details-right hide-description'}>
-					<h2 className='preview-title'>{title}</h2>
+					<h2 className='preview-title'>{item.title}</h2>
 
-					<p className={heroPosition <= -spacer + pageOffset * 1.25 || window.innerWidth <= 1024 ? 'project-description-right show-description' : 'project-description-right hide-description'}>{description}</p>
+					<p className={heroPosition <= -spacer + pageOffset * 1.25 || window.innerWidth <= 1024 ? 'project-description-right show-description' : 'project-description-right hide-description'}>{item.description}</p>
 
 					<div className={heroPosition <= -spacer + pageOffset || window.innerWidth <= 1024 ? 'preview-links show-description' : 'preview-links hide-description'}>
-						{link && (
-							<a href={link} target='_blank' rel='noreferrer' className='icon-link-hero'>
+						{item.link && (
+							<a href={item.link} target='_blank' rel='noreferrer' className='icon-link-hero'>
 								<img src='./assets/icons/web-icon.png' alt='deployed application link' className='icon'></img>
 								<p className='icon-description-right'>Deployed Application</p>
 							</a>
 						)}
-						{repo && (
-							<a href={repo} target='_blank' rel='noreferrer' className='icon-link-hero'>
+						{item.repo && (
+							<a href={item.repo} target='_blank' rel='noreferrer' className='icon-link-hero'>
 								<img src='./assets/icons/GitHub-Mark-Light-120px-plus.png' alt='GitHub repository link' className='icon'></img>
 								<p className='icon-description-right'>GitHub Repository</p>
 							</a>
 						)}
-						{react && (
+						{item.react && (
 							<div className='icon-link-hero'>
 								<img src='./assets/icons/React-icon.png' alt='GitHub repository link' className='icon'></img>
 								<p className='icon-description-right'>Made with React</p>
