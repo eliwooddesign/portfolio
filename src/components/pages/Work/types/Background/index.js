@@ -6,7 +6,8 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 	const id = title.replace(/ /g, '-').toLowerCase();
 
 	// set default background position
-	const [backgroundPosition, setBackgroundPosition] = useState(-window.innerHeight);
+	const [backgroundHeight, setBackgroundHeight] = useState(-window.innerHeight);
+	const [backgroundPosition, setBackgroundPosition] = useState(0);
 
 	// set background based on props and screen size
 	let styles;
@@ -15,7 +16,8 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 		window.innerWidth > 1024
 			? (styles = {
 					backgroundImage: `url('./assets/work/${id}/background.png')`,
-					top: `${backgroundPosition}px`
+					top: backgroundPosition,
+					'max-height': `${backgroundHeight}px`
 			  })
 			: (styles = {
 					backgroundImage: `linear-gradient(var(--background), var(--background75)), url('./assets/work/${id}/background.png')`,
@@ -25,7 +27,8 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 		window.innerWidth > 1024
 			? (styles = {
 					backgroundImage: `url('./assets/work/${id}/background.png')`,
-					top: `${backgroundPosition}px`
+					top: backgroundPosition,
+					'max-height': `${backgroundHeight}px`
 			  })
 			: (styles = {
 					backgroundImage: `linear-gradient(var(--background75), var(--background)), url('./assets/work/${id}/background.png')`,
@@ -35,7 +38,8 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 		window.innerWidth > 1024
 			? (styles = {
 					backgroundImage: `url('./assets/work/${id}/background.png')`,
-					top: `${backgroundPosition}px`
+					top: backgroundPosition,
+					'max-height': `${backgroundHeight}px`
 			  })
 			: (styles = {
 					backgroundImage: `linear-gradient(var(--background75), var(--background75)), url('./assets/work/${id}/background.png')`,
@@ -48,10 +52,18 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 		// get elements from the page
 		const position = document.getElementById(id).getBoundingClientRect().top;
 
-		if (position <= window.innerHeight) {
-			setBackgroundPosition(0 - position);
-		} else if (position > window.innerHeight) {
-			setBackgroundPosition(-window.innerHeight);
+		if (position < -window.innerHeight) {
+			setBackgroundPosition('auto');
+			setBackgroundHeight(0);
+		} else if (position < 0) {
+			setBackgroundPosition('auto');
+			setBackgroundHeight(window.innerHeight + position);
+		} else if (position <= window.innerHeight) {
+			setBackgroundPosition(0);
+			setBackgroundHeight(window.innerHeight - position);
+		} else {
+			setBackgroundPosition(0);
+			setBackgroundHeight(0);
 		}
 	};
 
