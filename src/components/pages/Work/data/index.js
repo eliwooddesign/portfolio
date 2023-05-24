@@ -10,7 +10,16 @@ const workData = {
 	mavenGroup: {
 		title: 'Maven Group',
 		description: 'Full stack promotional website serving as the first touchpoint for potential clients and a modern showcase for the services and success of the team.',
-		link: 'https://www.mavengroupnw.com'
+		link: 'https://www.mavengroupnw.com',
+		react: false
+	},
+
+	porefection: {
+		title: 'Porefection',
+		description: 'This web application helps users manage their skincare routine by allowing them to create a detailed list of their skincare products. When the user adds a product to their list, detailed product information is fetched from Sephora API and the list is automatically sorted in the correct order for using the products.',
+		link: 'https://mreliwood.github.io/porefection',
+		repo: 'https://github.com/MrEliWood/porefection',
+		react: true
 	}
 };
 

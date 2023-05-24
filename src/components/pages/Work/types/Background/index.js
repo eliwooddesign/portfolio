@@ -7,7 +7,7 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 
 	// set default background position
 	const [backgroundHeight, setBackgroundHeight] = useState(-window.innerHeight);
-	const [backgroundPosition, setBackgroundPosition] = useState(0);
+	const [backgroundPosition, setBackgroundPosition] = useState('top');
 
 	// set background based on props and screen size
 	let styles;
@@ -16,7 +16,7 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 		window.innerWidth > 1024
 			? (styles = {
 					backgroundImage: `url('./assets/work/${id}/background.png')`,
-					top: backgroundPosition,
+					[backgroundPosition]: 0,
 					'max-height': `${backgroundHeight}px`
 			  })
 			: (styles = {
@@ -27,7 +27,7 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 		window.innerWidth > 1024
 			? (styles = {
 					backgroundImage: `url('./assets/work/${id}/background.png')`,
-					top: backgroundPosition,
+					[backgroundPosition]: 0,
 					'max-height': `${backgroundHeight}px`
 			  })
 			: (styles = {
@@ -38,7 +38,7 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 		window.innerWidth > 1024
 			? (styles = {
 					backgroundImage: `url('./assets/work/${id}/background.png')`,
-					top: backgroundPosition,
+					[backgroundPosition]: 0,
 					'max-height': `${backgroundHeight}px`
 			  })
 			: (styles = {
@@ -53,16 +53,16 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 		const position = document.getElementById(id).getBoundingClientRect().top;
 
 		if (position < -window.innerHeight) {
-			setBackgroundPosition('auto');
+			setBackgroundPosition('bottom');
 			setBackgroundHeight(0);
 		} else if (position < 0) {
-			setBackgroundPosition('auto');
+			setBackgroundPosition('bottom');
 			setBackgroundHeight(window.innerHeight + position);
 		} else if (position <= window.innerHeight) {
-			setBackgroundPosition(0);
+			setBackgroundPosition('top');
 			setBackgroundHeight(window.innerHeight - position);
 		} else {
-			setBackgroundPosition(0);
+			setBackgroundPosition('top');
 			setBackgroundHeight(0);
 		}
 	};

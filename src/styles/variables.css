@@ -44,4 +44,37 @@
 	--medium: 30px;
 	--large: 60px;
 	--huge: 120px;
+
+	/* COLORS */
+	--primary: #78cce2; /* RGB:(120,204,226) */
+	--secondary: #4e7988; /* RGB:(78,121,136) */
+	--tertiary: #005066; /* RGB:(0,80,102) */
+	--shadow: #002439; /* RGB:(0,36,57) */
+	--highlight: #e4eff0; /* RGB:(228,239,240) */
+	/* opacity on background color variables is 30% */
+	--background-primary-30: #78cce24d;
+	--background-secondary-30: #4e79884d;
+	--background-tertiary-30: #0050664d;
+	--background-shadow-30: #0024394d;
+	--background-highlight-30: #e4eff04d;
+	/* opacity on background is 60% */
+	--background-primary-60: #78cce299;
+	--background-secondary-60: #4e798899;
+	--background-tertiary-60: #00506699;
+	--background-shadow-60: #00243999;
+	--background-highlight-60: #e4eff099;
+
+	/* VALUES */
+	--1: 0.25rem; /* 4 px */
+	--2: 0.5rem; /* 8 px */
+	--3: 0.75rem; /* 12 px */
+	--4: 1rem; /* 16 px */
+	--5: 1.25rem; /* 20 px */
+	--6: 1.5rem; /* 24 px */
+	--7: 1.75rem; /* 28 px */
+	--8: 2rem; /* 32 px */
+	--9: 2.25rem; /* 36 px */
+	--10: 2.5rem; /* 40 px */
+	--11: 2.75rem; /* 44 px */
+	--12: 3rem; /* 48 px */
 }
