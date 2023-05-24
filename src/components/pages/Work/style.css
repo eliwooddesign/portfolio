@@ -45,28 +45,28 @@
 	width: 90%;
 	opacity: 1;
 	margin: var(--medium) auto auto 0px;
-	transition: none !important;
+	transition: all ease-in-out 50ms !important;
 }
 
 .preview-thumbnail-left .project-thumbnail-desktop-link {
 	width: 90%;
 	opacity: 1;
 	margin: var(--medium) auto auto 0px;
-	transition: none !important;
+	transition: all ease-in-out 50ms !important;
 }
 
 .preview-thumbnail-right .project-thumbnail-desktop-link {
 	width: 90%;
 	opacity: 1;
 	margin: var(--medium) 0px auto auto;
-	transition: none !important;
+	transition: all ease-in-out 50ms !important;
 }
 
 .preview-thumbnail-center .project-thumbnail-desktop-link {
 	width: 100%;
 	opacity: 1;
 	margin: var(--medium) auto auto auto;
-	transition: none !important;
+	transition: all ease-in-out 50ms !important;
 }
 
 .project-thumbnail-desktop {
