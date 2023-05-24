@@ -16,7 +16,6 @@
 .background-scroll-image {
 	position: fixed;
 	left: 0;
-	bottom: 0;
 	display: flex;
 	background-color: var(--background);
 	background-attachment: fixed;

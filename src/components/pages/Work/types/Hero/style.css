@@ -1,6 +1,26 @@
+.project-preview-hero {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	position: sticky;
+	top: 15vh;
+	height: 80vh;
+	width: 100%;
+	padding: var(--huge);
+}
+
 .resizer {
 	width: 50%;
 	z-index: 2;
+}
+
+.preview-thumbnail-hero {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	width: 100%;
+	z-index: 1;
+	transition: none !important;
 }
 
 /* small screens */
