@@ -1,0 +1,16 @@
+:root {
+	/* colors */
+	--base-color-light: 0, 0%;
+	--base-color-dark: 0, 0%;
+	--base-color-accent: 240, 100%;
+
+	--red: hsl(0, 100%, 43%);
+	--green: hsl(120, 100%, 35%);
+
+	/* sizes */
+	--base-size: 24px;
+
+	/* fonts */
+	--font-weight: 400;
+	--font-weight-bold: 600;
+}

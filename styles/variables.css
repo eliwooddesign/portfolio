@@ -1,0 +1,69 @@
+@layer colors, sizes, borders, shadows, icons;
+
+@layer colors {
+	:root {
+		/* colors */
+		--light: hsl(var(--base-color-light), 100%);
+		--light-90: hsla(var(--base-color-light), 100%, 0.9);
+		--light-75: hsla(var(--base-color-light), 100%, 0.75);
+		--light-50: hsla(var(--base-color-light), 100%, 0.5);
+		--light-25: hsla(var(--base-color-light), 100%, 0.25);
+		--light-10: hsla(var(--base-color-light), 100%, 0.1);
+
+		--light-gray: hsl(var(--base-color-dark), 85%);
+		--gray: hsl(var(--base-color-dark), 50%);
+		--dark-gray: hsl(var(--base-color-dark), 15%);
+
+		--dark: hsl(var(--base-color-dark), 0%);
+		--dark-90: hsla(var(--base-color-dark), 0%, 0.9);
+		--dark-75: hsla(var(--base-color-dark), 0%, 0.75);
+		--dark-50: hsla(var(--base-color-dark), 0%, 0.5);
+		--dark-25: hsla(var(--base-color-dark), 0%, 0.25);
+		--dark-10: hsla(var(--base-color-dark), 0%, 0.1);
+
+		--accent: hsl(var(--base-color-accent), 0%);
+		--accent-90: hsla(var(--base-color-accent), 0%, 0.9);
+		--accent-75: hsla(var(--base-color-accent), 0%, 0.75);
+		--accent-50: hsla(var(--base-color-accent), 0%, 0.5);
+		--accent-25: hsla(var(--base-color-accent), 0%, 0.25);
+		--accent-10: hsla(var(--base-color-accent), 0%, 0.1);
+	}
+}
+
+@layer sizes {
+	:root {
+		/* sizes */
+		--xxxs: calc(var(--base-size) / 6);
+		--xxs: calc(var(--base-size) / 4);
+		--xs: calc(var(--base-size) / 3);
+		--small: calc(var(--base-size) / 2);
+		--medium: var(--base-size);
+		--large: calc(var(--base-size) * 2);
+		--xl: calc(var(--base-size) * 3);
+		--xxl: calc(var(--base-size) * 4);
+		--xxxl: calc(var(--base-size) * 6);
+	}
+}
+
+@layer borders {
+	:root {
+		--border-width: 1px;
+		--border-style: solid;
+		--border-color: var(--dark);
+		--border-radius: var(--xs);
+
+		--border: var(--border-width) var(--border-style) var(--border-color);
+	}
+}
+
+@layer shadows {
+	:root {
+		--shadow: var(--xxxs) var(--xxs) var(--medium) var(--dark-10);
+	}
+}
+
+@layer icons {
+	:root {
+		--icon-size: 20px;
+	}
+}
