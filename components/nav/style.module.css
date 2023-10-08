@@ -1,5 +1,27 @@
 .nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: flex-end;
 	gap: var(--medium);
+
+	width: 100vw;
+	height: 100vh;
+
+	padding: var(--large);
+
+	backdrop-filter: var(--blur);
+	background: var(--accent-75);
+}
+
+.nav * {
+	font-size: 1.25em;
+	font-weight: var(--font-weight-bold);
+}
+
+.active {
+	opacity: 0.5;
 }

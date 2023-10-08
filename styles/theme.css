@@ -11,6 +11,9 @@
 	--base-size: 24px;
 
 	/* fonts */
-	--font-weight: 400;
-	--font-weight-bold: 600;
+	--font-weight: 300;
+	--font-weight-bold: 500;
+
+	/* effects */
+	--blur: blur(5px);
 }
