@@ -8,18 +8,28 @@
 	align-items: flex-end;
 	gap: var(--medium);
 
+	background: var(--accent-75);
+	backdrop-filter: var(--blur);
+
+	text-transform: capitalize;
+
 	width: 100vw;
 	height: 100vh;
 
 	padding: var(--large);
-
-	backdrop-filter: var(--blur);
-	background: var(--accent-75);
 }
 
 .nav * {
+	cursor: default;
+
 	font-size: 1.25em;
 	font-weight: var(--font-weight-bold);
+}
+
+.nav a:hover {
+	cursor: pointer;
+
+	opacity: 0.75;
 }
 
 .active {
