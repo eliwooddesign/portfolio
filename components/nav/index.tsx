@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname, redirect } from 'next/navigation';
 
+import { Icons } from '@/components';
 import { getKey } from '@/utils';
 
 import styles from './style.module.css';
@@ -10,6 +12,7 @@ import styles from './style.module.css';
 const routes = ['about', 'work', 'resume'];
 
 export default function Nav() {
+	const [isActive, setIsActive] = useState(false);
 	const pathname: string = usePathname();
 
 	if (pathname === '/') {
@@ -18,7 +21,7 @@ export default function Nav() {
 
 	return (
 		<nav className={styles.nav}>
-			<h4>//</h4>
+			<Icons.Nav isActive={isActive} setIsActive={setIsActive} />
 
 			{routes.map((route) => {
 				const slug = '/' + route;
