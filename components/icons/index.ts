@@ -1,7 +1,9 @@
 import Nav from './nav';
+import Svg from './svg';
 
 const Icons = {
-	Nav
+	Nav,
+	Svg
 };
 
 export default Icons;

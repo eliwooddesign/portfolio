@@ -1,38 +1,98 @@
-.nav {
+.component {
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
 
+	display: flex;
+
+	width: 100vw;
+	height: 1000vh;
+
+	overflow: hidden;
+	z-index: 1;
+}
+
+.nav {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
 	gap: var(--medium);
 
-	background: var(--accent-75);
+	width: 100%;
+	height: 1000%;
+
+	padding: calc(var(--medium) + var(--small));
+
+	z-index: 1;
+}
+
+.nav::before {
+	content: '';
+
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	background: var(--accent-50);
 	backdrop-filter: var(--blur);
+
+	width: 0vw;
+	height: 100vh;
+
+	transition: all 750ms ease-in-out;
+
+	z-index: -1;
+}
+
+.visible {
+	transform: translateX(0%);
+}
+
+.visible::before {
+	width: 100vw;
+}
+
+.nav_icon {
+	cursor: pointer;
+
+	display: flex;
+
+	padding: var(--small);
+}
+
+.nav_links {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: var(--medium);
+
+	transform: translateX(calc(100% + var(--large)));
 
 	text-transform: capitalize;
 
-	width: 100vw;
-	height: 100vh;
+	padding: var(--small);
 
-	padding: var(--large);
+	transition: all 500ms ease-in-out;
 }
 
-.nav * {
-	cursor: default;
+.visible .nav_links {
+	transform: translateX(0%);
+}
 
+.nav_link {
 	font-size: 1.25em;
 	font-weight: var(--font-weight-bold);
 }
 
-.nav a:hover {
+.nav_link:hover {
 	cursor: pointer;
 
 	opacity: 0.75;
 }
 
 .active {
+	cursor: default;
+
 	opacity: 0.5;
 }
 

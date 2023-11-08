@@ -12,7 +12,7 @@ import styles from './style.module.css';
 const routes = ['about', 'work', 'resume'];
 
 export default function Nav() {
-	const [isActive, setIsActive] = useState(false);
+	const [isVisible, setIsVisible] = useState(false);
 	const pathname: string = usePathname();
 
 	if (pathname === '/') {
@@ -20,25 +20,32 @@ export default function Nav() {
 	}
 
 	return (
-		<nav className={styles.nav}>
-			<Icons.Nav isActive={isActive} setIsActive={setIsActive} />
+		<nav className={styles.component}>
+			<div className={isVisible ? `${styles.nav} ${styles.visible}` : styles.nav}>
+				<div id='nav_icon' className={styles.nav_icon} onClick={() => setIsVisible(!isVisible)}>
+					<Icons.Nav isVisible={isVisible} setIsVisible={setIsVisible} />
+				</div>
 
-			{routes.map((route) => {
-				const slug = '/' + route;
-				const isActive = slug === pathname;
+				<div className={styles.nav_links}>
+					{routes.map((route) => {
+						const slug = '/' + route;
+						const isActive = slug === pathname;
 
-				return isActive ? (
-					<h4 key={getKey()} className={styles.active}>
-						{route}
-					</h4>
-				) : (
-					<Link key={getKey()} href={slug}>
-						{route}
-					</Link>
-				);
-			})}
+						const linkClass = styles.nav_link;
+						const activeLinkClass = `${linkClass} ${styles.active}`;
 
-			<h4>Contact</h4>
+						const linkClassName = isActive ? activeLinkClass : linkClass;
+
+						return (
+							<Link key={getKey()} href={slug} className={linkClassName}>
+								{route}
+							</Link>
+						);
+					})}
+
+					<h4 className={styles.nav_link}>Contact</h4>
+				</div>
+			</div>
 		</nav>
 	);
 }
