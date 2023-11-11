@@ -11,13 +11,17 @@ const viewBox = {
 	y2: 100 + padding * 2
 };
 
-interface Props {}
+interface Props {
+	id?: string;
+	className?: string;
+	onClick?: () => any;
+}
 
 export default function Svg(props: PropsWithChildren<Props>) {
-	const { children } = props;
+	const { id = '', className = '', onClick = () => {}, children } = props;
 
 	return (
-		<svg className={styles.icon} viewBox={`${viewBox.x1} ${viewBox.y1} ${viewBox.x2} ${viewBox.y2}`} xmlns='http://www.w3.org/2000/svg'>
+		<svg id={id} className={`${styles.icon} ${className}`} onClick={onClick} viewBox={`${viewBox.x1} ${viewBox.y1} ${viewBox.x2} ${viewBox.y2}`} xmlns='http://www.w3.org/2000/svg'>
 			{children}
 		</svg>
 	);

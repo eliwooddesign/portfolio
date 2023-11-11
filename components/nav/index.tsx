@@ -21,9 +21,7 @@ export default function Nav() {
 
 	return (
 		<nav className={styles.component}>
-			<div id='nav_icon' className={styles.nav_icon} onClick={() => setIsVisible(!isVisible)}>
-				<Icons.Nav isVisible={isVisible} setIsVisible={setIsVisible} />
-			</div>
+			<Icons.Nav id={styles.nav_icon} className={styles.nav_icon} onClick={() => setIsVisible(!isVisible)} isVisible={isVisible} />
 
 			<div className={isVisible ? `${styles.nav} ${styles.visible}` : styles.nav}>
 				<div className={styles.nav_links}>
@@ -31,13 +29,8 @@ export default function Nav() {
 						const slug = '/' + route;
 						const isActive = slug === pathname;
 
-						const linkClass = styles.nav_link;
-						const activeLinkClass = `${linkClass} ${styles.active}`;
-
-						const linkClassName = isActive ? activeLinkClass : linkClass;
-
 						return (
-							<Link key={getKey()} href={slug} className={linkClassName}>
+							<Link key={getKey()} href={slug} className={`${styles.nav_link} ${isActive ? styles.active : ''}`}>
 								{route}
 							</Link>
 						);

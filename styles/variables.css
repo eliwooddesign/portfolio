@@ -1,8 +1,7 @@
-@layer colors, sizes, borders, shadows, icons, animations;
+@layer colors, sizes, fonts, borders, shadows, icons, animations;
 
 @layer colors {
 	:root {
-		/* colors */
 		--light: hsl(var(--base-color-light), 100%);
 		--light-90: hsla(var(--base-color-light), 100%, 0.9);
 		--light-75: hsla(var(--base-color-light), 100%, 0.75);
@@ -32,16 +31,25 @@
 
 @layer sizes {
 	:root {
-		/* sizes */
 		--xxxs: calc(var(--base-size) / 6);
 		--xxs: calc(var(--base-size) / 4);
 		--xs: calc(var(--base-size) / 3);
-		--small: calc(var(--base-size) / 2);
-		--medium: var(--base-size);
-		--large: calc(var(--base-size) * 2);
+		--s: calc(var(--base-size) / 2);
+		--m: var(--base-size);
+		--l: calc(var(--base-size) * 2);
 		--xl: calc(var(--base-size) * 3);
 		--xxl: calc(var(--base-size) * 4);
 		--xxxl: calc(var(--base-size) * 6);
+	}
+}
+
+@layer fonts {
+	:root {
+		--font-size-xs: calc(var(--font-size) * 0.8);
+		--font-size-s: var(--font-size);
+		--font-size-m: calc(var(--font-size) * 1.5);
+		--font-size-l: calc(var(--font-size) * 2);
+		--font-size-xl: calc(var(--font-size) * 4);
 	}
 }
 
@@ -58,7 +66,7 @@
 
 @layer shadows {
 	:root {
-		--shadow: var(--xxxs) var(--xxs) var(--medium) var(--dark-10);
+		--shadow: var(--xxxs) var(--xxs) var(--m) var(--dark-10);
 	}
 }
 
@@ -71,8 +79,8 @@
 @layer animations {
 	:root {
 		--transition-property: all;
-		--transition-duration: var(--transition-duration);
+		--transition-duration: var(--animation-speed);
 		--transition-timing_function: ease-in-out;
-		--transition: var(--transition-property) var(--transition-duration) var(--transition-timing_function);
+		--transition: var(--transition-property) var(--animation-speed) var(--transition-timing_function);
 	}
 }

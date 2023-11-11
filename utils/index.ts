@@ -1,4 +1,4 @@
+import addCSSVariable from './addCSSVariable';
 import getKey from './getKey';
-import viewBox from './svgViewBox';
 
-export { getKey, viewBox };
+export { addCSSVariable, getKey };

@@ -11,12 +11,16 @@
 	--base-size: 24px;
 
 	/* fonts */
-	--font-weight: 300;
-	--font-weight-bold: 500;
+	--font-family: Avenir, Arial, Helvetica, sans-serif;
+	--font-size: 16px;
+	--font-weight-light: 300;
+	--font-weight-regular: 500;
+	--font-weight-bold: 700;
+	--font-weight-bolder: 900;
 
 	/* effects */
 	--blur: blur(5px);
 
 	/* animations */
-	--transition-duration: 500ms;
+	--animation-speed: 500ms;
 }

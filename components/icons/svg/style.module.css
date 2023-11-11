@@ -1,8 +1,8 @@
 .icon {
 	stroke: var(--light);
-	stroke-width: calc(var(--font-weight-bold) / 50);
+	stroke-width: 10px;
 	stroke-linecap: 'round';
 
-	width: 18px;
-	height: 18px;
+	width: 14px;
+	height: 14px;
 }
