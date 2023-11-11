@@ -21,11 +21,11 @@ export default function Nav() {
 
 	return (
 		<nav className={styles.component}>
-			<div className={isVisible ? `${styles.nav} ${styles.visible}` : styles.nav}>
-				<div id='nav_icon' className={styles.nav_icon} onClick={() => setIsVisible(!isVisible)}>
-					<Icons.Nav isVisible={isVisible} setIsVisible={setIsVisible} />
-				</div>
+			<div id='nav_icon' className={styles.nav_icon} onClick={() => setIsVisible(!isVisible)}>
+				<Icons.Nav isVisible={isVisible} setIsVisible={setIsVisible} />
+			</div>
 
+			<div className={isVisible ? `${styles.nav} ${styles.visible}` : styles.nav}>
 				<div className={styles.nav_links}>
 					{routes.map((route) => {
 						const slug = '/' + route;

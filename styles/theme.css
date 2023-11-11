@@ -16,4 +16,7 @@
 
 	/* effects */
 	--blur: blur(5px);
+
+	/* animations */
+	--transition-duration: 500ms;
 }

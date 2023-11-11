@@ -33,7 +33,7 @@ export default function NavIcon(props: Props) {
 
 	const animation = {
 		duration: '300ms',
-		fill: 'remove',
+		fill: 'freeze',
 		restart: 'whenNotActive'
 	};
 
@@ -47,9 +47,9 @@ export default function NavIcon(props: Props) {
 				const { slash, close } = line;
 
 				return (
-					<line key={key} x1={isVisible ? close.x1 : slash.x1} y1={isVisible ? close.y1 : slash.y1} x2={isVisible ? close.x2 : slash.x2} y2={isVisible ? close.y2 : slash.y2}>
-						{/* <animate begin='nav_icon.click' attributeName='x1' from={isVisible ? close.x1 : slash.x1} to={isVisible ? slash.x1 : close.x1} dur={animation.duration} fill={animation.fill} restart={animation.restart} />
-						<animate begin='nav_icon.click' attributeName='x2' from={isVisible ? close.x2 : slash.x2} to={isVisible ? slash.x2 : close.x2} dur={animation.duration} fill={animation.fill} restart={animation.restart} /> */}
+					<line key={key} x1={slash.x1} y1={slash.y1} x2={slash.x2} y2={slash.y2}>
+						<animate begin='nav_icon.click' attributeName='x1' from={slash.x1} to={close.x1} dur={animation.duration} fill={animation.fill} restart={animation.restart} />
+						<animate begin='nav_icon.click' attributeName='x2' from={slash.x2} to={close.x2} dur={animation.duration} fill={animation.fill} restart={animation.restart} />
 					</line>
 				);
 			})}
