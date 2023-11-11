@@ -56,13 +56,11 @@
 /* tablets */
 @media screen and (max-width: 768px) {
 	.component {
-		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
 		gap: var(--l);
 
 		width: 100vw;
-		height: fit-content;
 
 		overflow: hidden;
 		z-index: 1;
@@ -71,13 +69,10 @@
 	.nav {
 		--height: calc(100vh - var(--header-height));
 
-		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
 		align-items: flex-end;
 		gap: var(--m);
-
-		text-transform: capitalize;
 
 		height: var(--height);
 		max-height: 0px;
@@ -95,17 +90,13 @@
 
 	.nav_icon {
 		cursor: pointer;
-
 		display: flex;
-
 		z-index: 1;
 	}
 
 	.nav_links {
-		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
-		gap: var(--m);
 
 		opacity: 0;
 	}
@@ -113,27 +104,6 @@
 	.visible .nav_links {
 		opacity: 1;
 		transition-delay: var(--transition-duration);
-	}
-
-	.nav_link {
-		font-size: 1.25em;
-		font-weight: bold;
-	}
-
-	.nav_link:hover {
-		cursor: pointer;
-
-		opacity: 0.75;
-	}
-
-	.active {
-		cursor: default;
-
-		opacity: 0.5;
-	}
-
-	.hidden {
-		display: none;
 	}
 }
 
