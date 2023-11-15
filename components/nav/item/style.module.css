@@ -1,0 +1,38 @@
+.nav_link {
+	font-weight: var(--font-weight-bold);
+	height: fit-content;
+}
+
+.nav_link:hover {
+	opacity: 0.75;
+}
+
+.active {
+	cursor: text;
+	opacity: 0.5;
+}
+
+.active:hover {
+	opacity: 0.5;
+}
+
+.active::before {
+	content: '//';
+	margin-right: var(--xxs);
+}
+
+/* large screens */
+@media screen and (max-width: var(--breakpoint-xl)) {
+}
+
+/* small screens */
+@media screen and (max-width: var(--breakpoint-l)) {
+}
+
+/* tablets */
+@media screen and (max-width: var(--breakpoint-m)) {
+}
+
+/* phones */
+@media screen and (max-width: var(--breakpoint-s)) {
+}

@@ -22,39 +22,16 @@
 	height: fit-content;
 }
 
-.nav_link {
-	font-weight: var(--font-weight-bold);
-	height: fit-content;
-}
-
-.nav_link:hover {
-	opacity: 0.75;
-}
-
-.active {
-	cursor: text;
-	opacity: 0.5;
-}
-
-.active:hover {
-	opacity: 0.5;
-}
-
-.active::before {
-	content: '//';
-	margin-right: var(--xxs);
-}
-
 /* large screens */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: var(--breakpoint-xl)) {
 }
 
 /* small screens */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: var(--breakpoint-l)) {
 }
 
 /* tablets */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: var(--breakpoint-m)) {
 	.component {
 		flex-direction: column;
 		align-items: flex-end;
@@ -108,5 +85,5 @@
 }
 
 /* phones */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: var(--breakpoint-s)) {
 }

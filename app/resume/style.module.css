@@ -2,4 +2,32 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: var(--xxl);
+}
+
+.main section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--m);
+
+	width: 100%;
+
+	padding: 0 var(--l);
+}
+
+.skills_content {
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
+}
+
+.experiences_content {
+	display: flex;
+}
+
+.experiences_item {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s);
 }

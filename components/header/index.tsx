@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import { Nav } from '@/components';
-import { addCSSVariable } from '@/utils';
+import { addCSSVariable, classList } from '@/utils';
 
 import styles from './style.module.css';
 
@@ -43,16 +43,16 @@ export default function Header() {
 	}, []);
 
 	return (
-		<header id={styles.header} className={`${styles.header} ${scrolled ? styles.scrolled_header : ''}`}>
+		<header id={styles.header} className={classList(styles.header, scrolled && styles.scrolled_header)}>
 			<Link href={'/'} className={styles.title}>
 				<h2>Eli Wood</h2>
 
-				<p id={styles.caption} className={`${styles.caption} ${scrolled ? styles.hidden : styles.visible}`}>
+				<p id={styles.caption} className={classList(styles.caption, scrolled && styles.hidden)}>
 					Designer & Developer
 				</p>
 			</Link>
 
-			<Nav />
+			<Nav.Primary />
 		</header>
 	);
 }
