@@ -1,9 +1,12 @@
 import Nav from './nav';
 import Svg from './svg';
 
+import badges from './badges';
+
 const Icons = {
 	Nav,
-	Svg
+	Svg,
+	badges
 };
 
 export default Icons;

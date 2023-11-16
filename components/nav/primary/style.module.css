@@ -22,6 +22,11 @@
 	height: fit-content;
 }
 
+.nav_links * {
+	font-size: var(--font-size-s) !important;
+	font-weight: var(--font-weight-regular) !important;
+}
+
 /* large screens */
 @media screen and (max-width: var(--breakpoint-xl)) {
 }

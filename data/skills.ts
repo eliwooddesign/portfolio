@@ -1,5 +1,3 @@
-import { Icons } from '@/components';
-
 type skill = {
 	name: string;
 	icon: any;

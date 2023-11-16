@@ -1,4 +1,5 @@
+import bio from './bio';
 import experiences from './experiences';
 import skills from './skills';
 
-export { experiences, skills };
+export { bio, experiences, skills };

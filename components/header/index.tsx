@@ -47,9 +47,9 @@ export default function Header() {
 			<Link href={'/'} className={styles.title}>
 				<h2>Eli Wood</h2>
 
-				<p id={styles.caption} className={classList(styles.caption, scrolled && styles.hidden)}>
+				<h5 id={styles.caption} className={classList(styles.caption, scrolled && styles.hidden)}>
 					Designer & Developer
-				</p>
+				</h5>
 			</Link>
 
 			<Nav.Primary />

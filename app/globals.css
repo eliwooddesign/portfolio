@@ -4,5 +4,30 @@ body {
 	background: var(--dark);
 	color: var(--light);
 
-	padding-top: calc(var(--header-height) + var(--l));
+	/* padding-top: calc(var(--header-height) + var(--l)); */
+	padding-top: var(--header-height);
+}
+
+/* extra large screens */
+@media screen and (max-width: var(--breakpoint-xxl)) {
+}
+
+/* large screens */
+@media screen and (max-width: var(--breakpoint-xl)) {
+}
+
+/* small screens */
+@media screen and (max-width: var(--breakpoint-l)) {
+}
+
+/* tablets */
+@media screen and (max-width: var(--breakpoint-m)) {
+}
+
+/* phones */
+@media screen and (max-width: var(--breakpoint-s)) {
+}
+
+/* small phones */
+@media screen and (max-width: var(--breakpoint-xs)) {
 }

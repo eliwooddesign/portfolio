@@ -6,77 +6,17 @@
 
 .about {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-
 	width: 100%;
-
-	padding: 0 var(--xxxl) 0;
-}
-
-.about section {
-	padding: var(--xxl) 0;
-}
-
-.about h3 {
-	font-weight: var(--font-weight-regular);
-	line-height: 1.5;
-}
-
-.intro_container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: var(--l);
-}
-
-.intro_headline {
-	line-height: 1.2;
-}
-
-.intro_tagline {
-	display: flex;
-	flex-direction: column;
-	gap: var(--xs);
-}
-
-.intro_tagline * {
-	font-weight: var(--font-weight-light);
-}
-
-.portrait_container {
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-
-	width: 100%;
+	max-width: 1500px;
+	padding: var(--m);
 }
 
 .portrait {
 	object-fit: cover;
 	object-position: top;
-	width: 100%;
+	width: 50%;
 	padding-right: var(--m);
-}
-
-.portrait_text {
-	height: fit-content;
-
-	padding-top: var(--xl);
-}
-
-.text_break {
-	line-height: 1.2;
-}
-
-.pillars {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: var(--xxxl);
-}
-
-.pillar_title {
-	font-weight: var(--font-weight-light);
 }
 
 .about_bio {
