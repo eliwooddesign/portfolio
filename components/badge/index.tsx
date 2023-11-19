@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function Badge(props: Props) {
-	const { name, label = true } = props;
+	const { name, label = name } = props;
 	const { badges } = Icons;
 
 	// file names are lowercase
@@ -27,7 +27,7 @@ export default function Badge(props: Props) {
 	return (
 		<div className={styles.badge_container}>
 			<Image src={source || ''} alt={altText || 'badge'} className={styles.badge} />
-			{label && <h5>{name}</h5>}
+			{label && <h5 className={styles.badge_label}>{name}</h5>}
 		</div>
 	);
 }

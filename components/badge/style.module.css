@@ -1,25 +1,32 @@
 .badge_container {
+	position: relative;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: var(--s);
 
-	color: var(--gray-light);
+	color: var(--light-50);
 
 	text-align: center;
+
+	width: fit-content;
+	height: fit-content;
 }
 
 .badge {
-	background-color: var(--dark-75);
-	border-radius: calc(var(--border-radius) * 1);
+	background-color: transparent;
+	border-radius: calc(var(--border-radius) * 1.25);
 
 	border: var(--border);
+
+	box-shadow: var(--shadow);
 
 	width: var(--badge-size);
 	height: var(--badge-size);
 
-	padding: var(--xxs);
+	padding: var(--xxxs);
 
 	filter: saturate(2);
 }

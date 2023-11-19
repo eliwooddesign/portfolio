@@ -26,7 +26,7 @@
 	/* borders */
 	--border-width: 1px;
 	--border-style: solid;
-	--border-color: var(--light);
+	--border-color: var(--light-50);
 	--border-radius: var(--m);
 
 	/* shadows */
