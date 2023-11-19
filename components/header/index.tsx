@@ -43,16 +43,18 @@ export default function Header() {
 	}, []);
 
 	return (
-		<header id={styles.header} className={classList(styles.header, scrolled && styles.scrolled_header)}>
-			<Link href={'/'} className={styles.title}>
-				<h2>Eli Wood</h2>
+		<header className={styles.header_container}>
+			<div id={styles.header} className={classList(styles.header, scrolled && styles.scrolled_header)}>
+				<Link href={'/'} className={styles.title}>
+					<h2>Eli Wood</h2>
 
-				<h5 id={styles.caption} className={classList(styles.caption, scrolled && styles.hidden)}>
-					Designer & Developer
-				</h5>
-			</Link>
+					<h5 id={styles.caption} className={classList(styles.caption, scrolled && styles.hidden)}>
+						Designer & Developer
+					</h5>
+				</Link>
 
-			<Nav.Primary />
+				<Nav.Primary />
+			</div>
 		</header>
 	);
 }

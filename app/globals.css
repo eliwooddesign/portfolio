@@ -1,11 +1,12 @@
-@import '../styles/layers.css';
+@import '../styles';
+
+:root {
+	--page-height: calc(100vh - var(--header-height));
+}
 
 body {
 	background: var(--dark);
 	color: var(--light);
-
-	/* padding-top: calc(var(--header-height) + var(--l)); */
-	padding-top: var(--header-height);
 }
 
 /* extra large screens */

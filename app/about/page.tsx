@@ -2,16 +2,113 @@ import Image from 'next/image';
 
 import { Badge, Images } from '@/components';
 import { getKey } from '@/utils';
-import { bio } from '@/data';
+import { bio, skills } from '@/data';
 
 import styles from './style.module.css';
 
 export default function About() {
 	const { h_1, h_2, h_3, p_1, p_2, p_3, p_4, p_5, p_6, p_7, p_8, p_9 } = bio;
+	const { myStack } = skills;
+	const stackSections = Object.keys(myStack);
 
 	return (
 		<main className={styles.page}>
 			<div className={styles.about}>
+				<section className={styles.stack}>
+					<h1 className={styles.stack_headline}>My Current Stack</h1>
+
+					<div className={styles.stack_row}>
+						<h3 className={styles.stack_row_label}>FE</h3>
+
+						<div className={styles.stack_item}>
+							<Badge name='TypeScript' />
+							<Badge name='CSS' />
+						</div>
+
+						<div className={styles.stack_item}>
+							<Badge name='React.js' />
+							<Badge name='Next.js' />
+						</div>
+					</div>
+
+					<div className={styles.stack_row}>
+						<h3 className={styles.stack_row_label}>BE</h3>
+
+						<div className={styles.stack_item}>
+							<Badge name='Node.js' />
+						</div>
+
+						<div className={styles.stack_item}>
+							<Badge name='Express' />
+						</div>
+					</div>
+
+					<div className={styles.stack_row}>
+						<h3 className={styles.stack_row_label}>DB</h3>
+
+						<div className={styles.stack_item}>
+							<Badge name='SQL' />
+						</div>
+
+						<div className={styles.stack_item}>
+							<Badge name='Sequelize' />
+						</div>
+					</div>
+				</section>
+
+				{/* <section className={styles.stack}>
+					<table>
+						<thead>
+							<tr>
+								<th>
+									<h1>My Current Stack</h1>
+								</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<th>
+									<h3>FE</h3>
+								</th>
+								<td>
+									<Badge name='TypeScript' />
+									<Badge name='CSS' />
+								</td>
+								<td>
+									<Badge name='React.js' />
+									<Badge name='Next.js' />
+								</td>
+							</tr>
+
+							<tr>
+								<th>
+									<h3>BE</h3>
+								</th>
+								<td>
+									<Badge name='Node.js' />
+								</td>
+								<td>
+									<Badge name='Express' />
+								</td>
+							</tr>
+
+							<tr>
+								<th>
+									<h3>DB</h3>
+								</th>
+								<td>
+									<Badge name='SQL' />
+								</td>
+
+								<td>
+									<Badge name='Sequelize' />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section> */}
+
 				<section className={styles.intro_container}>
 					<h1 className={styles.intro_headline}>
 						{h_1} {p_1}

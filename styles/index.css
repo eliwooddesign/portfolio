@@ -1,3 +1,5 @@
+@import './layers';
+
 :root {
 	/* colors */
 	--base-color-light: 0, 0%;
@@ -11,21 +13,31 @@
 	--base-size: 24px;
 
 	--icon-size: 18px;
-	--badge-size: 48px;
+	--badge-size: var(--xxl);
 
 	/* fonts */
 	--font-family: Avenir, Arial, Helvetica, sans-serif;
-	--font-size: 18px;
+	--font-size: 16px;
 	--font-weight-light: 300;
 	--font-weight-regular: 500;
 	--font-weight-bold: 700;
 	--font-weight-bolder: 900;
 
+	/* borders */
+	--border-width: 1px;
+	--border-style: solid;
+	--border-color: var(--light);
+	--border-radius: var(--m);
+
+	/* shadows */
+	--shadow-color: var(--dark-75);
+	--shadow-blur: var(--l);
+
 	/* effects */
 	--blur: blur(5px);
 
 	/* animations */
-	--animation-speed: 500ms;
+	--animation-speed: 200ms;
 
 	/* breakpoints */
 	--breakpoint-xxl: 1500px;

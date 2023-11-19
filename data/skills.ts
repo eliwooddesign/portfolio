@@ -3,7 +3,7 @@ type skill = {
 	icon: any;
 };
 
-const skills: skill[] = [
+const allSkills: skill[] = [
 	{
 		name: 'JavaScript',
 		icon: ''
@@ -81,5 +81,17 @@ const skills: skill[] = [
 		icon: ''
 	}
 ];
+
+const myStack = {
+	labels: ['Environment', 'Tool', 'Support'],
+	frontend: ['TypeScript', 'React.js', 'CSS'],
+	backend: ['Node.js', 'Express'],
+	database: ['SQL', 'Sequelize']
+};
+
+const skills = {
+	allSkills,
+	myStack
+};
 
 export default skills;

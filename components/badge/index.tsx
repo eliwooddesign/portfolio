@@ -27,7 +27,7 @@ export default function Badge(props: Props) {
 	return (
 		<div className={styles.badge_container}>
 			<Image src={source || ''} alt={altText || 'badge'} className={styles.badge} />
-			{label && <p>{name}</p>}
+			{label && <h5>{name}</h5>}
 		</div>
 	);
 }

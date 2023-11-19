@@ -1,7 +1,7 @@
 const bio = {
 	h_1: `Hi, my name is Eli.`,
-	h_2: `I am honored to work with students from University of Washington and UC Berkely.`,
-	h_3: `Currently working as a Web Development Instructional Specialist with edX.`,
+	h_2: `I am honored to work with students at University of Washington and UC Berkely.`,
+	h_3: `Currently a Web Development Instructional Specialist with edX.`,
 
 	p_1: `With a background in design and nearly five years of professional web development, I pride myself on making astonishing digital experiences.`,
 	p_2: `I earned a certificate in Full Stack Web Development from University of Washington, where I strengthened my skills in React.js, Node.js, Express, and MySQL.`,

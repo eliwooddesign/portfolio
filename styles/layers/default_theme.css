@@ -1,0 +1,47 @@
+:root {
+	/* colors */
+	--base-color-light: 0, 0%;
+	--base-color-dark: 0, 0%;
+	--base-color-accent: 288, 59%, 58%;
+
+	--red: hsl(0, 100%, 43%);
+	--green: hsl(120, 100%, 35%);
+
+	/* sizes */
+	--base-size: 24px;
+
+	--icon-size: 18px;
+	--badge-size: 48px;
+
+	/* fonts */
+	--font-family: Avenir, Arial, Helvetica, sans-serif;
+	--font-size: 16px;
+	--font-weight-light: 300;
+	--font-weight-regular: 500;
+	--font-weight-bold: 700;
+	--font-weight-bolder: 900;
+
+	/* borders */
+	--border-width: 1px;
+	--border-style: solid;
+	--border-color: var(--dark-50);
+	--border-radius: var(--xs);
+
+	/* shadows */
+	--shadow-color: var(--dark-25);
+	--shadow-blur: var(--l);
+
+	/* effects */
+	--blur: blur(5px);
+
+	/* animations */
+	--animation-speed: 200ms;
+
+	/* breakpoints */
+	--breakpoint-xxl: 1500px;
+	--breakpoint-xl: 1200px;
+	--breakpoint-l: 1024px;
+	--breakpoint-m: 768px;
+	--breakpoint-s: 480px;
+	--breakpoint-xs: 320px;
+}

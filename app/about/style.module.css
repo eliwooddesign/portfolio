@@ -15,7 +15,7 @@
 	padding: 0 var(--xxxl) 0;
 }
 
-.about section {
+.about section:not(.intro_container):not(.stack) {
 	padding: var(--xxl) 0;
 }
 
@@ -28,7 +28,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: var(--l);
+	gap: var(--xl);
+
+	padding: var(--xxl) 0 var(--xl);
 }
 
 .intro_headline {
@@ -39,6 +41,14 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--xs);
+}
+
+.intro_tagline h2 {
+	font-style: italic;
+}
+
+.intro_tagline h4 {
+	color: var(--gray);
 }
 
 .intro_tagline * {
@@ -55,14 +65,20 @@
 .portrait {
 	object-fit: cover;
 	object-position: top;
+
 	width: 100%;
 	padding-right: var(--m);
 }
 
 .portrait_text {
+	position: sticky;
+	top: 55vh;
+
 	height: fit-content;
 
-	padding-top: var(--xl);
+	padding-top: var(--xxs);
+
+	z-index: -1;
 }
 
 .text_break {
@@ -79,7 +95,82 @@
 	font-weight: var(--font-weight-light);
 }
 
-.about_bio {
+.stack {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--m);
+}
+
+.stack_headline {
+	margin-bottom: var(--m);
+}
+
+.stack_row {
+	display: grid;
+	grid-template-columns: auto 1fr 1fr;
+	align-items: center;
+	gap: var(--xl);
+
+	background-color: var(--gray-dark);
+	border-radius: calc(var(--border-radius) * 2);
+
+	width: 100%;
+
+	padding: var(--s) var(--xxl);
+}
+
+.stack_item {
+	display: flex;
+	justify-content: center;
+	gap: var(--s);
+}
+
+/* .stack table {
+	display: flex;
+	flex-direction: column;
+	gap: var(--l);
+
+	padding: var(--xl) 0;
+}
+
+.stack thead {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.stack tbody {
+	display: flex;
+	flex-direction: column;
+	gap: var(--m);
+}
+
+.stack tbody tr {
+	display: grid;
+	grid-template-columns: auto 1fr 1fr;
+	gap: var(--xxxl);
+
+	background-color: var(--light-10);
+	border-radius: calc(var(--border-radius) * 2);
+
+	padding: var(--l) var(--xxxl);
+}
+
+.stack .stack th {
+	text-transform: uppercase;
+}
+
+.stack th,
+.stack td {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--m);
+} */
+
+/* .about_bio {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
@@ -132,7 +223,7 @@
 
 .skills_icon {
 	width: var(--badge-size);
-}
+} */
 
 /* large screens */
 @media screen and (max-width: var(--breakpoint-xxl)) {
