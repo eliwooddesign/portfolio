@@ -34,7 +34,7 @@
 	--shadow-blur: var(--l);
 
 	/* effects */
-	--blur: blur(5px);
+	--blur: blur(8px);
 
 	/* animations */
 	--animation-speed: 200ms;

@@ -3,20 +3,14 @@
 
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	align-items: center;
-	/* gap: var(--gap); */
+	gap: var(--gap);
 
 	width: 100%;
-	height: calc(var(--page-height) + var(--xxl));
+	max-height: calc(var(--page-height) + var(--xl));
 
 	z-index: -1;
-
-	outline: solid red;
-}
-
-.headline {
-	outline: solid green;
 }
 
 .stack {
@@ -27,8 +21,7 @@
 	gap: var(--gap);
 
 	width: 100%;
-
-	outline: solid blue;
+	height: 100%;
 }
 
 .row {

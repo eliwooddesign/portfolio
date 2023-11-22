@@ -11,7 +11,8 @@
 	justify-content: space-between;
 
 	background-color: var(--dark-50);
-	backdrop-filter: blur(8px);
+	background: var(--light-50);
+	backdrop-filter: var(--blur);
 	box-shadow: var(--shadow);
 
 	width: 100%;
@@ -30,11 +31,11 @@
 }
 
 .hidden {
-	animation: fadeout var(--animation-speed) ease-in-out both;
+	opacity: 0;
+	height: 0%;
 }
 
 .visible {
-	animation: fadein var(--animation-speed) ease-in-out var(--animation-speed) both;
 }
 
 @keyframes fadeout {
