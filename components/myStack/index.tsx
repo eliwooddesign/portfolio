@@ -6,28 +6,36 @@ type Props = {};
 
 export default function Stack(props: Props) {
 	return (
-		<section className={styles.stack}>
-			<h1 className={styles.stack_headline}>My Current Stack</h1>
+		<section className={styles.section}>
+			<h1 className={styles.headline}>My Current Stack</h1>
 
-			<div className={styles.stack_row}>
-				<h1 className={styles.stack_row_label}>FRONTEND</h1>
+			<div className={styles.stack}>
+				<div className={styles.row}>
+					<div className={styles.row_label}>
+						<h1 className={styles.row_label_text}>FRONTEND</h1>
+					</div>
 
-				<Badge name='TypeScript' />
-				<Badge name='Next.js' />
-			</div>
+					<Badge name='TypeScript' />
+					<Badge name='Next.js' />
+				</div>
 
-			<div className={styles.stack_row}>
-				<h1 className={styles.stack_row_label}>BACKEND</h1>
+				<div className={styles.row}>
+					<div className={styles.row_label}>
+						<h1 className={styles.row_label_text}>BACKEND</h1>
+					</div>
 
-				<Badge name='Node.js' />
-				<Badge name='Express' />
-			</div>
+					<Badge name='Node.js' />
+					<Badge name='Express' />
+				</div>
 
-			<div className={styles.stack_row}>
-				<h1 className={styles.stack_row_label}>DATABASE</h1>
+				<div className={styles.row}>
+					<div className={styles.row_label}>
+						<h1 className={styles.row_label_text}>DATABASE</h1>
+					</div>
 
-				<Badge name='MySQL' />
-				<Badge name='Sequelize' />
+					<Badge name='MySQL' />
+					<Badge name='Sequelize' />
+				</div>
 			</div>
 		</section>
 	);
