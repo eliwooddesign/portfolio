@@ -5,18 +5,18 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import { Nav } from '@/components';
-import { addCSSVariable, classList, getKey } from '@/utils';
+import { addCSSVariable, classList } from '@/utils';
 
 import styles from './style.module.css';
+
+const headerId = 'site_header';
+const captionId = 'site_header_caption';
 
 export default function Header() {
 	const [scrollPosition, setScrollPosition] = useState<number>(0);
 
 	const scrollThreshold = 60;
 	const scrolled = scrollPosition > scrollThreshold;
-
-	const headerId = 'header__' + getKey();
-	const captionId = 'header_caption__' + getKey();
 
 	const getElementHeight = (id: string) => {
 		return document.getElementById(id)?.offsetHeight;
@@ -28,22 +28,21 @@ export default function Header() {
 		const scrolledHeaderHeight = headerHeight - captionHeight;
 
 		addCSSVariable('--header-height', `${headerHeight}px`);
+		addCSSVariable('--header-caption-height', `${captionHeight}px`);
 		addCSSVariable('--scrolled-header-height', `${scrolledHeaderHeight}px`);
 	};
 
 	const handleScroll = () => {
-		const position = window.scrollY;
+		const position = document.body.scrollTop;
 		setScrollPosition(position);
-
-		console.log(scrolled, position);
 	};
 
 	useEffect(() => {
-		window.addEventListener('scroll', handleScroll);
+		document.body.addEventListener('scroll', handleScroll);
 		setCSSVariables();
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+			document.body.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
 
@@ -53,12 +52,14 @@ export default function Header() {
 				<Link href={'/'} className={styles.title}>
 					<h2>Eli Wood</h2>
 
-					<h5 id={captionId} className={classList(styles.caption, scrolled && styles.hidden)}>
+					<h5 id={captionId} className={classList(styles.caption, scrolled ? styles.hidden : styles.visible)}>
 						Designer & Developer
 					</h5>
 				</Link>
 
-				<Nav.Primary />
+				<div className={styles.nav_container}>
+					<Nav.Primary />
+				</div>
 			</div>
 		</header>
 	);

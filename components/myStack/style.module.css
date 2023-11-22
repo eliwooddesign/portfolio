@@ -1,9 +1,8 @@
-.section {
+.my_stack {
 	--gap: var(--xl);
 
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-between; */
 	align-items: center;
 	gap: var(--gap);
 

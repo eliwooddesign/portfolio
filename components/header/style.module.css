@@ -4,6 +4,8 @@
 }
 
 .header {
+	--transition-speed: 500ms;
+
 	position: fixed;
 	top: 0;
 
@@ -11,7 +13,6 @@
 	justify-content: space-between;
 
 	background-color: var(--dark-50);
-	background: var(--light-50);
 	backdrop-filter: var(--blur);
 	box-shadow: var(--shadow);
 
@@ -19,6 +20,23 @@
 	max-height: 100vh;
 
 	padding: var(--l);
+
+	transition-duration: var(--transition-speed);
+}
+
+.scrolled_header {
+	background: var(--light-05);
+
+	padding: var(--m) var(--l);
+}
+
+.nav_container {
+	padding-top: 0;
+	transition-duration: var(--transition-speed);
+}
+
+.scrolled_header .nav_container {
+	padding-top: var(--xs);
 }
 
 .title {
@@ -31,22 +49,22 @@
 }
 
 .hidden {
-	opacity: 0;
-	height: 0%;
+	animation: fadeout var(--transition-speed) ease-in-out both;
 }
 
 .visible {
+	animation: fadein var(--transition-speed) ease-in-out both;
 }
 
 @keyframes fadeout {
 	from {
 		opacity: 1;
-		max-height: 30px;
+		max-height: var(--header-caption-height);
 	}
 
 	50% {
 		opacity: 0;
-		max-height: 30px;
+		max-height: var(--header-caption-height);
 	}
 
 	to {
@@ -63,11 +81,11 @@
 
 	50% {
 		opacity: 0;
-		max-height: 30px;
+		max-height: var(--header-caption-height);
 	}
 
 	to {
 		opacity: 1;
-		max-height: 30px;
+		max-height: var(--header-caption-height);
 	}
 }

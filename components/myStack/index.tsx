@@ -6,7 +6,7 @@ type Props = {};
 
 export default function Stack(props: Props) {
 	return (
-		<section className={styles.section}>
+		<section className={styles.my_stack}>
 			<h1 className={styles.headline}>My Current Stack</h1>
 
 			<div className={styles.stack}>

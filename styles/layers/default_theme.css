@@ -35,7 +35,7 @@
 	--blur: blur(5px);
 
 	/* animations */
-	--animation-speed: 200ms;
+	--transition-speed: 200ms;
 
 	/* breakpoints */
 	--breakpoint-xxl: 1500px;
