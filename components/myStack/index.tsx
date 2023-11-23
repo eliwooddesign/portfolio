@@ -1,4 +1,4 @@
-import { Badge, Icons } from '@/components';
+import { Badges } from '@/components';
 
 import styles from './style.module.css';
 
@@ -15,8 +15,8 @@ export default function Stack(props: Props) {
 						<h1 className={styles.row_label_text}>FRONTEND</h1>
 					</div>
 
-					<Badge name='TypeScript' />
-					<Badge name='Next.js' />
+					<Badges.typescript />
+					<Badges.next__js />
 				</div>
 
 				<div className={styles.row}>
@@ -24,8 +24,8 @@ export default function Stack(props: Props) {
 						<h1 className={styles.row_label_text}>BACKEND</h1>
 					</div>
 
-					<Badge name='Node.js' />
-					<Badge name='Express' />
+					<Badges.node__js />
+					<Badges.express />
 				</div>
 
 				<div className={styles.row}>
@@ -33,8 +33,8 @@ export default function Stack(props: Props) {
 						<h1 className={styles.row_label_text}>DATABASE</h1>
 					</div>
 
-					<Badge name='MySQL' />
-					<Badge name='Sequelize' />
+					<Badges.mysql />
+					<Badges.sequelize />
 				</div>
 			</div>
 		</section>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Icons } from '@/components';
+import { badges } from '@/assets';
 
 import styles from './style.module.css';
 
@@ -9,9 +9,8 @@ type Props = {
 	label?: boolean;
 };
 
-export default function Badge(props: Props) {
+export default function Component(props: Props) {
 	const { name, label = name } = props;
-	const { badges } = Icons;
 
 	// file names are lowercase
 	// underscore represents a space
