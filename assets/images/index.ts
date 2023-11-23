@@ -1,7 +1,7 @@
 import personal from './personal';
 
-const Images = {
+const images = {
 	personal
 };
 
-export default Images;
+export default images;

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import { Images, MyStack } from '@/components';
-import { getKey } from '@/utils';
+import { MyStack } from '@/components';
+import { images } from '@/assets';
 import { bio } from '@/data';
 
 import styles from './style.module.css';
@@ -11,52 +11,50 @@ export default function About() {
 
 	return (
 		<main className={styles.page}>
-			<div className={styles.about}>
-				<section className={styles.intro_container}>
-					<h1 className={styles.intro_headline}>
-						{h_1} {p_1}
-					</h1>
+			<section className={styles.intro_container}>
+				<h1 className={styles.intro_headline}>
+					{h_1} {p_1}
+				</h1>
 
-					<div className={styles.intro_tagline}>
-						<h2>{h_2}</h2>
-						<h4>{h_3}</h4>
-					</div>
-				</section>
+				<div className={styles.intro_tagline}>
+					<h2>{h_2}</h2>
+					<h4>{h_3}</h4>
+				</div>
+			</section>
 
-				<section className={styles.portrait_container}>
-					<Image src={Images.personal.headshot} alt='Portrait of Eli Wood' className={styles.portrait} />
+			<section className={styles.portrait_container}>
+				<Image src={images.personal.headshot} alt='Portrait of Eli Wood' className={styles.portrait} />
 
-					<h3 className={styles.portrait_text}>
-						{p_3}
-						<br />
-						<br />
-						{p_4}
-					</h3>
-				</section>
+				<h3 className={styles.portrait_text}>
+					{p_3}
+					<br />
+					<br />
+					{p_4}
+				</h3>
+			</section>
 
-				<section className={styles.text_break_container}>
-					<h1 className={styles.text_break}>{p_2}</h1>
-				</section>
+			<section className={styles.text_break_container}>
+				<h1 className={styles.text_break}>{p_2}</h1>
+			</section>
 
-				<section className={styles.pillars}>
-					<h2 className={styles.pillar_title}>Intentional.</h2>
-					<h3 className={styles.pillar_text}>{p_5}</h3>
+			<section className={styles.pillars}>
+				<h2 className={styles.pillar_title}>Intentional.</h2>
+				<h3 className={styles.pillar_text}>{p_5}</h3>
 
-					<h2 className={styles.pillar_title}>Practiced.</h2>
-					<h3 className={styles.pillar_text}>{p_6}</h3>
+				<h2 className={styles.pillar_title}>Practiced.</h2>
+				<h3 className={styles.pillar_text}>{p_6}</h3>
 
-					<h2 className={styles.pillar_title}>Eager.</h2>
-					<h3 className={styles.pillar_text}>
-						{p_8} {p_9}
-					</h3>
-				</section>
+				<h2 className={styles.pillar_title}>Eager.</h2>
+				<h3 className={styles.pillar_text}>
+					{p_8} {p_9}
+				</h3>
+			</section>
 
-				<MyStack />
+			<MyStack />
 
-				<section className={styles.text_break_container}>
-					<h1 className={styles.text_break}>{p_7}</h1>
-				</section>
-			</div>
+			<section className={styles.text_break_container}>
+				<h1 className={styles.text_break}>{p_7}</h1>
+			</section>
 		</main>
 	);
 }

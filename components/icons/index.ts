@@ -1,12 +1,11 @@
+import Badge from './badge';
 import Nav from './nav';
 import Svg from './svg';
-
-import badges from './badges';
 
 const Icons = {
 	Nav,
 	Svg,
-	badges
+	Badge
 };
 
 export default Icons;

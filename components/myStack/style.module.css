@@ -41,17 +41,46 @@
 	align-items: center;
 
 	color: var(--light-05);
-	font-size: 25vh;
-	line-height: 0;
-
-	filter: blur(1.5vh);
 
 	height: 100%;
 }
 
 .row_label_text {
-	font-size: 25vh;
+	font-size: calc(0.15 * var(--breakpoint-xxl));
 	line-height: 0;
 
-	padding-top: 1.75vh;
+	filter: blur(calc(0.0085 * var(--breakpoint-xxl)));
+
+	padding-top: calc(0.01 * var(--breakpoint-xxl));
+}
+
+/* extra large screens */
+@media screen and (max-width: var(--breakpoint-xxl)) {
+	.row_label_text {
+		font-size: 15vw;
+
+		filter: blur(0.85vw);
+
+		padding-top: 1vw;
+	}
+}
+
+/* large screens */
+@media screen and (max-width: var(--breakpoint-xl)) {
+}
+
+/* small screens */
+@media screen and (max-width: var(--breakpoint-l)) {
+}
+
+/* tablets */
+@media screen and (max-width: var(--breakpoint-m)) {
+}
+
+/* phones */
+@media screen and (max-width: var(--breakpoint-s)) {
+}
+
+/* small phones */
+@media screen and (max-width: var(--breakpoint-xs)) {
 }
