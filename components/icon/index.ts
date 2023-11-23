@@ -1,9 +1,9 @@
 import Nav from './nav';
 import Svg from './svg';
 
-const Icons = {
+const Icon = {
 	Nav,
 	Svg
 };
 
-export default Icons;
+export default Icon;

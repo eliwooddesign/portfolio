@@ -1,7 +1,7 @@
-import Badges from './badges';
+import Badge from './badge';
 import Header from './header';
-import Icons from './icons';
+import Icon from './icon';
 import Nav from './nav';
 import MyStack from './myStack';
 
-export { Badges, Header, Icons, Nav, MyStack };
+export { Badge, Header, Icon, Nav, MyStack };

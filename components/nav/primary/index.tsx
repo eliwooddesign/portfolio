@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Icons, Nav } from '@/components';
+import { Icon, Nav } from '@/components';
 import { classList } from '@/utils';
 
 import styles from './style.module.css';
@@ -12,7 +12,7 @@ export default function Primary() {
 
 	return (
 		<nav className={styles.component}>
-			<Icons.Nav id={styles.nav_icon} className={styles.nav_icon} onClick={() => setIsVisible(!isVisible)} isVisible={isVisible} />
+			<Icon.Nav id={styles.nav_icon} className={styles.nav_icon} onClick={() => setIsVisible(!isVisible)} isVisible={isVisible} />
 
 			<div className={classList(styles.nav, isVisible && styles.visible)}>
 				<div className={styles.nav_links}>

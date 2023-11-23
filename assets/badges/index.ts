@@ -1,4 +1,4 @@
-import adobe_cc from './adobe_cc.png';
+import adobe__cc from './adobe__cc.png';
 import bootstrap from './bootstrap.png';
 import css from './css.png';
 import express from './express.png';
@@ -9,11 +9,11 @@ import javascript from './javascript.png';
 import jquery from './jquery.png';
 import mongodb from './mongodb.png';
 import mysql from './mysql.png';
-import next__js from './next__js.png';
-import node__js from './node__js.png';
-import react__js from './react__js.png';
+import next_js from './next_js.png';
+import node_js from './node_js.png';
+import react_js from './react_js.png';
 import sequelize from './sequelize.png';
 import sql from './sql.png';
 import typescript from './typescript.png';
 
-export default { adobe_cc, bootstrap, css, express, figma, handlebars, html, javascript, jquery, mongodb, mysql, next__js, node__js, react__js, sequelize, sql, typescript };
+export default { adobe__cc, bootstrap, css, express, figma, handlebars, html, javascript, jquery, mongodb, mysql, next_js, node_js, react_js, sequelize, sql, typescript };
