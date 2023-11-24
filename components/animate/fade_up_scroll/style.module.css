@@ -1,0 +1,12 @@
+.fade_on_scroll {
+	transition-duration: calc(2 * var(--transition-speed));
+	transition-timing-function: ease-out;
+
+	transform: translateY(var(--xl));
+	opacity: 0;
+}
+
+.visible {
+	transform: translateY(0px);
+	opacity: 1;
+}

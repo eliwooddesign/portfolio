@@ -1,4 +1,4 @@
-import { Badge } from '@/components';
+import { Animate, Badge } from '@/components';
 
 import styles from './style.module.css';
 
@@ -7,35 +7,43 @@ type Props = {};
 export default function MyStack(props: Props) {
 	return (
 		<section className={styles.my_stack}>
-			<h1 className={styles.headline}>My Current Stack</h1>
+			<Animate.FadeUpScroll>
+				<h1 className={styles.headline}>My Current Stack</h1>
+			</Animate.FadeUpScroll>
 
 			<div className={styles.stack}>
-				<div className={styles.row}>
-					<div className={styles.row_label}>
-						<h1 className={styles.row_label_text}>FRONTEND</h1>
+				<Animate.FadeUpScroll>
+					<div className={styles.row}>
+						<div className={styles.row_label}>
+							<h1 className={styles.row_label_text}>FRONTEND</h1>
+						</div>
+
+						<Badge.TypeScript />
+						<Badge.Next_js />
 					</div>
+				</Animate.FadeUpScroll>
 
-					<Badge.TypeScript />
-					<Badge.Next_js />
-				</div>
+				<Animate.FadeUpScroll>
+					<div className={styles.row}>
+						<div className={styles.row_label}>
+							<h1 className={styles.row_label_text}>BACKEND</h1>
+						</div>
 
-				<div className={styles.row}>
-					<div className={styles.row_label}>
-						<h1 className={styles.row_label_text}>BACKEND</h1>
+						<Badge.Node_js />
+						<Badge.Express />
 					</div>
+				</Animate.FadeUpScroll>
 
-					<Badge.Node_js />
-					<Badge.Express />
-				</div>
+				<Animate.FadeUpScroll>
+					<div className={styles.row}>
+						<div className={styles.row_label}>
+							<h1 className={styles.row_label_text}>DATABASE</h1>
+						</div>
 
-				<div className={styles.row}>
-					<div className={styles.row_label}>
-						<h1 className={styles.row_label_text}>DATABASE</h1>
+						<Badge.MySQL />
+						<Badge.Sequelize />
 					</div>
-
-					<Badge.MySQL />
-					<Badge.Sequelize />
-				</div>
+				</Animate.FadeUpScroll>
 			</div>
 		</section>
 	);

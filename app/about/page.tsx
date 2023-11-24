@@ -12,50 +12,70 @@ export default function About() {
 	return (
 		<main className={styles.page}>
 			<section className={styles.intro_container}>
-				<h1 className={styles.intro_headline}>
-					{h_1} {p_1}
-				</h1>
+				<Animate.FadeUp>
+					<h1 className={styles.intro_headline}>
+						{h_1} {p_1}
+					</h1>
+				</Animate.FadeUp>
 
-				<div className={styles.intro_tagline}>
-					<h2>{h_2}</h2>
-					<h4>{h_3}</h4>
-				</div>
+				<Animate.FadeUp delay='200ms'>
+					<div className={styles.intro_tagline}>
+						<h2>{h_2}</h2>
+						<h4>{h_3}</h4>
+					</div>
+				</Animate.FadeUp>
 			</section>
 
 			<section className={styles.portrait_container}>
 				<Image src={images.personal.headshot} alt='Portrait of Eli Wood' className={styles.portrait} />
 
-				<h3 className={styles.portrait_text}>
-					{p_3}
-					<br />
-					<br />
-					{p_4}
-				</h3>
+				<Animate.FadeUpScroll breakpoint={0.5}>
+					<h3 className={styles.portrait_text}>
+						{p_3}
+						<br />
+						<br />
+						{p_4}
+					</h3>
+				</Animate.FadeUpScroll>
 			</section>
 
 			<section className={styles.text_break_container}>
-				<Animate.FadeOnScroll>
+				<Animate.FadeUpScroll>
 					<h1 className={styles.text_break}>{p_2}</h1>
-				</Animate.FadeOnScroll>
+				</Animate.FadeUpScroll>
 			</section>
 
 			<section className={styles.pillars}>
-				<h2 className={styles.pillar_title}>Intentional.</h2>
-				<h3 className={styles.pillar_text}>{p_5}</h3>
+				<Animate.FadeUpScroll>
+					<div className={styles.pillar}>
+						<h2 className={styles.pillar_title}>Intentional.</h2>
+						<h3 className={styles.pillar_text}>{p_5}</h3>
+					</div>
+				</Animate.FadeUpScroll>
 
-				<h2 className={styles.pillar_title}>Practiced.</h2>
-				<h3 className={styles.pillar_text}>{p_6}</h3>
+				<Animate.FadeUpScroll>
+					<div className={styles.pillar}>
+						<h2 className={styles.pillar_title}>Practiced.</h2>
+						<h3 className={styles.pillar_text}>{p_6}</h3>
+					</div>
+				</Animate.FadeUpScroll>
 
-				<h2 className={styles.pillar_title}>Eager.</h2>
-				<h3 className={styles.pillar_text}>
-					{p_8} {p_9}
-				</h3>
+				<Animate.FadeUpScroll>
+					<div className={styles.pillar}>
+						<h2 className={styles.pillar_title}>Eager.</h2>
+						<h3 className={styles.pillar_text}>
+							{p_8} {p_9}
+						</h3>
+					</div>
+				</Animate.FadeUpScroll>
 			</section>
 
 			<MyStack />
 
 			<section className={styles.text_break_container}>
-				<h1 className={styles.text_break}>{p_7}</h1>
+				<Animate.FadeUpScroll>
+					<h1 className={styles.text_break}>{p_7}</h1>
+				</Animate.FadeUpScroll>
 			</section>
 		</main>
 	);

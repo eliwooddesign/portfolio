@@ -1,5 +1,6 @@
-import FadeOnScroll from './fade_on_scroll';
+import FadeUp from './fade_up';
+import FadeUpScroll from './fade_up_scroll';
 
-const Animate = { FadeOnScroll };
+const Animate = { FadeUp, FadeUpScroll };
 
 export default Animate;

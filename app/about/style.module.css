@@ -82,9 +82,15 @@
 }
 
 .pillars {
+	display: flex;
+	flex-direction: column;
+	gap: var(--xxxl);
+}
+
+.pillar {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: var(--xxxl);
+	width: 100%;
 }
 
 .pillar_title {
