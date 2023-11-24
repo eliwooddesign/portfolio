@@ -49,7 +49,7 @@
 	font-size: calc(0.15 * var(--breakpoint-xxl));
 	line-height: 0;
 
-	filter: blur(calc(0.0085 * var(--breakpoint-xxl)));
+	filter: blur(calc(0.01 * var(--breakpoint-xxl)));
 
 	padding-top: calc(0.01 * var(--breakpoint-xxl));
 }
@@ -59,7 +59,7 @@
 	.row_label_text {
 		font-size: 15vw;
 
-		filter: blur(0.85vw);
+		filter: blur(1vw);
 
 		padding-top: 1vw;
 	}
