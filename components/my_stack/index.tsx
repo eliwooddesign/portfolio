@@ -4,7 +4,7 @@ import styles from './style.module.css';
 
 type Props = {};
 
-export default function Stack(props: Props) {
+export default function MyStack(props: Props) {
 	return (
 		<section className={styles.my_stack}>
 			<h1 className={styles.headline}>My Current Stack</h1>

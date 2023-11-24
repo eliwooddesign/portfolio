@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { MyStack } from '@/components';
+import { Animate, MyStack } from '@/components';
 import { images } from '@/assets';
 import { bio } from '@/data';
 
@@ -34,7 +34,9 @@ export default function About() {
 			</section>
 
 			<section className={styles.text_break_container}>
-				<h1 className={styles.text_break}>{p_2}</h1>
+				<Animate.FadeOnScroll>
+					<h1 className={styles.text_break}>{p_2}</h1>
+				</Animate.FadeOnScroll>
 			</section>
 
 			<section className={styles.pillars}>
