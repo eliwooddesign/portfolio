@@ -8,10 +8,11 @@ import styles from './style.module.css';
 
 type Props = {
 	breakpoint?: number;
+	delay?: string;
 };
 
 export default function FadeUpScroll(props: PropsWithChildren<Props>) {
-	const { breakpoint = 0.85, children } = props;
+	const { breakpoint = 0.85, delay = '0ms', children } = props;
 
 	const [scrollPosition, setScrollPosition] = useState<number>(window.innerHeight);
 
@@ -19,6 +20,10 @@ export default function FadeUpScroll(props: PropsWithChildren<Props>) {
 
 	const visibleThreshold = breakpoint * window.innerHeight;
 	const visible = scrollPosition < visibleThreshold;
+
+	const inlineStyles = {
+		'transition-delay': delay
+	};
 
 	const handleScroll = () => {
 		const element = document.getElementById(elementId);
@@ -36,7 +41,7 @@ export default function FadeUpScroll(props: PropsWithChildren<Props>) {
 	}, []);
 
 	return (
-		<div id={elementId} className={classList(styles.fade_on_scroll, visible && styles.visible)}>
+		<div id={elementId} className={classList(styles.fade_on_scroll, visible && styles.visible)} style={inlineStyles}>
 			{children}
 		</div>
 	);

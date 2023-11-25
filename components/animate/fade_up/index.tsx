@@ -9,5 +9,13 @@ type Props = {
 export default function FadeUp(props: PropsWithChildren<Props>) {
 	const { delay = '0ms', children } = props;
 
-	return <div className={styles.fade_up}>{children}</div>;
+	const inlineStyles = {
+		'animation-delay': `calc(500ms + ${delay})`
+	};
+
+	return (
+		<div className={styles.fade_up} style={inlineStyles}>
+			{children}
+		</div>
+	);
 }

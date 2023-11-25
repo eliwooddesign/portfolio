@@ -22,6 +22,8 @@
 	padding: var(--l);
 
 	transition-duration: var(--transition-speed);
+
+	z-index: 100;
 }
 
 .scrolled_header {

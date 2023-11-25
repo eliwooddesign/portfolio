@@ -18,7 +18,7 @@ export default function About() {
 					</h1>
 				</Animate.FadeUp>
 
-				<Animate.FadeUp delay='200ms'>
+				<Animate.FadeUp delay='100ms'>
 					<div className={styles.intro_tagline}>
 						<h2>{h_2}</h2>
 						<h4>{h_3}</h4>
@@ -27,16 +27,18 @@ export default function About() {
 			</section>
 
 			<section className={styles.portrait_container}>
-				<Image src={images.personal.headshot} alt='Portrait of Eli Wood' className={styles.portrait} />
+				<Animate.FadeUp delay='300ms'>
+					<Image src={images.personal.headshot} alt='Portrait of Eli Wood' className={styles.portrait} />
+				</Animate.FadeUp>
 
-				<Animate.FadeUpScroll breakpoint={0.5}>
+				<Animate.FadeUp delay='400ms'>
 					<h3 className={styles.portrait_text}>
 						{p_3}
 						<br />
 						<br />
 						{p_4}
 					</h3>
-				</Animate.FadeUpScroll>
+				</Animate.FadeUp>
 			</section>
 
 			<section className={styles.text_break_container}>

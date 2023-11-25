@@ -68,13 +68,9 @@
 
 .portrait_text {
 	position: sticky;
-	top: 55vh;
+	top: var(--header-height);
 
-	height: fit-content;
-
-	padding-top: var(--xxs);
-
-	z-index: -1;
+	padding-top: var(--xxxs);
 }
 
 .text_break {

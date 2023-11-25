@@ -15,7 +15,9 @@ export default function MyStack(props: Props) {
 				<Animate.FadeUpScroll>
 					<div className={styles.row}>
 						<div className={styles.row_label}>
-							<h1 className={styles.row_label_text}>FRONTEND</h1>
+							<Animate.FadeScroll delay='100ms'>
+								<h1 className={styles.row_label_text}>FRONTEND</h1>
+							</Animate.FadeScroll>
 						</div>
 
 						<Badge.TypeScript />
@@ -26,7 +28,9 @@ export default function MyStack(props: Props) {
 				<Animate.FadeUpScroll>
 					<div className={styles.row}>
 						<div className={styles.row_label}>
-							<h1 className={styles.row_label_text}>BACKEND</h1>
+							<Animate.FadeScroll delay='100ms'>
+								<h1 className={styles.row_label_text}>BACKEND</h1>
+							</Animate.FadeScroll>
 						</div>
 
 						<Badge.Node_js />
@@ -37,7 +41,9 @@ export default function MyStack(props: Props) {
 				<Animate.FadeUpScroll>
 					<div className={styles.row}>
 						<div className={styles.row_label}>
-							<h1 className={styles.row_label_text}>DATABASE</h1>
+							<Animate.FadeScroll delay='100ms'>
+								<h1 className={styles.row_label_text}>DATABASE</h1>
+							</Animate.FadeScroll>
 						</div>
 
 						<Badge.MySQL />
