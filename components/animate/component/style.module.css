@@ -1,0 +1,21 @@
+.animate {
+	transition: all 1s ease-out 0s;
+}
+
+.fade {
+	opacity: 0;
+}
+
+.fade-visible {
+	opacity: 1;
+}
+
+.fade-up {
+	transform: translateY(var(--xl));
+	opacity: 0;
+}
+
+.fade-up-visible {
+	transform: translateY(0px);
+	opacity: 1;
+}
