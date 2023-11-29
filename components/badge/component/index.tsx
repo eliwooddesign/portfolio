@@ -12,7 +12,7 @@ export default function Component(props: Props) {
 
 	return (
 		<div className={styles.badge_container}>
-			<Image src={image} alt={`${label} badge`} className={styles.badge} />
+			<Image src={image} alt={`${label} badge`} className={styles.badge_image} />
 			{label && <h5 className={styles.badge_label}>{label}</h5>}
 		</div>
 	);

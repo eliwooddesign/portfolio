@@ -8,8 +8,6 @@
 
 	width: 100%;
 	max-height: calc(var(--page-height) + var(--xl));
-
-	z-index: -1;
 }
 
 .stack {

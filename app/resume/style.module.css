@@ -2,7 +2,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: var(--xxl);
+	gap: var(--l);
+
+	padding: var(--m);
 }
 
 .main section {
@@ -10,14 +12,19 @@
 	flex-direction: column;
 	gap: var(--m);
 
+	background: var(--gray-dark);
+	border-radius: var(--border-radius);
+
 	width: 100%;
 
-	padding: 0 var(--l);
+	padding: var(--l);
 }
 
 .skills_content {
 	display: flex;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: var(--xl);
 
 	width: 100%;
 }

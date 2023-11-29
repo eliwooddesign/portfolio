@@ -1,3 +1,4 @@
+import { Badge } from '@/components';
 import { getKey } from '@/utils';
 import { experiences, skills } from '@/data';
 
@@ -6,7 +7,32 @@ import styles from './style.module.css';
 export default function Resume() {
 	return (
 		<main className={styles.main}>
+			<h1>Skills</h1>
+
 			<section className={styles.skills}>
+				<div className={styles.skills_content}>
+					<Badge.TypeScript />
+					<Badge.JavaScript />
+					<Badge.Html />
+					<Badge.CSS />
+					<Badge.Python />
+					<Badge.SQL />
+					<Badge.MySQL />
+					<Badge.Adobe__CC />
+					<Badge.Bootstrap />
+					<Badge.Express />
+					<Badge.Figma />
+					<Badge.Handlebars />
+					<Badge.MongoDB />
+					<Badge.Next_js />
+					<Badge.Node_js />
+					<Badge.React_js />
+					<Badge.Sequelize />
+					<Badge.jQuery />
+				</div>
+			</section>
+
+			{/* <section className={styles.skills}>
 				<h1>Skills</h1>
 
 				<ul className={styles.skills_content}>
@@ -16,7 +42,7 @@ export default function Resume() {
 						return <li key={getKey()}>{name}</li>;
 					})}
 				</ul>
-			</section>
+			</section> */}
 
 			<section className={styles.experiences}>
 				<h1>Experience</h1>

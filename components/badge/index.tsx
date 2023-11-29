@@ -17,6 +17,7 @@ const Badge = {
 	MySQL: () => <Component image={mysql} label='MySQL' />,
 	Next_js: () => <Component image={next_js} label='Next.js' />,
 	Node_js: () => <Component image={node_js} label='Node.js' />,
+	Python: () => <Component image={node_js} label='Python' />,
 	React_js: () => <Component image={react_js} label='React.js' />,
 	Sequelize: () => <Component image={sequelize} label='Sequelize' />,
 	SQL: () => <Component image={sql} label='SQL' />,

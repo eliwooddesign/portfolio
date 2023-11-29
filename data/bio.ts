@@ -9,7 +9,7 @@ const bio = {
 	p_4: `My previous career in sales management and web design experience has prepared me to approach problems with empathy, creativity, and teamwork.`,
 	p_5: `With each project, I strive to deliver the most impactful user experience and design with purpose.`,
 	p_6: `I applied aspects of UX and agile development in a recent project where I worked in a team of 4 to develop a full stack web application serving as the point of sale system for a Seattle food bank.`,
-	p_7: `When I’m not designing or developing, I enjoy going to concerts, movies, trying out new restaurants, or reading up on the latest trends in web and mobile design.`,
+	p_7: `When I’m not designing or developing, I enjoy going to concerts and movies, trying out new restaurants, or reading up on the latest trends in web and mobile design.`,
 	p_8: `I’m excited to leverage my skills in the future as part of a fast-paced, quality-driven team.`,
 	p_9: `Check out some of my work and reach out when you're ready to chat about our next project.`
 };
