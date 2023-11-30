@@ -40,9 +40,13 @@
 	padding-top: var(--xs);
 }
 
-.title {
+.brand {
 	display: flex;
 	flex-direction: column;
+}
+
+.title {
+	font-weight: var(--font-weight-bold);
 }
 
 .caption {

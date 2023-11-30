@@ -7,6 +7,42 @@ import styles from './style.module.css';
 export default function Resume() {
 	return (
 		<main className={styles.main}>
+			<section className={classList(styles.section, styles.experience)}>
+				<h2>Experience</h2>
+
+				<ul className={styles.experience_content}>
+					{experiences.map((experience) => {
+						const { employer, title, location, start, end, description } = experience;
+
+						return (
+							<li key={getKey()} className={classList(styles.content_card, styles.experience_item)}>
+								<div className={styles.experience_item_headline}>
+									<h1>{employer}</h1>
+									<h2 className={styles.experience_item_role}>{title}</h2>
+								</div>
+
+								<div className={styles.experience_item_details}>
+									<p>{location}</p>
+									<p>
+										{start} - {end}
+									</p>
+								</div>
+
+								<ul className={styles.experience_item_description}>
+									{description.map((bullet) => {
+										return (
+											<li key={getKey()} className={styles.experience_item_bullet}>
+												<h3>{bullet}</h3>
+											</li>
+										);
+									})}
+								</ul>
+							</li>
+						);
+					})}
+				</ul>
+			</section>
+
 			<section className={classList(styles.section, styles.skills)}>
 				<h2 className={styles.section_title}>Skills</h2>
 
@@ -44,40 +80,6 @@ export default function Resume() {
 						</div>
 					</div>
 				</div>
-			</section>
-
-			<section className={classList(styles.section, styles.experience)}>
-				<h2>Experience</h2>
-
-				<ul className={styles.experience_content}>
-					{experiences.map((experience) => {
-						const { employer, title, location, start, end, description } = experience;
-
-						return (
-							<li key={getKey()} className={classList(styles.content_card, styles.experience_item)}>
-								<h2>{employer}</h2>
-								<h3 className={styles.experience_item_title}>{title}</h3>
-
-								<div className={styles.experience_item_details}>
-									<h4>{location}</h4>
-									<h4>
-										{start} - {end}
-									</h4>
-								</div>
-
-								<ul className={styles.experience_item_description}>
-									{description.map((bullet) => {
-										return (
-											<li key={getKey()} className={styles.experience_item_bullet}>
-												{bullet}
-											</li>
-										);
-									})}
-								</ul>
-							</li>
-						);
-					})}
-				</ul>
 			</section>
 		</main>
 	);

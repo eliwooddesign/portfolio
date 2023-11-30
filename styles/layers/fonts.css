@@ -14,18 +14,19 @@ h1 * {
 h2,
 h2 * {
 	font-size: var(--font-size-l);
-	font-weight: var(--font-weight-bold);
+	font-weight: var(--font-weight-light);
 }
 
 h3,
 h3 * {
 	font-size: var(--font-size-m);
-	font-weight: var(--font-weight-bold);
+	line-height: 1.5;
 }
 
 h4,
 h4 * {
 	font-size: var(--font-size-s);
+	font-weight: var(--font-weight-bold);
 }
 
 h5,
@@ -35,5 +36,5 @@ h5 * {
 
 p,
 p * {
-	line-height: 1.25;
+	line-height: 1.5;
 }
