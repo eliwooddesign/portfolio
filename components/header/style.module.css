@@ -12,7 +12,6 @@
 	display: flex;
 	justify-content: space-between;
 
-	background-color: var(--dark-50);
 	backdrop-filter: var(--blur);
 	box-shadow: var(--shadow);
 
