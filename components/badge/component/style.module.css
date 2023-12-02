@@ -14,9 +14,10 @@
 }
 
 .badge_image {
-	background-color: transparent;
-	border-radius: calc(var(--border-radius) * 1.25);
+	--badge-size: var(--xl);
 
+	background-color: transparent;
+	border-radius: calc(var(--border-radius) * 0.9);
 	border: var(--border);
 
 	box-shadow: var(--shadow);

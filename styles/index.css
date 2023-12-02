@@ -13,7 +13,6 @@
 	--base-size: 24px;
 
 	--icon-size: 18px;
-	--badge-size: var(--xxl);
 
 	/* fonts */
 	--font-family: Avenir, Arial, Helvetica, sans-serif;
@@ -26,7 +25,7 @@
 	/* borders */
 	--border-width: 1px;
 	--border-style: solid;
-	--border-color: var(--light-50);
+	--border-color: var(--gray);
 	--border-radius: var(--m);
 
 	/* shadows */

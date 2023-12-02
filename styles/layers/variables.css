@@ -11,9 +11,9 @@
 		--light-10: hsla(var(--base-color-light), 100%, 0.1);
 		--light-05: hsla(var(--base-color-light), 100%, 0.05);
 
-		--gray-light: hsl(var(--base-color-dark), 85%);
+		--gray-light: hsl(var(--base-color-dark), 92.5%);
 		--gray: hsl(var(--base-color-dark), 50%);
-		--gray-dark: hsl(var(--base-color-dark), 15%);
+		--gray-dark: hsl(var(--base-color-dark), 7.5%);
 
 		--dark: hsl(var(--base-color-dark), 0%);
 		--dark-95: hsla(var(--base-color-dark), 0%, 0.95);

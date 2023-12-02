@@ -6,7 +6,7 @@
 
 body {
 	background: var(--dark);
-	color: var(--light);
+	color: var(--gray-light);
 
 	transition: color 0ms;
 }
