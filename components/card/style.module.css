@@ -1,0 +1,12 @@
+.card {
+	background: var(--gray-dark);
+	border-radius: var(--border-radius);
+}
+
+.card h2 {
+	font-weight: var(--font-weight-bold);
+}
+
+.card h4 {
+	font-weight: var(--font-weight-light);
+}

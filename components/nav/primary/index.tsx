@@ -16,8 +16,7 @@ export default function Primary() {
 
 			<div className={classList(styles.nav, isVisible && styles.visible)}>
 				<div className={styles.nav_links}>
-					<Nav.Item href={'/'}>Work</Nav.Item>
-					<Nav.Item href={'/about'}>About</Nav.Item>
+					<Nav.Item href={'/work'}>Work</Nav.Item>
 					<Nav.Item href={'/resume'}>Resume</Nav.Item>
 
 					<h4 className={styles.nav_link}>Contact</h4>

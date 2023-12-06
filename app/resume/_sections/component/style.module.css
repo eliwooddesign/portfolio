@@ -1,8 +1,8 @@
-.main {
+.section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: var(--xxl);
+	gap: var(--l);
 
-	padding: var(--l) var(--xxl);
+	width: 100%;
 }
