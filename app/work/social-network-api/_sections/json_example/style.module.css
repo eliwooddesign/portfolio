@@ -1,0 +1,85 @@
+.json {
+	--indent: var(--m);
+}
+
+.json_array {
+	display: flex;
+	flex-direction: column;
+
+	letter-spacing: 1px;
+}
+
+.square_open,
+.square_close {
+	color: rgb(254, 209, 11);
+}
+
+.json_object {
+	display: flex;
+	flex-direction: column;
+}
+
+.curly_open,
+.curly_close {
+	color: rgb(207, 83, 205);
+
+	margin-left: var(--indent);
+}
+
+.json_object_entry {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--xs);
+}
+
+.json_object_entry .square_open,
+.json_object_entry .square_close,
+.empty_brackets {
+	color: rgb(26, 138, 254);
+}
+
+.json_object_entry .square_close {
+	padding-left: calc(var(--indent) * 2);
+}
+
+.json_object_key {
+	color: rgb(141, 211, 253);
+
+	margin-left: calc(var(--indent) * 2);
+
+	width: fit-content;
+}
+
+.json_object_array {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+}
+
+.json_object_array * {
+	margin-left: calc(var(--indent) * 3);
+}
+
+.json_string {
+	color: rgb(194, 125, 101);
+}
+
+.json_number {
+	color: rgb(167, 196, 152);
+}
+
+.json_string::after,
+.json_number::after,
+.json_object .square_close::after,
+.json_object .curly_close::after {
+	content: ',';
+
+	color: white;
+}
+
+.json_object:last-of-type .curly_close::after,
+.json_object_entry:last-of-type *::after,
+.json_object_array *:last-child::after {
+	content: '';
+}

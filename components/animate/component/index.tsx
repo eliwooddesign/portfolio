@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, PropsWithChildren } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 import { classList, getKey } from '@/utils';
 
@@ -12,6 +12,7 @@ export type Props = {
 	timing?: 'ease' | 'ease-in' | 'ease-out' | 'eas-in-out' | 'inherit';
 	delay?: number; // ms
 	breakpoint?: number; // vh
+	children: React.ReactNode;
 };
 
 export default function Fade({
@@ -22,8 +23,8 @@ export default function Fade({
 	delay = 0,
 	breakpoint = 85,
 	children
-}: PropsWithChildren<Props>) {
-	const [scrollPosition, setScrollPosition] = useState<number>(window.innerHeight);
+}: Props) {
+	const [scrollPosition, setScrollPosition] = useState<number>(0);
 
 	const elementId = useMemo(() => 'animation__' + getKey(), []);
 
@@ -33,14 +34,14 @@ export default function Fade({
 	const animationClass = styles[animation];
 	const visibleClass = styles[animation + '-visible'];
 
-	const handleScroll = () => {
-		const element = document.getElementById(elementId);
-		const position = element?.getBoundingClientRect().top;
-
-		setScrollPosition(position || window.innerHeight);
-	};
-
 	useEffect(() => {
+		const handleScroll = () => {
+			const element = document.getElementById(elementId);
+			const position = element?.getBoundingClientRect().top;
+
+			setScrollPosition(position || window.innerHeight);
+		};
+
 		document.body.addEventListener('scroll', handleScroll);
 		handleScroll();
 
@@ -56,7 +57,6 @@ export default function Fade({
 	};
 
 	return (
-		// @ts-ignore: Type '{ 'animation-delay': string; }' has no properties in common with type 'Properties<string | number, string & {}>'.
 		<div id={elementId} className={classList(styles.animate, animationClass, visible && visibleClass)} style={inlineStyles}>
 			{children}
 		</div>

@@ -1,0 +1,15 @@
+.page {
+	display: flex;
+	justify-content: space-between;
+}
+
+.json {
+	display: flex;
+	justify-content: flex-end;
+
+	/* background: rgb(24, 24, 24); */
+
+	width: 100%;
+
+	padding-right: 45vw;
+}

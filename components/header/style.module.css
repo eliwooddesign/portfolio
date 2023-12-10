@@ -47,9 +47,12 @@
 
 .title {
 	font-weight: var(--font-weight-bold);
+	margin-top: 2%;
 }
 
 .caption {
+	--margin-top: var(--xxxs);
+
 	margin-left: 1.5px;
 }
 
@@ -65,16 +68,19 @@
 	from {
 		opacity: 1;
 		max-height: var(--header-caption-height);
+		margin-top: var(--margin-top);
 	}
 
 	50% {
 		opacity: 0;
 		max-height: var(--header-caption-height);
+		margin-top: var(--margin-top);
 	}
 
 	to {
 		opacity: 0;
 		max-height: 0px;
+		margin-top: 0px;
 	}
 }
 
@@ -82,15 +88,18 @@
 	from {
 		opacity: 0;
 		max-height: 0px;
+		margin-top: 0px;
 	}
 
 	50% {
 		opacity: 0;
 		max-height: var(--header-caption-height);
+		margin-top: var(--margin-top);
 	}
 
 	to {
 		opacity: 1;
 		max-height: var(--header-caption-height);
+		margin-top: var(--margin-top);
 	}
 }
