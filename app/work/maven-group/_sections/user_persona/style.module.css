@@ -1,0 +1,10 @@
+.section {
+	display: flex;
+	flex-direction: column;
+
+	padding: var(--xxl);
+}
+
+.heading {
+	font-weight: var(--font-weight-bold);
+}

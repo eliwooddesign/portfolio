@@ -3,7 +3,7 @@ export type Project = {
 	slug: string;
 };
 
-const projectNames: string[] = ['Apple a Day', 'Property Website', 'Social Network API'];
+const projectNames: string[] = ['Apple a Day', 'Maven Group', 'Property Website', 'Social Network API'];
 
 const projects: Project[] = projectNames.map((name) => {
 	const slug = name.toLowerCase().replaceAll(' ', '-');
