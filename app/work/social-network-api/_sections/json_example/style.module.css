@@ -5,8 +5,6 @@
 .json_array {
 	display: flex;
 	flex-direction: column;
-
-	letter-spacing: 1px;
 }
 
 .square_open,
@@ -29,7 +27,6 @@
 .json_object_entry {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--xs);
 }
 
 .json_object_entry .square_open,
@@ -46,6 +43,7 @@
 	color: rgb(141, 211, 253);
 
 	margin-left: calc(var(--indent) * 2);
+	/* margin-right: var(--xxs); */
 
 	width: fit-content;
 }

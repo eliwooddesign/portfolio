@@ -1,0 +1,49 @@
+.frame {
+	display: grid;
+	grid-template-rows: 48px 1fr;
+	gap: 2px;
+
+	border-radius: 12px;
+
+	max-width: 80vw;
+	max-height: 70vh;
+
+	overflow: hidden;
+}
+
+.title_bar {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-image: linear-gradient(var(--dark-90), var(--dark-90));
+	background-position: 88px 0px;
+	background-repeat: no-repeat;
+	backdrop-filter: blur(var(--blur));
+
+	height: 48px;
+
+	padding: 0 18px;
+}
+
+.frame_buttons {
+	position: absolute;
+	left: 0px;
+}
+
+.frame_buttons_background {
+	fill: var(--dark-90);
+}
+
+.title {
+	color: var(--gray);
+}
+
+.body {
+	background: var(--dark-90);
+	backdrop-filter: blur(var(--blur));
+
+	overflow: scroll;
+}

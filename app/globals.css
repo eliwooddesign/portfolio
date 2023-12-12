@@ -5,10 +5,15 @@
 }
 
 body {
-	background: var(--dark);
+	background-color: var(--dark);
+
 	color: var(--gray-light);
 
 	transition: color 0ms;
+}
+
+figcaption {
+	display: none;
 }
 
 /* extra large screens */

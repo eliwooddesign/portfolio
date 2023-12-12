@@ -1,0 +1,13 @@
+.code {
+	display: flex;
+	gap: var(--m);
+
+	padding: var(--s) var(--m);
+}
+
+.line_numbers {
+	display: flex;
+	flex-direction: column;
+
+	color: var(--gray);
+}

@@ -39,3 +39,11 @@ p,
 p * {
 	line-height: 1.5;
 }
+
+code,
+code * {
+	font-family: 'Fira Code VF', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	font-size: 14px;
+	font-weight: revert;
+	line-height: 1.5rem;
+}

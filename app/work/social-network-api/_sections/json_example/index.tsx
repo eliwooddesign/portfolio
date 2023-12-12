@@ -1,62 +1,65 @@
+import { Window, Code } from '@/components';
+import { getKey } from '@/utils';
 import { jsonExampleData } from '@/data';
 
 import styles from './style.module.css';
 
-const squareOpen = '[';
-const squareClose = ']';
-const curlyOpen = '{';
-const curlyClose = '}';
-
 export default function JsonExample() {
 	return (
-		<div className={styles.json}>
-			<div className={styles.json_array}>
-				<p className={styles.square_open}>{squareOpen}</p>
+		<Window caption='Example API response.'>
+			<Code lines={76}>
+				<div className={styles.json}>
+					<div className={styles.json_array}>
+						<p className={styles.square_open}>{'['}</p>
 
-				{jsonExampleData.map((arrayObject) => {
-					const entries = Object.entries(arrayObject);
+						{jsonExampleData.map((arrayObject) => {
+							const entries = Object.entries(arrayObject);
 
-					return (
-						<div className={styles.json_object}>
-							<p className={styles.curly_open}>{curlyOpen}</p>
+							return (
+								<div key={getKey()} className={styles.json_object}>
+									<p className={styles.curly_open}>{'{'}</p>
 
-							{entries.map((entry) => {
-								const key = entry[0];
-								const value = entry[1];
+									{entries.map((entry) => {
+										const key = entry[0];
+										const value = entry[1];
 
-								return (
-									<div className={styles.json_object_entry}>
-										<p className={styles.json_object_key}>{key}:</p>
+										return (
+											<div key={getKey()} className={styles.json_object_entry}>
+												<p className={styles.json_object_key}>{key}:&nbsp;</p>
 
-										{typeof value === 'string' ? (
-											// prettier-ignore
-											<p className={styles.json_string}>"${value}"</p>
-										) : typeof value === 'number' ? (
-											<p className={styles.json_number}>{value}</p>
-										) : !value.length ? (
-											<p className={styles.empty_brackets}>{`[ ]`}</p>
-										) : (
-											<>
-												<p className={styles.square_open}>{squareOpen}</p>
-												<div className={styles.json_object_array}>
-													{value.map((item) => (
-														<p className={styles.json_string}>"{item}"</p>
-													))}
-												</div>
-												<p className={styles.square_close}>{squareClose}</p>
-											</>
-										)}
-									</div>
-								);
-							})}
+												{typeof value === 'string' ? (
+													// prettier-ignore
+													<p className={styles.json_string}>"{value}"</p>
+												) : typeof value === 'number' ? (
+													<p className={styles.json_number}>{value}</p>
+												) : !value.length ? (
+													<p className={styles.empty_brackets}>{'[]'}</p>
+												) : (
+													<>
+														<p className={styles.square_open}>{'['}</p>
+														<div className={styles.json_object_array}>
+															{value.map((item) => (
+																<p key={getKey()} className={styles.json_string}>
+																	"{item}"
+																</p>
+															))}
+														</div>
+														<p className={styles.square_close}>{']'}</p>
+													</>
+												)}
+											</div>
+										);
+									})}
 
-							<p className={styles.curly_close}>{curlyClose}</p>
-						</div>
-					);
-				})}
+									<p className={styles.curly_close}>{'}'}</p>
+								</div>
+							);
+						})}
 
-				<p className={styles.square_close}>{squareClose}</p>
-			</div>
-		</div>
+						<p className={styles.square_close}>{']'}</p>
+					</div>
+				</div>
+			</Code>
+		</Window>
 	);
 }
