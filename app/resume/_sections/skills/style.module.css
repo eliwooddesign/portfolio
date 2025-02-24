@@ -6,12 +6,25 @@
 	width: 100%;
 }
 
+.card_title {
+	display: flex;
+	justify-content: center;
+
+	text-align: center;
+
+	border-bottom: var(--border);
+	border-color: var(--gray);
+	color: var(--gray);
+
+	padding-bottom: var(--s);
+}
+
 .badge_container {
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	grid-auto-flow: column;
-
-	padding: var(--s);
+	justify-content: space-around;
+	gap: var(--m);
 }
 
 .languages {

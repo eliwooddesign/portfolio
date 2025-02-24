@@ -1,0 +1,14 @@
+.component_button_outline {
+  color: var(--primary-950);
+  background-color: transparent;
+  outline: var(--outline);
+  outline-color: var(--primary-a300);
+}
+
+.component_button_outline:hover > span[data-item='overlay'] {
+  background-color: var(--primary-a50);
+}
+
+.component_button_outline:active > span[data-item='overlay'] {
+  background-color: var(--primary-a100);
+}

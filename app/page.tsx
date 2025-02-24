@@ -1,9 +1,13 @@
+// external
 import Image from 'next/image';
+import { Menu as MenuIcon } from 'lucide-react';
 
+// internal
 import { Animate, MyStack } from '@/components';
 import { images } from '@/assets';
 import { bio } from '@/data';
 
+// styles
 import styles from './page.module.css';
 
 const { FadeUp } = Animate;
@@ -13,6 +17,14 @@ export default function Home() {
 
 	return (
 		<main className={styles.page}>
+			<div className={styles.temp}>
+				<button>Text Button</button>
+
+				<button>
+					<MenuIcon />
+				</button>
+			</div>
+
 			<section className={styles.intro_container}>
 				<FadeUp breakpoint={100} delay={500}>
 					<h1 className={styles.banner_text}>

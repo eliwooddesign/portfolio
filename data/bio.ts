@@ -1,9 +1,9 @@
-const bio = {
+export const bio = {
 	h_1: `Hi, my name is Eli.`,
-	h_2: `I am honored to work with students at University of Washington and UC Berkely.`,
-	h_3: `Currently a Web Development Instructional Specialist with edX.`,
+	h_2: `I am honored to have instructed & mentored students at University of Washington and UC Berkely.`,
+	h_3: `Currently looking for a new challenge.`,
 
-	p_1: `With a background in design and nearly five years in professional web development, I pride myself on making astonishing digital experiences.`,
+	p_1: `With a background in design and five years in professional web development, I pride myself on making astonishing digital experiences.`,
 	p_2: `I earned a certificate in Full Stack Web Development from University of Washington, where I strengthened my skills in React.js, Node.js, Express, and MySQL.`,
 	p_3: `An innovative problem solver passionate about developing apps, with a focus on user-centered design and mobile-first development.`,
 	p_4: `My previous career in sales management and web design experience has prepared me to approach problems with empathy, creativity, and teamwork.`,

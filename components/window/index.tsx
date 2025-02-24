@@ -7,9 +7,9 @@ type Props = {
 };
 
 // title bar button colors
-// red: #fc4645
-// yellow: #fcb025
-// green: #29c231
+// 🔴 #fc4645
+// 🟡 #fcb025
+// 🟢 #29c231
 
 export default function Window({
 	// prettier-ignore

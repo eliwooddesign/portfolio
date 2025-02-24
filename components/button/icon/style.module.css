@@ -1,0 +1,16 @@
+.component_button_icon {
+  background-color: transparent;
+
+  height: 32px;
+  aspect-ratio: 1;
+
+  padding: 0;
+}
+
+.component_button_icon * {
+  color: var(--gray-500);
+}
+
+.component_button_icon:hover * {
+  color: var(--gray-900);
+}

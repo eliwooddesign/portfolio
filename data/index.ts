@@ -1,7 +1,5 @@
-import bio from './bio';
-import experience from './experience';
-import jsonExampleData from './json_example_data';
-import projects from './projects';
-import skills from './skills';
-
-export { bio, experience, jsonExampleData, projects, skills };
+export * from './bio';
+export * from './experience';
+export * from './json_example_data';
+export * from './projects';
+export * from './skills';

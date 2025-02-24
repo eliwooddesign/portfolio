@@ -1,17 +1,14 @@
-export type Project = {
+export interface Project {
 	name: string;
 	slug: string;
-};
+}
 
-const projectNames: string[] = ['Apple a Day', 'Maven Group', 'Property Website', 'Social Network API'];
+export const projectNames = ['Apple a Day', 'Maven Group', 'Property Website', 'Social Network API', 'Cascading Solar System'];
 
-const projects: Project[] = projectNames.map((name) => {
+export const projects = projectNames.map((name) => {
 	const slug = name.toLowerCase().replaceAll(' ', '-');
 
-	return {
-		name,
-		slug
-	};
+	return { name, slug } as Project;
 });
 
 export default projects;

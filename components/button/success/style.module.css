@@ -1,0 +1,11 @@
+.component_button_success {
+  background-color: var(--green-500);
+}
+
+.component_button_success:hover > span[data-item='overlay'] {
+  background-color: var(--secondary-a100);
+}
+
+.component_button_success:active > span[data-item='overlay'] {
+  background-color: var(--primary-a50);
+}

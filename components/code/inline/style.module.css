@@ -1,0 +1,59 @@
+.component_code_inline {
+  gap: 8px;
+
+  width: fit-content;
+  height: 25px;
+
+  padding: 4px 8px;
+  margin: -2px 0;
+}
+
+.component_code_inline code {
+  z-index: 10;
+}
+
+.copy_button_container {
+  position: absolute;
+  right: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: hsl(0, 0%, 24%);
+  border-radius: var(--radius);
+
+  width: 25px;
+  height: 25px;
+
+  transform: translateX(0);
+
+  overflow: hidden;
+
+  transition: all 240ms ease-in 120ms;
+  z-index: -1;
+}
+
+.copy_button {
+  transform: translateX(-100%);
+  transition: all 240ms ease-in 120ms;
+}
+
+.component_code_inline:hover .copy_button_container,
+.copy_button_container:hover,
+.copy_button_container:where(:has(.copy_button[data-copied='true'])) {
+  transform: translateX(calc(100% + 4px));
+  transition: all 120ms ease-out 0ms;
+  z-index: 0;
+}
+
+.component_code_inline:hover .copy_button,
+.copy_button_container:hover .copy_button,
+.copy_button[data-copied='true'] {
+  transform: translateX(0);
+  transition: all 120ms ease-out 24ms;
+}
+
+.copy_button:focus {
+  outline: none;
+}

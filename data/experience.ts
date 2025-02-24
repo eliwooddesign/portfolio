@@ -1,13 +1,13 @@
-type experienceItem = {
+export interface IExperience {
 	employer: string;
 	title: string;
 	location: string;
 	start: string;
 	end: string;
 	description: string[];
-};
+}
 
-const experience: experienceItem[] = [
+export const experience: IExperience[] = [
 	{
 		employer: 'Apple a Day',
 		title: 'Full Stack Software Engineer & UX/UI Designer',

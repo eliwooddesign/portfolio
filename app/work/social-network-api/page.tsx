@@ -1,7 +1,6 @@
 import { Card } from '@/components';
 
-import sections from './_sections';
-const { JsonExample } = sections;
+import { JsonExample } from './_sections';
 
 import styles from './style.module.css';
 
@@ -10,9 +9,9 @@ export default function SocialNetworkAPI() {
 		<main className={styles.page}>
 			<h1>Social Network API</h1>
 
-			<figure className={styles.json}>
+			<div className={styles.json}>
 				<JsonExample />
-			</figure>
+			</div>
 
 			<Card></Card>
 		</main>

@@ -22,6 +22,7 @@ pre,
 code {
 	font-size: 100%;
 	font-family: inherit;
+	color: currentColor;
 }
 
 ol,
@@ -33,6 +34,14 @@ a,
 a:visited {
 	color: inherit;
 	text-decoration: none;
+}
+
+button,
+input {
+	background: none;
+	border: none;
+	padding-block: 0;
+	padding-inline: 0;
 }
 
 img {

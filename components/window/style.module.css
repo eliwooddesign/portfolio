@@ -7,8 +7,6 @@
 
 	max-width: 80vw;
 	max-height: 70vh;
-
-	overflow: hidden;
 }
 
 .title_bar {
@@ -23,6 +21,11 @@
 	background-repeat: no-repeat;
 	backdrop-filter: blur(var(--blur));
 
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 6px 6px rgba(0, 0, 0, 0.16);
+
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+
 	height: 48px;
 
 	padding: 0 18px;
@@ -31,6 +34,8 @@
 .frame_buttons {
 	position: absolute;
 	left: 0px;
+
+	border-top-left-radius: 12px;
 }
 
 .frame_buttons_background {
@@ -38,12 +43,18 @@
 }
 
 .title {
-	color: var(--gray);
+	color: var(--light-25);
+	font-weight: var(--font-weight-light);
 }
 
 .body {
 	background: var(--dark-90);
 	backdrop-filter: blur(var(--blur));
+
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 6px 6px rgba(0, 0, 0, 0.16);
+
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
 
 	overflow: scroll;
 }

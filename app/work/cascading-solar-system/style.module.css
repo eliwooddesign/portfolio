@@ -1,0 +1,12 @@
+.page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--l);
+
+	background-image: linear-gradient(135deg, LightSkyBlue, Navy);
+
+	min-height: calc(100% - var(--header-height));
+
+	padding: var(--l);
+}

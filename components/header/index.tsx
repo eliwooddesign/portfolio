@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import { Nav } from '@/components';
-import { addCSSVariable, classList } from '@/utils';
+import { cssVar, cn } from '@/utils';
 
 import styles from './style.module.css';
 
@@ -22,14 +22,14 @@ export default function Header() {
 		return document.getElementById(id)?.offsetHeight;
 	};
 
-	const setCSSVariables = () => {
+	const setCssVariables = () => {
 		const headerHeight = getElementHeight(headerId) || 140;
 		const captionHeight = getElementHeight(captionId) || 14.4;
 		const scrolledHeaderHeight = headerHeight - captionHeight;
 
-		addCSSVariable('--header-height', `${headerHeight}px`);
-		addCSSVariable('--header-caption-height', `${captionHeight}px`);
-		addCSSVariable('--scrolled-header-height', `${scrolledHeaderHeight}px`);
+		cssVar('--header-height', `${headerHeight}px`);
+		cssVar('--header-caption-height', `${captionHeight}px`);
+		cssVar('--scrolled-header-height', `${scrolledHeaderHeight}px`);
 	};
 
 	const handleScroll = () => {
@@ -39,7 +39,7 @@ export default function Header() {
 
 	useEffect(() => {
 		document.body.addEventListener('scroll', handleScroll);
-		setCSSVariables();
+		setCssVariables();
 
 		return () => {
 			document.body.removeEventListener('scroll', handleScroll);
@@ -47,18 +47,18 @@ export default function Header() {
 	}, []);
 
 	return (
-		<header className={styles.header_container}>
-			<div id={headerId} className={classList(styles.header, scrolled && styles.scrolled_header)}>
-				<Link href={'/'} className={styles.brand}>
-					<h2 className={styles.title}>Eli Wood</h2>
+		<header {...cn(styles.header_container)}>
+			<div id={headerId} {...cn(styles.header, scrolled && styles.scrolled_header)}>
+				<Link href='/' {...cn(styles.brand)}>
+					<h2 {...cn(styles.title)}>Eli Wood</h2>
 
-					<h5 id={captionId} className={classList(styles.caption, scrolled ? styles.hidden : styles.visible)}>
-						Designer & Developer
+					<h5 id={captionId} {...cn(styles.caption, scrolled ? styles.hidden : styles.visible)}>
+						Software Developer
 					</h5>
 				</Link>
 
-				<div className={styles.nav_container}>
-					<Nav.Primary />
+				<div {...cn(styles.nav_container)}>
+					<Nav />
 				</div>
 			</div>
 		</header>

@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 
-import { classList } from '@/utils';
+import { cn } from '@/utils';
 
 import styles from './style.module.css';
 
@@ -17,7 +17,7 @@ export default function Component({
 	className = ''
 }: Props) {
 	return (
-		<div className={classList(styles.badge_container, className)}>
+		<div {...cn(styles.badge_container, className)}>
 			<Image src={image} alt={`${label} badge`} className={styles.badge_image} />
 			{label && <h5 className={styles.badge_label}>{label}</h5>}
 		</div>

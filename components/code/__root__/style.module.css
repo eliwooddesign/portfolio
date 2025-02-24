@@ -1,0 +1,12 @@
+.component_code_root {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: hsl(0, 0%, 24%);
+  border-radius: var(--radius);
+
+  font-family: var(--font-mono);
+}

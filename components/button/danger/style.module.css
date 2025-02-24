@@ -1,0 +1,11 @@
+.component_button_danger {
+  background-color: var(--red-500);
+}
+
+.component_button_danger:hover > span[data-item='overlay'] {
+  background-color: var(--secondary-a200);
+}
+
+.component_button_danger:active > span[data-item='overlay'] {
+  background-color: var(--primary-a50);
+}

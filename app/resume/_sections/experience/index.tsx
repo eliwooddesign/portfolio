@@ -1,18 +1,14 @@
-import { Card } from '@/components';
-import { classList, getKey } from '@/utils';
-import { experience } from '@/data';
+import clsx from 'clsx';
 
-import Section from '../component';
+import { Card, Section } from '@/components';
+import { uuid } from '@/utils';
+import { experience } from '@/data';
 
 import styles from './style.module.css';
 
-interface Props {
-	className?: string;
-}
-
-export default function Experience({ className = '' }: Props) {
+export function Experience() {
 	return (
-		<Section className={classList(styles.experience, className)}>
+		<Section className={styles.experience}>
 			<h1>Experience</h1>
 
 			<div className={styles.section_content}>
@@ -20,7 +16,7 @@ export default function Experience({ className = '' }: Props) {
 					const { employer, title, location, start, end, description } = experienceItem;
 
 					return (
-						<Card key={getKey()} className={classList(styles.content_card, styles.experience_item)}>
+						<Card key={uuid()} className={clsx(styles.content_card, styles.experience_item)}>
 							<div className={styles.experience_item_headline}>
 								<h2>{employer}</h2>
 								<h4>{title}</h4>
@@ -36,7 +32,7 @@ export default function Experience({ className = '' }: Props) {
 							<ul className={styles.experience_item_description}>
 								{description.map((bullet) => {
 									return (
-										<li key={getKey()} className={styles.experience_item_bullet}>
+										<li key={uuid()} className={styles.experience_item_bullet}>
 											<p>{bullet}</p>
 										</li>
 									);

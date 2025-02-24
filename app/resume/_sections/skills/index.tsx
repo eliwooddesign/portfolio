@@ -1,21 +1,18 @@
-import { Badge, Card } from '@/components';
-import { classList } from '@/utils';
-
-import Section from '../component';
+import { Badge, Card, Section } from '@/components';
 
 import styles from './style.module.css';
 
-interface Props {
-	className?: string;
-}
-
-export default function Skills({ className = '' }: Props) {
+export function Skills() {
 	return (
-		<Section className={classList(styles.skills, className)}>
+		<Section>
 			<h1>Skills</h1>
 
 			<div className={styles.section_content}>
 				<Card className={styles.languages}>
+					<div className={styles.card_title}>
+						<h5>My Stack</h5>
+					</div>
+
 					<div className={styles.badge_container}>
 						<Badge.Next_js className={styles.badge} />
 						<Badge.TypeScript className={styles.badge} />
@@ -27,6 +24,10 @@ export default function Skills({ className = '' }: Props) {
 				</Card>
 
 				<Card className={styles.tools}>
+					<div className={styles.card_title}>
+						<h5>Development</h5>
+					</div>
+
 					<div className={styles.badge_container}>
 						<Badge.JavaScript className={styles.badge} />
 						<Badge.React_js className={styles.badge} />
@@ -42,6 +43,10 @@ export default function Skills({ className = '' }: Props) {
 				</Card>
 
 				<Card className={styles.design}>
+					<div className={styles.card_title}>
+						<h5>Design</h5>
+					</div>
+
 					<div className={styles.badge_container}>
 						<Badge.Adobe__CC className={styles.badge} />
 						<Badge.Figma className={styles.badge} />

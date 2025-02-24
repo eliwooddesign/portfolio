@@ -1,5 +1,4 @@
-import sections from './_sections';
-const { Experience, Skills } = sections;
+import { Experience, Skills } from './_sections';
 
 import styles from './style.module.css';
 

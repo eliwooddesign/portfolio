@@ -1,0 +1,67 @@
+/* .component_button_root {
+  position: relative;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: var(--radius-l);
+  background-color: var(--gray-400);
+  color: var(--gray-950);
+  font-weight: 700;
+  text-wrap: nowrap;
+
+  width: fit-content;
+  min-width: fit-content;
+  height: 36px;
+
+  padding: 0 12px;
+
+  overflow: hidden;
+}
+
+.component_button_root svg {
+  color: var(--gray-600);
+  stroke-width: 1.75;
+  margin: -1px;
+}
+
+.component_button_root:hover,
+.component_button_root:hover svg {
+  color: var(--gray-950);
+} */
+
+.overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.component_button_root:hover .overlay {
+  background-color: var(--gray-a300);
+}
+
+.component_button_root:active .overlay {
+  background-color: var(--gray-a100);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  text-wrap: nowrap;
+
+  width: fit-content;
+  height: 100%;
+
+  z-index: 10;
+}

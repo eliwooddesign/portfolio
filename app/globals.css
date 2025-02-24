@@ -16,6 +16,12 @@ figcaption {
 	display: none;
 }
 
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /* extra large screens */
 @media screen and (max-width: var(--breakpoint-xxl)) {
 }

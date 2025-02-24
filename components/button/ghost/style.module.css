@@ -1,0 +1,12 @@
+.component_button_ghost {
+  color: var(--primary-950);
+  background-color: transparent;
+}
+
+.component_button_ghost:hover > span[data-item='overlay'] {
+  background-color: var(--primary-a50);
+}
+
+.component_button_ghost:active > span[data-item='overlay'] {
+  background-color: var(--primary-a100);
+}

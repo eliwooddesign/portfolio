@@ -1,9 +1,9 @@
-type skill = {
+export interface Skill {
 	name: string;
 	icon: any;
-};
+}
 
-const skills: skill[] = [
+export const skills: Skill[] = [
 	{
 		name: 'JavaScript',
 		icon: ''

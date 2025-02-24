@@ -1,0 +1,21 @@
+.component_button_container {
+  outline: none;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: start;
+
+  width: fit-content;
+  height: fit-content;
+
+  padding: 0;
+}
+
+.component_button_container:hover {
+  box-shadow: none;
+}

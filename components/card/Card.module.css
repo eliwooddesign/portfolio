@@ -1,6 +1,13 @@
 .card {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	gap: var(--m);
+
 	background: var(--gray-dark);
 	border-radius: var(--border-radius);
+
+	padding: calc(var(--m) + var(--s)) var(--m);
 }
 
 .card h2 {

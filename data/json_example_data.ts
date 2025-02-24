@@ -1,4 +1,4 @@
-const jsonExampleData = [
+export const jsonExampleData = [
 	{
 		_id: '628c2daa810bcd09ada17751',
 		username: 'theradish56',
@@ -48,5 +48,3 @@ const jsonExampleData = [
 		friendCount: 3
 	}
 ];
-
-export default jsonExampleData;

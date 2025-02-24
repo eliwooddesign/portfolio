@@ -11,8 +11,6 @@
 	gap: var(--m);
 
 	width: 30%;
-
-	padding: calc(var(--m) + var(--s)) var(--m);
 }
 
 .experience_item_headline {
