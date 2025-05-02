@@ -1,5 +1,6 @@
 #cascading-solar-system {
 	position: relative;
+	margin-top: calc(-2 * var(--huge));
 	margin-bottom: var(--huge);
 }
 
@@ -814,6 +815,10 @@
 
 /* large screens */
 @media screen and (max-width: 1024px) {
+	#cascading-solar-system {
+		margin-bottom: calc(var(--huge) * 2.5);
+	}
+
 	.css-panel-details {
 		left: 0vw;
 		margin: 0 var(--large);

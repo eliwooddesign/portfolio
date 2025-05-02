@@ -7,6 +7,7 @@
 	height: 80vh;
 	width: 100%;
 	padding: var(--huge);
+	z-index: 10;
 }
 
 .resizer {

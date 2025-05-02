@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 import './style.css';
 
 function Nav({ handleMobileNavClick, navStatus, setNavStatus }) {
@@ -35,14 +35,14 @@ function Nav({ handleMobileNavClick, navStatus, setNavStatus }) {
 				</li>
 
 				<li className='nav-item'>
-					<Link to='about' className={'nav-link ' + (location.pathname === '/about' && 'active')}>
-						About
+					<Link to='work' className={location.pathname === '/work' || location.pathname === '/' || location.pathname === '' ? 'nav-link active' : 'nav-link'}>
+						Work
 					</Link>
 				</li>
 
 				<li className='nav-item'>
-					<Link to='work' className={location.pathname === '/work' || location.pathname === '/' || location.pathname === '' ? 'nav-link active' : 'nav-link'}>
-						Work
+					<Link to='about' className={'nav-link ' + (location.pathname === '/about' && 'active')}>
+						About
 					</Link>
 				</li>
 

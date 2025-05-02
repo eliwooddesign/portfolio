@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 
-function Background({ title, description, link, repo, react, flip, fadeIn, fadeOut }) {
+function Background({ data, flip, fadeIn, fadeOut }) {
+	const { title, description, link, repo, react } = data;
+
 	// create id based on title
 	const id = title.replace(/ /g, '-').toLowerCase();
 
@@ -75,7 +77,7 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 	}, []);
 
 	return (
-		<>
+		<div className='background-wrapper'>
 			<div id={'background-' + id} className='background-scroll-image' style={window.innerWidth > 1024 ? styles : { display: 'none' }} />
 
 			<div id={id} className='project-preview-background' style={window.innerWidth <= 1024 ? styles : { display: 'flex' }}>
@@ -108,7 +110,7 @@ function Background({ title, description, link, repo, react, flip, fadeIn, fadeO
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

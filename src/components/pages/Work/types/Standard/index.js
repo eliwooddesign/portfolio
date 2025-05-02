@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 
-function Standard({ title, description, link, repo, react, flip, single }) {
+function Standard({ data, flip, hideMobile }) {
+	const { title, description, link, repo, react } = data;
+
 	// create id based on title
 	const id = title.replace(/ /g, '-').toLowerCase();
 
@@ -43,12 +45,12 @@ function Standard({ title, description, link, repo, react, flip, single }) {
 	return (
 		<div className='sticky-container'>
 			<div id={id} className={flip ? 'project-preview-right' : 'project-preview-left'}>
-				<div className={single ? 'preview-thumbnail-center' : flip ? 'preview-thumbnail-right' : 'preview-thumbnail-left'}>
+				<div className={hideMobile ? 'preview-thumbnail-center' : flip ? 'preview-thumbnail-right' : 'preview-thumbnail-left'}>
 					<a href={link} target='_blank' rel='noreferrer' className='project-thumbnail-desktop-link' style={{ transform: `translateY(-${Math.floor(modifier / 5)}px)` }}>
 						<img src={'./assets/work/' + id + '/desktop-mockup.png'} alt={title + ' desktop preview'} className='project-thumbnail-desktop'></img>
 					</a>
 
-					{!single && (
+					{!hideMobile && (
 						<a href={link} target='_blank' rel='noreferrer' className='project-thumbnail-phone-link' style={{ transform: `translateY(${Math.floor(modifier / 10)}px)` }}>
 							<img src={'./assets/work/' + id + '/mobile-mockup.png'} alt={title + ' mobile preview'} className='project-thumbnail-phone'></img>
 						</a>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import './style.css';
 
-function CSS() {
+function CascadingSolarSystem() {
 	// scroll modifier
 	const [modifier, setModifier] = useState(0.005);
 
@@ -132,7 +133,7 @@ function CSS() {
 								An educational website intended to teach students about our solar system. The Sun, eight plants and all of their moons are included, with detailed information stored in a MySQL database and served with Express.
 								<br />
 								<br />
-								This project is also an exercise in CSS. The visuals are built entirely from vanilla CSS. There are no images, svgs, or videos used anywhere on the site. Even the planets are built entirely from scratch and their movement is relative to actual time.
+								This project is also a demonstration of advanced CSS. The visuals are built entirely from vanilla CSS. There are no images, svgs, or videos in the project. The planets and other elements are built entirely out of divs then highly styled. The movement is achieved with CSS animations and is relative to actual time.
 							</p>
 
 							<div className='preview-links'>
@@ -161,4 +162,4 @@ function CSS() {
 	);
 }
 
-export default CSS;
+export default CascadingSolarSystem;

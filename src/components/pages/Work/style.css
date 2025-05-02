@@ -19,6 +19,7 @@
 	height: 80vh;
 	width: 100%;
 	padding: var(--huge);
+	margin-top: var(--large);
 	z-index: 1;
 }
 
@@ -84,10 +85,10 @@
 .project-thumbnail-phone-link {
 	position: absolute;
 	width: 10%;
-	margin-top: 2%;
+	margin-top: 5%;
 	opacity: 1;
 	z-index: 1;
-	transition: all 0.1s;
+	transition: all 50ms;
 }
 
 .project-thumbnail-phone {
@@ -184,10 +185,14 @@
 		justify-content: flex-start;
 		align-items: center;
 		top: 10vh;
-		height: 80vh;
+		/* height: 80vh; */
 		width: 100%;
 		padding: var(--large);
 		margin-bottom: var(--huge);
+	}
+
+	#cascading-solar-system {
+		margin-top: calc(-4 * var(--huge));
 	}
 
 	.preview-thumbnail-left,
@@ -237,8 +242,8 @@
 	.project-preview-left,
 	.project-preview-right,
 	.project-preview-hero {
-		height: 60vh;
 		top: 20vh;
+		/* height: 60vh; */
 		padding: var(--medium);
 	}
 
@@ -268,9 +273,8 @@
 	.project-preview-right,
 	.project-preview-hero {
 		top: 15vh;
-		height: 60vh;
+		/* height: 70vh; */
 		width: 100%;
-		margin-bottom: var(--large);
 	}
 
 	.preview-thumbnail-left,
@@ -283,7 +287,7 @@
 
 	.project-thumbnail-phone-link {
 		width: 20%;
-		margin-top: 10% !important;
+		margin-top: 5% !important;
 	}
 
 	.preview-details-left,
@@ -292,7 +296,7 @@
 	}
 }
 
-/* phones */
+/* small phones */
 @media screen and (max-width: 320px) {
 	.intro {
 		height: 45vh;

@@ -49,7 +49,6 @@
 	--primary: #78cce2; /* RGB:(120,204,226) */
 	--secondary: #4e7988; /* RGB:(78,121,136) */
 	--tertiary: #005066; /* RGB:(0,80,102) */
-	--shadow: #002439; /* RGB:(0,36,57) */
 	--highlight: #e4eff0; /* RGB:(228,239,240) */
 	/* opacity on background color variables is 30% */
 	--background-primary-30: #78cce24d;
