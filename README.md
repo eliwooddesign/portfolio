@@ -2,7 +2,7 @@
 
 ## Hi, my name is Eli and I'm a software developer.
 
-I'm always open to new opportunities. Check out my [portfolio](https://mreliwood.github.io/portfolio) and let me know if you're interested in working together.
+I'm always open to new opportunities. Check out my [portfolio](https://www.eliwooddesign.com) and let me know if you're interested in working together.
 
 <br>
 
@@ -10,6 +10,6 @@ I'm always open to new opportunities. Check out my [portfolio](https://mreliwood
 
 [425.736.5875](sms:+14257365875)
 
-[contact.eliwood@gmail.com](mailto:contact.eliwood@gmail.com)
+[eli@eliwooddesign.com](mailto:eli@eliwooddesign.com)
 
-[LinkedIn](https://www.linkedin.com/in/eliwoodprofessional/)
+[LinkedIn](https://www.linkedin.com/in/eliwooddesign/)
